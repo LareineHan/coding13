@@ -1,7 +1,8 @@
 import React from "react";
+import "./PropertyRating.style.css";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
-const ReviewStarRating = ({ averageRating }) => {
+const PropertyRating = ({ averageRating, totalReviews }) => {
   const MAX_STARS = 5;
   const fullStars = Math.floor(averageRating);
   const hasHalfStar = averageRating % 1 !== 0;
@@ -17,8 +18,12 @@ const ReviewStarRating = ({ averageRating }) => {
   };
 
   return (
-    <div>{[...Array(MAX_STARS)].map((_, index) => renderStar(index))}</div>
+    <div className="rating-box">
+      {[...Array(MAX_STARS)].map((_, index) => renderStar(index))}{" "}
+      <span>{averageRating.toFixed(1)}</span>{" "}
+      <span className="total-reviews">({totalReviews} reviews)</span>
+    </div>
   );
 };
 
-export default ReviewStarRating;
+export default PropertyRating;

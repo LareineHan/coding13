@@ -6,7 +6,7 @@ import PropertyReviews from "../../common/PropertyReviews/PropertyReviews";
 import { useGetImagesQuery } from "../../hooks/useGetPropertyImages";
 import PropertyCarousel from "../../common/Carousel/PropertyCarousel";
 import { useGetReviewsQuery } from "../../hooks/useGetReviews";
-import ReviewStarRating from "../../common/ReviewStarRating/ReviewStarRating";
+import PropertyRating from "../../common/PropertyRating/PropertyRating";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -64,6 +64,8 @@ const PropertyDetailPage = () => {
 
   const averageRating = calculateAverageRating();
 
+  const totalReviews = reviews.length;
+
   return (
     <Container>
       <PropertyCarousel images={images} />
@@ -71,10 +73,12 @@ const PropertyDetailPage = () => {
       <p>
         {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
       </p>
-      <span>
-        <ReviewStarRating averageRating={averageRating} />
-      </span>{" "}
-      <span>{averageRating.toFixed(1)}</span>
+
+      <PropertyRating
+        averageRating={averageRating}
+        totalReviews={totalReviews}
+      />
+
       <p>Rent Range: {rentRange}</p>
       <p>Bed Range: {bedRange}</p>
       <p>Description: {description}</p>
