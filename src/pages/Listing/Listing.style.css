@@ -1,9 +1,0 @@
-.properties {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.properties div {
-	display: flex;
-	flex-wrap: wrap;
-}
