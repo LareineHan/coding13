@@ -1,9 +1,23 @@
 .properties {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
+	align-items: flex-start;
+	margin: 0;
+	position: fixed;
+	height: 100vh;
 }
-.properties div {
+
+.property-listing {
 	display: flex;
-	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid #ccc;
+	margin-left: 10px;
+	margin-right: 0;
+	width: 300px;
+	overflow-y: auto; /* Enable vertical scrolling */
+	max-height: 100vh; /* Set max height to 100vh */
+}
+
+.property-listing-markers {
+	margin: 0;
 }
