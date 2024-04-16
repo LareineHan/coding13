@@ -24,7 +24,7 @@ const PropertyImages = ({ id }) => {
             alt="Property Image"
             className="property-imag"
           />
-          <p>
+          {/* <p>
             Virtual Tour:{" "}
             <a
               href={image.virtualTourLink}
@@ -33,7 +33,7 @@ const PropertyImages = ({ id }) => {
             >
               {image.virtualTourLink}
             </a>
-          </p>
+          </p> */}
         </div>
       ))}
     </div>
