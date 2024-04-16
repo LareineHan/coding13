@@ -63,17 +63,15 @@ const getPropertiesSlice = createSlice({
       })
       .addCase(fetchDetailProperty.pending, (state) => {
         state.isLoading = true;
-        state.status = "pending";
+        state.error = null;
       })
       .addCase(fetchDetailProperty.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.status = "succeeded";
         state.detailProperty = action.payload;
         console.log("detail product", action.payload);
       })
       .addCase(fetchDetailProperty.rejected, (state, action) => {
         state.isLoading = false;
-        state.status = "failed";
         state.error = action.error.message;
       });
   },

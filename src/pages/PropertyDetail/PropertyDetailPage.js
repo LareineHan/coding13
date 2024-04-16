@@ -1,51 +1,66 @@
 import React from "react";
-import "./PropertyDetailPage.style.css";
-import { useGetPropertyDetailQuery } from "../../hooks/useGetPropertyDetailQuery";
+import { useGetPropertyDetailQuery } from "../../hooks/useGetPropertyDetail";
 import { useParams } from "react-router-dom";
-import { Col, Row, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
-  const { data, isLoading, error, isError } = useGetPropertyDetailQuery({ id });
+  const { data, isLoading, error, isError } = useGetPropertyDetailQuery(id);
 
-  console.log("MovieDetailPage Data:", data);
+  console.log("PropertyDetailData", data);
 
   if (isLoading) {
-    return (
-      <Container>
-        <Row>
-          <Col>
-            <h1>Loading...</h1>
-          </Col>
-        </Row>
-      </Container>
-    );
+    return <div>Loading...</div>;
   }
 
   if (isError) {
-    return (
-      <Container>
-        <Row>
-          <Col>
-            <h1>Error: {error.message}</h1>
-          </Col>
-        </Row>
-      </Container>
-    );
+    return <div>Error: {error.message}</div>;
   }
 
+  // Destructure the data object to access specific properties
+  const {
+    name,
+    rentRange,
+    bedRange,
+    address,
+    description,
+    contact,
+    amenities,
+    transits,
+  } = data?.data; // Access nested data
+
   return (
-    <div>
-      {/* Display property details */}
-      {data && (
-        <div>
-          <h2>{data.title}</h2>
-          <p>Price: {data.price}</p>
-          <p>Bedrooms: {data.bedrooms}</p>
-          {/* Add more details as needed */}
-        </div>
-      )}
-    </div>
+    <Container>
+      <h1>{name}</h1>
+      <p>Rent Range: {rentRange}</p>
+      <p>Bed Range: {bedRange}</p>
+      <p>Description: {description}</p>
+
+      <h2>Contact</h2>
+      <p>Phone: {contact.phone}</p>
+      <p>Company: {contact.name}</p>
+
+      <h2>Address</h2>
+      <p>{address.lineOne}</p>
+      <p>{address.lineTwo}</p>
+      <p>
+        {address.city}, {address.state} {address.postalCode}
+      </p>
+
+      <h2>Amenities</h2>
+      <ul>
+        {amenities.map((amenity) => (
+          <li key={amenity.id}>{amenity.type}</li>
+        ))}
+      </ul>
+
+      <h2>Transit Options</h2>
+      <ul>
+        {transits.map((transit) => (
+          <li key={transit.id}>{transit.type}</li>
+        ))}
+      </ul>
+    </Container>
   );
 };
 
