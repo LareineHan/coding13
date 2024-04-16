@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGoogleOneTapLogin } from '@react-oauth/google';
-import { googleLogin } from '../../redux/Actions/authAction';
+import { googleLogin } from '../../redux /Actions/authAction';
 import { useDispatch } from 'react-redux';
 const Login = ({setLogIn}) => {
   const dispatch=useDispatch()
