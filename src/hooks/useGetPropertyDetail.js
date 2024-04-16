@@ -15,5 +15,6 @@ export const useGetPropertyDetailQuery = (id) => {
     queryKey: ["property", id],
     queryFn: () => fetchGetPropertyDetail(id),
     staleTime: 1000 * 60 * 5,
+    select: (data) => data?.data,
   });
 };

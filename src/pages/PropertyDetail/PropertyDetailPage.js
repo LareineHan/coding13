@@ -2,6 +2,8 @@ import React from "react";
 import { useGetPropertyDetailQuery } from "../../hooks/useGetPropertyDetail";
 import { useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import PropertyImages from "../../common/PropertyImages/PropertyImages";
+import PropertyReviews from "../../common/PropertyReviews/PropertyReviews";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -27,14 +29,19 @@ const PropertyDetailPage = () => {
     contact,
     amenities,
     transits,
-  } = data?.data; // Access nested data
+  } = data; // Access nested data
 
   return (
     <Container>
+      {/* Display Property Images */}
+      <PropertyImages id={id} />
       <h1>{name}</h1>
       <p>Rent Range: {rentRange}</p>
       <p>Bed Range: {bedRange}</p>
       <p>Description: {description}</p>
+
+      {/* Display Property Reviews */}
+      <PropertyReviews id={id} />
 
       <h2>Contact</h2>
       <p>Phone: {contact.phone}</p>
