@@ -9,6 +9,7 @@ const api = axios.create({
 		'X-RapidAPI-Key': API_KEY,
 		'X-RapidAPI-Host': 'apartments-com1.p.rapidapi.com',
 	},
+	mode: 'cors',
 });
 
 export default api;
