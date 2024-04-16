@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Map = () => {
-	return <div>map</div>;
+  return <div>map</div>;
 };
 
 export default Map;
