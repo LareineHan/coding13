@@ -3,7 +3,6 @@ import mapApi from '../mapApi';
 
 const fetchMap = async () => {
 	const response = await mapApi.get();
-
 	return response.data;
 };
 
