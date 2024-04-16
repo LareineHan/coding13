@@ -6,7 +6,6 @@ const fetchGetProperties = async (params) => {
 		const results = await api.get('/properties', {
 			params: {
 				...params,
-				sort: 'default',
 			},
 		});
 		return results.data;
