@@ -7,10 +7,12 @@ import Navibar from './pages/Navibar/Navibar';
 import { useSelector } from 'react-redux';
 import LogOut from './pages/LogOut';
 import MyPage from './pages/MyPage/MyPage';
+import Listing from './pages/Listing/Listing';
 function App() {
 	const {userInfo }= useSelector(state=>state.user)
   const [login,setLogin]=useState(false)
-	
+
+
   useEffect(()=>{
     if(sessionStorage.getItem('token') !== null){
       setLogin(true)
@@ -26,6 +28,7 @@ function App() {
 			<Route path="/login" element={<Login setLogIn={setLogin}/>}/>
 			<Route path="/logout" element={<LogOut setLogIn={setLogin}/>}/>
 			<Route path="/myPage" element={<MyPage />}/>
+      <Route path="/listing" element={<Listing userInfo={userInfo}/>}/>
 		</Routes>
 	</div>
 	)

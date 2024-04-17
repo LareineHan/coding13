@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apibk = axios.create({
-  baseURL: 'http://localhost:5000/coding',
+  baseURL: 'https://coding13bk.onrender.com/coding',
   headers: {
   
    "Content-Type": "application/json",

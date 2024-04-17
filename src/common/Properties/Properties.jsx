@@ -5,7 +5,8 @@ import { Spinner } from 'react-bootstrap';
 import { useGetPropertiesQuery } from '../../hooks/useGetProperties';
 import { useDispatch } from 'react-redux';
 import { addMapMarkers } from '../../redux/reducers/getMapMarkersSlice';
-
+import Card from '../../pages/Listing/components/Card/Card';
+import { useSelector } from 'react-redux';
 const Properties = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
 	const dispatch = useDispatch();
@@ -25,9 +26,19 @@ const Properties = ({ props }) => {
 	}
 
 	const listing = data?.data?.map((property) => (
-
+    
 		<div key={property.id}>
-			<ul className='listing-ul'>
+		<Card 
+		itemId={property?.id} 
+		rentRange={property?.rentRange} 
+		bedRange={property?.bedRange}
+		address={property?.address.fullAddress}
+		zipCode={property?.address.postalCode}	
+		lat={property?.address.latitude}
+		lon={property?.address.longitude}
+		/>
+			{/* <ul className='listing-ul'>
+
 				{property.name}
 				<li>{property.rentRange}</li>
 				<li>{property.bedRange}</li>
@@ -35,7 +46,7 @@ const Properties = ({ props }) => {
 				<li>{property.address.postalCode}</li>
 				<li>{property.address.latitude}</li>
 				<li>{property.address.longitude}</li>
-			</ul>
+			</ul> */}
 		</div>
 	));
 	return <div className='listing'>{listing}</div>;
