@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import './Properties.style.css';
 import { Spinner } from 'react-bootstrap';
@@ -24,6 +25,7 @@ const Properties = ({ props }) => {
 	}
 
 	const listing = data?.data?.map((property) => (
+
 		<div key={property.id}>
 			<ul className='listing-ul'>
 				{property.name}
