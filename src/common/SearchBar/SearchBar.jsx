@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { Form } from 'react-bootstrap';
-
+import './SearchBar.style.css';
+import { Form, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const SearchBar = () => {
@@ -60,29 +62,31 @@ const SearchBar = () => {
 	};
 
 	return (
-		<div id='custom-search-input'>
-			<Form.Group
-				className='input-group'
-				onSubmit={handleSubmit}
-				id='autocomplete'>
-				<input
-					id='autocomplete_search'
-					name='autocomplete_search'
-					type='text'
-					className='form-control'
-					placeholder='Search'
-				/>
-				<input type='hidden' id='lat' name='lat' />
-				<input type='hidden' id='long' name='long' />
-				<span className='input-group-btn'>
-					<button
-						className='btn btn-info'
-						type='submit'
-						style={{ display: 'none' }}>
-						<i className='glyphicon glyphicon-search'></i>
-					</button>
-				</span>
-			</Form.Group>
+		<div className='primary-search-bar'>
+			<div id='custom-search-input'>
+				<Form.Group
+					className='input-group'
+					onSubmit={handleSubmit}
+					id='autocomplete'>
+					<input
+						id='autocomplete_search'
+						name='autocomplete_search'
+						type='text'
+						className='form-control search-form-control'
+						placeholder='Search'
+					/>
+					<input type='hidden' id='lat' name='lat' />
+					<input type='hidden' id='long' name='long' />
+					<span className='input-group-btn'>
+						<Button
+							className='btn btn-light'
+							type='submit'
+							style={{ display: 'block' }}>
+							<FontAwesomeIcon icon={faSearch} />
+						</Button>
+					</span>
+				</Form.Group>
+			</div>
 		</div>
 	);
 };

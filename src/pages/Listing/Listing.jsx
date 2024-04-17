@@ -2,7 +2,7 @@ import React from 'react';
 import './Listing.style.css';
 import Card from './components/Card/Card';
 import { Container, Row, Col } from 'react-bootstrap';
-import SearchBar from './components/SearchBar/SearchBar';
+import SearchBar from '../../common/SearchBar/SearchBar';
 import MapBox from './components/MapBox/MapBox';
 
 const Listing = () => {
