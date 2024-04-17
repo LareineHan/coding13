@@ -12,6 +12,7 @@ const Properties = ({ props }) => {
 	if (isError) {
 		return <div>Error: {isError.message}</div>;
 	}
+  console.log("ddd", data)
 
 	const listing = data?.data?.map((property) => (
 		<Link key={property.id} to={`/properties/${property.id}`} className='property-link'>
