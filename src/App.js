@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Listing from "./pages/Listing/Listing";
 
 function App() {
   return (
-    <div >
-      test code by geunseon kim.
+    <div>
+      <Listing />
     </div>
   );
 }
