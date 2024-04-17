@@ -1,0 +1,64 @@
+.appLayout-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.7rem;
+    background-color: white;
+}
+.appLayout-left-section {
+    display: flex;
+    position: relative;
+}
+.appLayout-left-section-menu {
+    padding-top: 0.2rem;
+}
+.appLayout-left-section-language {
+    position: absolute;
+    left: 5rem;
+    border: none;
+    background-color: #ffff;
+}
+.appLayout-left-section-language:hover {
+    color: green;
+}
+
+.appLayout-center-section {
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* 로고 디자인 수정해주세요. */
+}
+
+.appLayout-right-section {
+    display: flex;
+    position: relative;
+}
+.appLayout-right-section-login {
+    display: flex;
+    position: absolute;
+    right: 9rem;
+}
+.appLayout-right-section-login button {
+    border: none;
+    background-color: white;
+    width: 5rem;
+}
+.appLayout-right-section-login button:hover {
+    color: green;
+}
+.appLayout-right-section-wrap {
+    display: flex;
+}
+.appLayout-right-section-add-property {
+    border: none;
+    background-color: #666;
+    z-index: 10;
+    padding-left: 1rem;
+    color: #fff;
+    font-weight: 600;
+}
+.appLayout-right-section-login button:hover {
+    color: green;
+}
+.appLayout-right-section-add-property:hover {
+    text-decoration-line: underline;
+}
