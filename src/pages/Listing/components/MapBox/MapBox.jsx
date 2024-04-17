@@ -1,29 +1,3 @@
-// import React, { useEffect } from 'react';
-// import { useGetPropertiesQuery } from '../../../../hooks/useGetProperties';
-// import { useDispatch } from 'react-redux';
-// import { addMapMarkers } from '../../../../redux/reducers/getMapMarkersSlice';
-// import Map from '../Map/Map';
-
-// const MapBox = ({ props }) => {
-// 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
-// 	const dispatch = useDispatch();
-
-// 	useEffect(() => {
-// 		if (data) {
-// 			console.log('data', data);
-// 			dispatch(addMapMarkers(data?.data));
-// 		}
-// 	}, [data, dispatch]);
-
-// 	return (
-// 		<div>
-// 			<Map />
-// 		</div>
-// 	);
-// };
-
-// export default MapBox;
-
 import React, { useEffect, useState } from 'react';
 import { useGetPropertiesQuery } from '../../../../hooks/useGetProperties';
 import { useDispatch } from 'react-redux';

@@ -8,8 +8,8 @@ import MapBox from './components/MapBox/MapBox';
 const Listing = () => {
 	const searchParams = {
 		location: 'new-york',
-		minRent: '1500',
-		maxRent: '3000',
+		minRent: '1000',
+		maxRent: '8000',
 		page: '1',
 		sort: 'default',
 		// Add other params here
