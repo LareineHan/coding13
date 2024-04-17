@@ -1,6 +1,9 @@
 import React from 'react';
 import './Listing.style.css';
-import Properties from '../../common/Properties/Properties';
+import Card from './components/Card/Card';
+import { Container, Row, Col } from 'react-bootstrap';
+import SearchBar from './components/SearchBar/SearchBar';
+import MapBox from './components/MapBox/MapBox';
 
 const Listing = () => {
 	const searchParams = {
@@ -8,12 +11,23 @@ const Listing = () => {
 		minRent: '1500',
 		maxRent: '3000',
 		page: '1',
+		sort: 'default',
 		// Add other params here
 	};
 	return (
-		<div className='properties'>
-			<Properties props={searchParams} />
-		</div>
+		<Container className='properties'>
+			<Col lg={8} className='properties-map-box'>
+				<MapBox props={searchParams} />
+			</Col>
+			<Col lg={4} className='property-listing'>
+				<Row className='property-listing-search-bar'>
+					<SearchBar />
+				</Row>
+				<Row className='property-listing-card-box'>
+					<Card props={searchParams} />
+				</Row>
+			</Col>
+		</Container>
 	);
 };
 

@@ -1,11 +1,22 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import './Properties.style.css';
 import { Spinner } from 'react-bootstrap';
 import { useGetPropertiesQuery } from '../../hooks/useGetProperties';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addMapMarkers } from '../../redux/reducers/getMapMarkersSlice';
 
 const Properties = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (data) {
+			console.log('data', data);
+			dispatch(addMapMarkers(data?.data));
+		}
+	}, [data, dispatch]);
+
 	if (isLoading) {
 		return <Spinner animation='border' />;
 	}
@@ -14,22 +25,20 @@ const Properties = ({ props }) => {
 	}
 
 	const listing = data?.data?.map((property) => (
-		<Link key={property.id} to={`/properties/${property.id}`} className='property-link'>
-      {/* Wrap each property card with a Link component to link PropertyDetail page */}
-      <div className='listing'>
-        <ul className='listing-ul'>
-          <li>{property.name}</li>
-          <li>{property.rentRange}</li>
-          <li>{property.bedRange}</li>
-          <li>{property.address.fullAddress}</li>
-          <li>{property.address.postalCode}</li>
-          <li>{property.address.latitude}</li>
-          <li>{property.address.longitude}</li>
-        </ul>
-      </div>
-    </Link>
+
+		<div key={property.id}>
+			<ul className='listing-ul'>
+				{property.name}
+				<li>{property.rentRange}</li>
+				<li>{property.bedRange}</li>
+				<li>{property.address.fullAddress}</li>
+				<li>{property.address.postalCode}</li>
+				<li>{property.address.latitude}</li>
+				<li>{property.address.longitude}</li>
+			</ul>
+		</div>
 	));
-	return <div>{listing}</div>;
+	return <div className='listing'>{listing}</div>;
 };
 
 export default Properties;
