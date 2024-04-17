@@ -1,0 +1,40 @@
+.information-card {
+    display: flex;
+    justify-content: center;
+}
+.information-card-img {
+    background-size: cover;
+    /* float:right; */
+    width: 40rem;
+    height: 19rem;
+}
+.information-card-content {
+    background-color: #f5f5f5;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* float: right; */
+    width: 40rem;
+    height: 19rem;
+    padding: 4.5rem;
+}
+.information-card-content h3 {
+    font-weight: 600;
+}
+.information-card-content p {
+    padding-top: 0.7rem;
+    font-size: 1.2rem !important;
+}
+.information-card-content-btn {
+    border: none;
+    background-color: #f5f5f5;
+    padding: 0px;
+    color: #0576a7;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.information-card-content-btn:hover {
+    font-weight: 800;
+    text-decoration-line: underline;
+}
