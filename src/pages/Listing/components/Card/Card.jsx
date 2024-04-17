@@ -21,9 +21,9 @@ const Card = ({ props }) => {
     <div>
       {data?.data.map((property) => (
         <div key={property.id} className='listing'>
+          <h1>{property.name}</h1>
           <CardCarousel id={property.id} />
           <ul className='listing-ul'>
-            {property.name}
             <li>{property.rentRange}</li>
             <li>{property.bedRange}</li>
             <li>{property.address.fullAddress}</li>
