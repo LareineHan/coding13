@@ -5,7 +5,7 @@
 .explore-container::after {
     content: "";
     position: absolute;
-    top: 135%;
+    top: 1120px;
     /* bottom: -55%; */
     left: 5%;
     right: 5%;
