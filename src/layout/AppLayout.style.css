@@ -62,3 +62,13 @@
 .appLayout-right-section-add-property:hover {
     text-decoration-line: underline;
 }
+.googlelogo{
+    width:20px;
+  }
+  .loginBtn{
+    border-radius: 50px;
+  }
+  .nav{
+    align-content:center;
+    align-items:center;
+  }
