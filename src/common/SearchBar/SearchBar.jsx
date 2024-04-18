@@ -1,12 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './SearchBar.style.css';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { addSearchPlace } from '../../redux/reducers/getSearchPlaceSlice';
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const SearchBar = () => {
 	const scriptRef = useRef(null);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		const initializeAutocomplete = () => {
@@ -19,6 +22,7 @@ const SearchBar = () => {
 					console.error('Invalid place geometry');
 					return;
 				}
+				dispatch(addSearchPlace(place));
 				console.log('Place:', place); // Log the place object
 				console.log('Selected Place:', place.name); // Log the selected place name
 				document.getElementById('lat').value = place.geometry.location.lat();
@@ -73,7 +77,7 @@ const SearchBar = () => {
 						name='autocomplete_search'
 						type='text'
 						className='form-control search-form-control'
-						placeholder='Search'
+						placeholder='Search City Name'
 					/>
 					<input type='hidden' id='lat' name='lat' />
 					<input type='hidden' id='long' name='long' />
