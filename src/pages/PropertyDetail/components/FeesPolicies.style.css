@@ -1,0 +1,46 @@
+.pets-fee {
+    width: 100%;
+  }  
+
+.pets-fee tbody tr,
+.pets-fee thead tr  {
+    border-bottom: 1px solid #cacaca;
+  }
+
+.pets-fee thead tr
+ {
+font-weight: bold;
+margin: 1rem;
+}
+
+.pets-fee th,
+.pets-fee td {
+  padding: 0.5rem; 
+  text-align: left; 
+}
+
+.pets-fee tbody td:last-child {
+  text-align: end;
+}
+
+.policy-type {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.FeePolicies-pet {
+    padding-left: 0;
+    margin: 1rem 0;
+    font-weight: bold;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.pets-fee tbody tr:last-child,
+.pets-fee thead tr:last-child  {
+    border-bottom: none;
+  }
+
+  .pets-fee >:not(caption)>*>* {
+    border-bottom-width: 0;
+  }
