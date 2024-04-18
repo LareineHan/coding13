@@ -1,9 +1,9 @@
 import React from "react";
-import { useGetImagesQuery } from "../../../../hooks/useGetPropertyImages";
+import { useGetImagesQuery } from "../../../hooks/useGetPropertyImages";
 import Carousel from "react-bootstrap/Carousel";
-import "./CardCarousel.style.css";
+import "./ListingCardCarousel.style.css";
 
-const CardCarousel = ({ id }) => {
+const ListingCardCarousel = ({ id }) => {
   const { data, isLoading, isError } = useGetImagesQuery(id);
   console.log("property images:", data);
 
@@ -37,4 +37,4 @@ const CardCarousel = ({ id }) => {
   );
 };
 
-export default CardCarousel;
+export default ListingCardCarousel;

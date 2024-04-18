@@ -1,10 +1,11 @@
 import React from "react";
 import "./Listing.style.css";
-import Card from "./components/Card/Card";
 import { Container, Row, Col } from "react-bootstrap";
 import MapBox from "./components/MapBox/MapBox";
 import FilterBar from "./components/FilterBar/FilterBar";
 import { useSelector } from "react-redux";
+import Card from "../../common/ListingCard/ListingCard";
+import ListingCard from "../../common/ListingCard/ListingCard";
 
 const Listing = () => {
   const searchPlace = useSelector((state) => state.searchPlace.searchPlace);
@@ -32,7 +33,7 @@ const Listing = () => {
             </Col>
             <Col lg={4} className='property-listing'>
               <Row className='property-listing-card-box'>
-                <Card props={searchParams} />
+                <ListingCard props={searchParams} />
               </Row>
             </Col>
           </Row>
