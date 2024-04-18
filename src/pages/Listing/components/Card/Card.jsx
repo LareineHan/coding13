@@ -21,13 +21,19 @@ const Card = ({ props }) => {
     <div>
       {data?.data.map((property) => (
         <div key={property.id} className='listing'>
-          <h1>{property.name}</h1>
+          <div className='card_title'>
+            <div>
+              <h1>{property.name}</h1>
+              <span>{property.address.fullAddress}</span>
+              <span>{property.address.postalCode}</span>
+            </div>
+            <div>Like</div>
+          </div>
+
           <CardCarousel id={property.id} />
           <ul className='listing-ul'>
             <li>{property.rentRange}</li>
             <li>{property.bedRange}</li>
-            <li>{property.address.fullAddress}</li>
-            <li>{property.address.postalCode}</li>
             <li>{property.address.latitude}</li>
             <li>{property.address.longitude}</li>
           </ul>
