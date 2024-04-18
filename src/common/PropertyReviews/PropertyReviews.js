@@ -34,7 +34,8 @@ const PropertyReviews = ({ id }) => {
   return (
     <div className="property-review-box">
       <h2>Reviews</h2>
-      {data ? (
+      {/*Change logic to show "No available reviews" when there is no review by minji*/}
+      {data.length > 0 ? (
         <div>
           {data?.data.map((review) => (
             <div key={review.key}>
@@ -47,7 +48,7 @@ const PropertyReviews = ({ id }) => {
           ))}
         </div>
       ) : (
-        <p>No reviews</p>
+        <p>No available reviews</p>
       )}
     </div>
   );
