@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<AppLayout/>}>
         <Route index element={<Mainpage/>}/>
-        <Route path="/list" element={<Listing />} />
+        <Route path="/properties" element={<Listing />} />
         <Route path="/properties/:id" element={<PropertyDetailPage />} />
       </Route>
     </Routes>
