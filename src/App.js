@@ -6,7 +6,9 @@ import Listing from "./pages/Listing/Listing";
 import AppLayout from "./layout/AppLayout";
 import Mainpage from "./pages/Main/Mainpage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
-
+import MyPage from "./pages/MyPage/MyPage";
+import Login from "./pages/Login/Login";
+import LogOut from "./pages/LogOut";
 function App() {
   return (
     <div className='App'>
@@ -17,6 +19,9 @@ function App() {
             <Route index element={<Listing />} />
             <Route path=':id' element={<PropertyDetailPage />} />
           </Route>
+          <Route path='/myPage' element={<MyPage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<LogOut />} />
         </Route>
         <Route path='*' element={<NotFoundPage />}></Route>
       </Routes>

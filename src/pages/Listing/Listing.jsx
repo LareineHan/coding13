@@ -4,7 +4,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import MapBox from "./components/MapBox/MapBox";
 import FilterBar from "./components/FilterBar/FilterBar";
 import { useSelector } from "react-redux";
-import Card from "../../common/ListingCard/ListingCard";
 import ListingCard from "../../common/ListingCard/ListingCard";
 
 const Listing = () => {
