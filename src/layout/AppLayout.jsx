@@ -25,17 +25,15 @@ const AppLayout = () => {
             <div className='appLayout-center-section'>Apartment</div>
 
             <div className='appLayout-right-section'>
-            <Nav>
-          <GoToMyPage to="/myPage">{name}</GoToMyPage>
-          <Nav.Link eventKey={2} href={!login?'/login':'/logOut'}>
-          <Button  className='loginBtn' variant='outline-dark'>
-
-          <img className='googlelogo' src={'./image/googlelogo.png'} />
-        {login?'Log Out': 'Log In'}
-          </Button>
-         
-          </Nav.Link>
-        </Nav>
+                <Nav>
+                    <GoToMyPage to="/myPage">{name}</GoToMyPage>
+                    <Nav.Link eventKey={2} href={!login?'/login':'/logOut'} style={{padding: "0px", paddingRight: "10px"}}>
+                        <Button className='loginBtn' variant='outline-dark' style={{width: "100px", height: "30px", fontSize: "14px", padding: "0px"}}>
+                        <img className='googlelogo' src={'./image/googlelogo.png'} style={{width: "20px", paddingRight: "5px"}}/>
+                        {login?'Log Out': 'Log In'}
+                        </Button>
+                    </Nav.Link>
+                </Nav>
                 <div className='appLayout-right-section-wrap'>
                     <button className='appLayout-right-section-add-property'>Add a Property</button>
                 </div>
