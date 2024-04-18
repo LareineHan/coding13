@@ -1,14 +1,29 @@
 .properties {
 	display: flex;
 	max-width: 100%;
-	margin: 0;
+	margin-top: 0px;
+	background-color: transparent;
 	padding: 0;
 }
+.property-filter-row {
+	width: 100%;
+	display: flex;
+	margin: 0 !important;
+}
+.bg-body-tertiary {
+	background-color: transparent !important;
+}
+#root > div.App > div > div:nth-child(3) > div > div > div:nth-child(2) {
+	width: 100%;
+	margin: 0 !important;
+	border-bottom: 1px solid #ccc;
+}
+
 .property-filter-bar {
-	padding-right: 0;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between !important;
 }
 .property-filter-bar .bg-body-tertiary {
 	background-color: transparent;
@@ -39,15 +54,6 @@
 	background-color: #f9f9f9;
 	overflow-y: auto; /* Enable vertical scrolling */
 }
-
-/* .property-listing-search-bar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 0 10px 10px 10px;
-	border-bottom: 1px solid #ccc;
-} */
 
 .property-listing-card-box {
 	flex: 1;

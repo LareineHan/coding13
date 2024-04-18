@@ -37,7 +37,7 @@ const Listing = () => {
 		<div>
 			<Container className='properties'>
 				<Col>
-					<Row>
+					<Row className='property-filter-row'>
 						<Row className='property-filter-bar'>
 							<FilterBar />
 						</Row>
