@@ -1,0 +1,29 @@
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darkturquoise;
+    padding: 0.5rem;
+    margin: 2rem 0;
+
+}
+.contactName-logo {
+    align-items: center; 
+}
+.contact-logo{
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    position: relative; 
+    z-index: -1; 
+}
+
+.contact-logo-img {
+    max-width: 100px; 
+    max-height: 70px;
+}
+
+.message-btn {
+    background-color:darkturquoise ;
+    border: none;
+}
