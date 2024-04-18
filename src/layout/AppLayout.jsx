@@ -2,9 +2,11 @@ import React from 'react'
 import "./AppLayout.style.css"
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Outlet } from 'react-router-dom';
-
-
+import { Nav,Navbar ,Button} from 'react-bootstrap';
+import GoToMyPage from './components/GoToMyPage';
 const AppLayout = () => {
+    const login = sessionStorage.getItem("token")
+    const name = sessionStorage.getItem('name')
   return (
     <div>
         <div className='appLayout-container'>
@@ -23,11 +25,17 @@ const AppLayout = () => {
             <div className='appLayout-center-section'>Apartment</div>
 
             <div className='appLayout-right-section'>
-                <div className='appLayout-right-section-login'>
-                    <button>sign up</button>
-                    <span>/</span>
-                    <button>sign in</button>
-                </div>
+            <Nav>
+          <GoToMyPage to="/myPage">{name}</GoToMyPage>
+          <Nav.Link eventKey={2} href={!login?'/login':'/logOut'}>
+          <Button  className='loginBtn' variant='outline-dark'>
+
+          <img className='googlelogo' src={'./image/googlelogo.png'} />
+        {login?'Log Out': 'Log In'}
+          </Button>
+         
+          </Nav.Link>
+        </Nav>
                 <div className='appLayout-right-section-wrap'>
                     <button className='appLayout-right-section-add-property'>Add a Property</button>
                 </div>
