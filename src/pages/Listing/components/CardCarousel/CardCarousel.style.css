@@ -1,0 +1,23 @@
+.info_images {
+  width: 50%;
+}
+
+.info_images .carousel-inner {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  position: relative;
+}
+
+.info_images .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info_images .carousel-inner .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,43 +1,44 @@
 .properties {
-	display: flex;
-	max-width: 100%;
-	margin: 0;
-	padding: 0;
+  display: flex;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .property-filter-bar {
-	padding-right: 0;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
+  padding-right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .property-filter-bar .bg-body-tertiary {
-	background-color: transparent;
+  background-color: transparent;
 }
 .properties-map-box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin: 0;
-	position: absolute;
-	left: 0;
-	top: 128px;
-	bottom: 0;
-	width: 70%; /* Adjust as needed */
-	overflow: hidden; /* Ensure map doesn't overflow */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 128px;
+  bottom: 0;
+  width: 70%; /* Adjust as needed */
+  overflow: hidden; /* Ensure map doesn't overflow */
 }
 
 .property-listing {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	right: 0;
-	top: 128px;
-	bottom: 0;
-	width: 30%; /* Adjust as needed */
-	background-color: #f9f9f9;
-	overflow-y: auto; /* Enable vertical scrolling */
+  width: 30%; /* Adjust as needed */
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 128px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* .property-listing-search-bar {
@@ -50,10 +51,12 @@
 } */
 
 .property-listing-card-box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	overflow-y: auto; /* Enable vertical scrolling */
+  width: 100%;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto; /* Enable vertical scrolling */
 }

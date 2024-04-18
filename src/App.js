@@ -5,6 +5,7 @@ import PropertyDetailPage from "./pages/PropertyDetail/PropertyDetailPage";
 import Listing from "./pages/Listing/Listing";
 import AppLayout from "./layout/AppLayout";
 import Mainpage from "./pages/Main/Mainpage";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
 
 function App() {
   return (

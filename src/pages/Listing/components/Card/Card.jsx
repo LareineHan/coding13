@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useGetPropertiesQuery } from "../../../../hooks/useGetProperties";
 import CardCarousel from "../CardCarousel/CardCarousel";
@@ -8,6 +8,7 @@ import "./Card.style.css";
 const Card = ({ props }) => {
   const { data, isLoading, isError } = useGetPropertiesQuery(props);
   const { id } = useParams();
+  console.log("데이터", data);
 
   if (isLoading) {
     return <Spinner animation='border' />;
@@ -20,23 +21,37 @@ const Card = ({ props }) => {
   return (
     <div>
       {data?.data.map((property) => (
-        <div key={property.id} className='listing'>
+        <div key={property.id} className='card'>
           <div className='card_title'>
             <div>
-              <h1>{property.name}</h1>
-              <span>{property.address.fullAddress}</span>
-              <span>{property.address.postalCode}</span>
+              <div>
+                <h1>{property.name}</h1>
+                <span>{property.address.fullAddress}</span>
+              </div>
+              <div>
+                {property.contact.logo ? (
+                  <img src='property.contact.logo' alt='company logo' />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
-            <div>Like</div>
+            <div>
+              <button>Like</button>
+            </div>
           </div>
-
-          <CardCarousel id={property.id} />
-          <ul className='listing-ul'>
-            <li>{property.rentRange}</li>
-            <li>{property.bedRange}</li>
-            <li>{property.address.latitude}</li>
-            <li>{property.address.longitude}</li>
-          </ul>
+          <div className='card_info'>
+            <CardCarousel id={property.id} />
+            <div className='info_items'>
+              <ul>
+                <li>{property.rentRange}</li>
+                <li>{property.bedRange}</li>
+                <li>{property.address.latitude}</li>
+                <li>{property.contact.phone}</li>
+              </ul>
+              <Button className='btn_contact'>Email</Button>
+            </div>
+          </div>
         </div>
       ))}
     </div>

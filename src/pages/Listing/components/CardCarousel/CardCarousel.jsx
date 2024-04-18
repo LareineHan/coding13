@@ -1,6 +1,7 @@
 import React from "react";
 import { useGetImagesQuery } from "../../../../hooks/useGetPropertyImages";
 import Carousel from "react-bootstrap/Carousel";
+import "./CardCarousel.style.css";
 
 const CardCarousel = ({ id }) => {
   const { data, isLoading, isError } = useGetImagesQuery(id);
@@ -15,7 +16,7 @@ const CardCarousel = ({ id }) => {
   }
 
   return (
-    <div>
+    <div className='info_images'>
       <Carousel fade interval={null}>
         <Carousel.Item>
           <img
