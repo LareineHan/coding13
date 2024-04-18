@@ -1,0 +1,28 @@
+.transport-table tbody tr,
+.transport-table thead tr  {
+    border-bottom: 1px solid #cacaca;
+  }
+
+  .transport-table tbody td,
+  .transport-table thead th,
+  .transport-table tbody .empty-cell {
+    text-align: center;
+  }
+
+  .transport-table tbody td:last-child,
+  .transport-table thead th:last-child  {
+    text-align: end;
+  }
+
+  .transport-table tbody td:first-child,
+  .transport-table thead th:first-child  {
+    text-align: start;
+  }
+  .transport-table {
+    margin-top: 20px;
+  }
+  
+
+
+  
+  

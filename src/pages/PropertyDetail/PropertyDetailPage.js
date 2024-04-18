@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import Amenities from "./components/Amenities";
 import FeesPolicies from "./components/FeesPolicies";
 import PropertyDetails from "./components/PropertyDetails";
+import Transportation from "./components/Transportation";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -73,7 +74,7 @@ const PropertyDetailPage = () => {
     unitCount,
     storyCount,
     isFurnished,
-    // transits,
+    transits,
   } = data; // Access nested data
 
   const images = imageData?.data;
@@ -152,6 +153,8 @@ const PropertyDetailPage = () => {
         storyCount={storyCount}
         isFurnished={isFurnished}
       />
+
+      <Transportation transits={transits} />
     </Container>
   );
 };
