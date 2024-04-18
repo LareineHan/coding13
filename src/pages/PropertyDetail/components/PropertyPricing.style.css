@@ -8,9 +8,22 @@
    margin: 1rem 0;
 }
 
+.nav-tabs .nav-link {
+    /*Tabs border*/
+      border: 1px solid skyblue;
+      border-radius: 0;
+      color: black; /*Tab font color*/
+} 
+
+.nav-tabs {
+    border: 0;
+    --bs-nav-tabs-link-active-border-color: skyblue;
+    --bs-nav-tabs-link-active-color: white;
+    --bs-nav-tabs-link-active-bg: skyblue;  
+    margin: 2rem 0;
+}
+
 .property-type-tab{
-    border: 1px solid skyblue;
-    color: cadetblue;
     margin-top: 0.5rem;
 }
 
