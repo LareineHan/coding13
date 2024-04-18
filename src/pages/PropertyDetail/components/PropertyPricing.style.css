@@ -1,0 +1,20 @@
+.propertyPricing-container {
+    padding: 0;
+    
+}
+
+.propertyPricing-card {
+   border: 1px solid #cacaca;
+   margin: 1rem 0;
+}
+
+.property-type-tab{
+    border: 1px solid skyblue;
+    color: cadetblue;
+    margin-top: 0.5rem;
+}
+
+.propertyTypeTab-container {
+    margin: 1rem 0 ;
+    padding: 0;
+}
