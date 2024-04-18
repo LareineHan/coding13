@@ -1,0 +1,16 @@
+.utility-list {
+    list-style-type: disc;
+}
+
+.utility-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.leaseTerms-item{
+    display: list-item;
+    margin-left: 2rem;
+    font-size: 1rem;
+}
+
