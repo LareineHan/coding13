@@ -4,19 +4,22 @@
     align-items: center;
     padding: 0.5rem 0.7rem;
     background-color: white;
+    font-weight: 600;
 }
 .appLayout-left-section {
     display: flex;
     position: relative;
 }
 .appLayout-left-section-menu {
-    padding-top: 0.2rem;
+    padding-top: 0.1rem;
+    padding-left: 0.7rem;
 }
 .appLayout-left-section-language {
     position: absolute;
-    left: 5rem;
+    left: 5.5rem;
     border: none;
     background-color: #ffff;
+    font-weight: 600;
 }
 .appLayout-left-section-language:hover {
     color: green;
@@ -42,6 +45,7 @@
     border: none;
     background-color: white;
     width: 5rem;
+    font-weight: 500;
 }
 .appLayout-right-section-login button:hover {
     color: green;

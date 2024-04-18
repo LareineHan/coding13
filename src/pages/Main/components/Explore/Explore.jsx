@@ -14,7 +14,7 @@ const Explore = () => {
   
   return (
     <div className='explore-container'>
-      <h2>Explore Rentals in Mississauga, ON</h2>
+      <h2>Explore Rentals in New York, NY</h2>
       <div className='explore-cards' style={{display: "flex", flexDirection: "column"}}>
         <ExploreCard props={searchParams}/>
         {/* <ExploreCard props={searchParams}/> */}

@@ -9,7 +9,7 @@ const ExploreCardImage = ({id}) => {
 
   return (
     <div>
-        <img style={{width: "288px", height: "200px"}} alt='Property image' src={data.data[0].link}/>
+        <img style={{width: "288px", height: "200px", borderTopLeftRadius: "5px", borderTopRightRadius: "5px"}} alt='Property image' src={data.data[0].link}/>
     </div>
   )
 }

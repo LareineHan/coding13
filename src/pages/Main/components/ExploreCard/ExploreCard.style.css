@@ -2,6 +2,12 @@
     width: 18rem;
     margin: 1rem;
     height: 23rem;
+    transition: all 0.5s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.explore-card:hover {
+    transform: scale(1.09);
 }
 .explore-card-content {
     list-style-type: none;

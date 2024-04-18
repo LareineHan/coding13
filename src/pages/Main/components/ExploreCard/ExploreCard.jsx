@@ -18,7 +18,7 @@ const ExploreCard = ({props}) => {
     <div style={{display: "flex"}}>
         {data?.data.slice(0, 4).map((property, idx)=> (
         <Card className='explore-card' key={idx}>
-            <ExploreCardImage id={property.id}/>
+            <ExploreCardImage className='explore-card-img' id={property.id}/>
             <Card.Body>
                 <Card.Title>{property.name}</Card.Title>
                 <Card.Text>
