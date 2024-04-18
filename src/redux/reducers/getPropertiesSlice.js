@@ -1,4 +1,3 @@
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import api from '../../utils/api';
 
@@ -16,7 +15,6 @@ export const fetchProperties = createAsyncThunk(
 			const response = await api.get('/properties', {
 				params: {
 					...params, // Spread the params object here
-					sort: 'default', // Default sort
 				},
 			});
 			return response.data;
