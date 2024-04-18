@@ -1,0 +1,37 @@
+.rent-bed-bath-range-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #cacaca;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+.rent-bed-bath-range-inner-container:not(:last-child)::after {    
+    border-right: 1px solid #cacaca;
+    content: "";
+}
+
+.rent-range-inner-container,
+.bed-range-inner-container,
+.bath-range-inner-container{
+
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column
+}
+
+.rent-range-title {
+    font-size: .875rem;
+    line-height: .875rem;
+    margin: 0;
+}
+
+.rent-range-value,
+.bad-range-value,
+.rent-range-value {
+font-size: 1rem;
+margin: 0;
+font-weight: bold;
+}
+
