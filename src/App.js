@@ -18,10 +18,11 @@ function App() {
 					<Route path='/properties'>
 						<Route index element={<Listing />} />
 						<Route path=':id' element={<PropertyDetailPage />} />
-						<Route path="/myPage" element={<MyPage />}/>
-       		 	<Route path="/login" element={<Login setLogIn={setLogin}/>}/>
-						<Route path="/logout" element={<LogOut setLogIn={setLogin}/>}/>
+					
 					</Route>
+					<Route path="/myPage" element={<MyPage />}/>
+       		 	<Route path="/login" element={<Login />}/>
+						<Route path="/logout" element={<LogOut />}/>
 				</Route>
 				<Route path='*' element={<NotFoundPage />}></Route>
 			</Routes>
