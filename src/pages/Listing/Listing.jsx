@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Listing = () => {
 	const searchPlace = useSelector((state) => state.searchPlace.searchPlace);
-	console.log('searchPlace', searchPlace.name);
+	// console.log('searchPlace', searchPlace.name);
 	const cityName = searchPlace?.name;
 	const searchParams = {
 		location: cityName ? cityName : 'new-york',

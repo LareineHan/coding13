@@ -1,0 +1,19 @@
+.adventure-container {
+    margin-top: 1rem;
+}
+.adventure-container::after {
+    content: "";
+    position: absolute;
+    bottom: -910px;
+    /* bottom: -55%; */
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: #f4f4f4;
+}
+.adventure-more-btn {
+    padding: 0 10rem !important;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 3rem;
+}

@@ -10,6 +10,7 @@ import MyPage from "./pages/MyPage/MyPage";
 import Login from "./pages/Login/Login";
 import LogOut from "./pages/LogOut";
 function App() {
+
 	return (
 		<div className='App'>
 			<Routes>
