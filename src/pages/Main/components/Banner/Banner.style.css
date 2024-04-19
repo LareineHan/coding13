@@ -26,6 +26,8 @@
 	font-weight: 700;
 	line-height: 64px;
 	margin-bottom: 1.125rem;
+	color: #00bf67;
+	text-shadow: #0000009c 0.06em 0.06em 0;
 	/* z-index: 100; */
 }
 .banner-wrap p {
@@ -33,6 +35,7 @@
 	font-weight: 600;
 	line-height: 30px;
 	margin-bottom: 3.3125rem;
+	text-shadow: #0000009c 0.06em 0.06em 0;
 	/* z-index: 100; */
 }
 .banner-wrap-search {
