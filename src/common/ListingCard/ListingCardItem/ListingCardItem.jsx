@@ -77,7 +77,7 @@ const ListingCardItem = ({ id }) => {
               <li className='room'>{bedRange}</li>
               <li className='label'>
                 {desc.map((item) => (
-                  <span className={item ? "" : "none"}>{item}</span>
+                  <span className={item ? "block" : "none"}>{item}</span>
                 ))}
               </li>
               <li className='phone'>{contact.phone}</li>

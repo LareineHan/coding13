@@ -85,12 +85,12 @@
   display: none;
 }
 
-.info_items ul li.label span::after {
+.info_items ul li.label .block::after {
   content: ", ";
 }
 
-.info_items ul li.label span:last-child::after {
-  display: none;
+.info_items ul li.label .block:last-child::after {
+  content: "";
 }
 
 .card_info .info_items .btn_contact {
