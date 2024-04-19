@@ -1,12 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import "./AppLayout.style.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import GoToMyPage from "./components/GoToMyPage";
 import { Outlet } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import '../../node_modules/serve-index/public/style.css';
+
 
 const AppLayout = () => {
-  const login = sessionStorage.getItem("token");
-  const name = sessionStorage.getItem("name");
+let username;
+
+const {userInfo}=useSelector(state=>state.user)
+const token = sessionStorage.getItem('token')
+const name = sessionStorage.getItem('name')
+
+if(userInfo?.name !== undefined){
+  username = userInfo?.name
+}else{
+  username = name
+}
   return (
     <div>
       <div className='appLayout-container'>
@@ -20,7 +32,7 @@ const AppLayout = () => {
                 Help Center
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.4'>About us</NavDropdown.Item>
+              <NavDropdown.Item href='/properties'>properties</NavDropdown.Item>
             </NavDropdown>
           </div>
           <button className='appLayout-left-section-language'>English</button>
@@ -30,46 +42,56 @@ const AppLayout = () => {
 
         <div className='appLayout-right-section'>
           <div className='appLayout-right-section-login'>
-            <button>
-              <GoToMyPage to='/myPage'>{name}</GoToMyPage>
-            </button>
+        
+        
           </div>
 
           <div className='appLayout-right-section-wrap'>
-            <button className='appLayout-right-section-add-property'>
+            {/* <button className='appLayout-right-section-add-property'>
               another btn
-            </button>
-            <button className='appLayout-right-section-add-property'>
-              <GoToMyPage to='/myPage'>{name}go to my page</GoToMyPage>
-            </button>
-            <button
-              className='appLayout-right-section-add-property'
-              eventKey={2}
-              href={!login ? "/login" : "/logOut"}
-            >
-              {login ? "Log Out" : "Log In"}
-              <span>
-                <img
-                  className='googlelogo'
-                  src={"./image/googlelogo.png"}
-                  alt='logo'
-                />
-              </span>
-            </button>
+            </button> */}
+            
           </div>
         </div>
       </div>
       <div
         style={{
-          padding: "4.6rem",
+          display:'flex',
+         justifyContent:'flex-end',
+
+         borderRadius:'10px',
+          padding: "2.6rem",
           paddingTop: "1rem",
-          paddingBottom: "2rem",
+          paddingBottom: "1.1rem",
           backgroundColor: "#666",
           position: "absolute",
           right: "0",
           top: "0",
+          
         }}
-      ></div>
+      >
+<button   className={username ?'appLayout-right-section-add-property':'none'}>
+              <GoToMyPage to='/myPage'>{username}'Page</GoToMyPage>
+            </button>
+            <a
+              className='appLayout-right-section-add-property'
+              eventKey={2}
+              href={!username  ? "/login" : "/logOut"}
+              style={{textDecorationLine:'none',fontSize:'20px',color:'white'}}
+            >
+              {username  ? "Log Out" : "Log In"}
+              <span  style={{paddingLeft:'10px',cursor:'pointer'}} >
+                <img
+                  className='googlelogo'
+                  src={"./image/googlelogo.png"}
+                  alt='logo'
+                 
+                 
+                />
+              </span>
+            </a>
+
+      </div>
       <Outlet />
     </div>
   );

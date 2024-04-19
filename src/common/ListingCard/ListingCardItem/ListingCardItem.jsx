@@ -4,6 +4,8 @@ import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./ListingCardItem.style.css";
 import ListingCardCarousel from "../ListingCardCarousel/ListingCardCarousel";
+import HeartBtn from "../../HeartBtn/LikeBtn"
+import LikeBtn from '../../HeartBtn/LikeBtn';
 
 const ListingCardItem = ({ id }) => {
   const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
@@ -66,7 +68,7 @@ const ListingCardItem = ({ id }) => {
             </div>
           </div>
           <div>
-            <button>Like</button>
+            <LikeBtn listId={data?.id}/>
           </div>
         </div>
         <div className='card_info'>

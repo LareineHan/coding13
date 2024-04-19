@@ -1,4 +1,4 @@
-import {createSuccessItem,allRequest,allError,getLikeList ,checkLike } from '../reducers/likeReducer';
+import {createSuccessItem,allRequest,allError,getLikeList  } from '../reducers/likeReducer';
 import apibk from '../../utils/apibk';
 
 export const createLike =({userId,like,listId})=>async(dispatch)=>{
@@ -24,26 +24,3 @@ export const showLikeList=(userId)=>async(dispatch)=>{
   }
 }
 
-export const checkLikeItem = (userId, listId) => async (dispatch) => {
-  try {
-    
-    const res = await apibk.get(`/like/showAll/${userId}`);
-    const list = res.data.data;
-    const isLiked = list.some(item => item.listId === listId);
-    console.log(isLiked,'actionIsLiked')
-    dispatch(checkLike(isLiked));
-  } catch (error) {
-    console.error('checkLikeItem error', error);
-  }
-}
-
-
-export const deleteLikeItem=({userId,listId})=>async(dispatch)=>{
-  try{
-    const res = await apibk.delete(`/like/delete/${userId}/${listId}`)
-    console.log(res.data.data,'deletedItem')
-
-  }catch(error){
-    console.log(error,'deleteLikeItem')
-  }
-}

@@ -9,9 +9,9 @@ const LogOut = ({setLogIn}) => {
   useEffect(()=>{
    googleLogout()
   dispatch(logOut())
-  setLogIn(false)
+
   navigate('/')
-  },[])
+  },[dispatch,navigate])
   return (
     <div>
       
