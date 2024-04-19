@@ -52,19 +52,16 @@ const Listing = () => {
 		<div>
 			<Container className='properties'>
 				<Col>
-					<Row className='property-filter-row'>
-						<Row className='property-filter-bar'>
-							<FilterBar />
-						</Row>
+					<Row className='property-filter-bar'>
+						<FilterBar />
 					</Row>
-					<Row>
-						<Col lg={8} className='properties-map-box'>
+
+					<Row className='properties-content-container'>
+						<Col className='properties-map-box'>
 							<MapBox props={searchParams} />
 						</Col>
-						<Col lg={4} className='property-listing'>
-							<Row className='property-listing-card-box'>
-								<ListingCard props={searchParams} />
-							</Row>
+						<Col className='property-listing scrollable-box'>
+							<ListingCard props={searchParams} />
 						</Col>
 					</Row>
 				</Col>
