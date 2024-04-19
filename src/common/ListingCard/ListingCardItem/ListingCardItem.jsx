@@ -100,7 +100,6 @@ const ListingCardItem = ({ id }) => {
       </div>
     </div>
   );
-  s;
 };
 
 export default ListingCardItem;
