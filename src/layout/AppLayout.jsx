@@ -3,6 +3,7 @@ import "./AppLayout.style.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import GoToMyPage from "./components/GoToMyPage";
 import { Outlet } from "react-router-dom";
+import { Nav,Navbar ,Button} from 'react-bootstrap';
 
 const AppLayout = () => {
   const login = sessionStorage.getItem("token");
@@ -20,7 +21,7 @@ const AppLayout = () => {
                 Help Center
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='#action/3.4'>About us</NavDropdown.Item>
+              <NavDropdown.Item href='/properties'>properties</NavDropdown.Item>
             </NavDropdown>
           </div>
           <button className='appLayout-left-section-language'>English</button>
@@ -30,22 +31,28 @@ const AppLayout = () => {
 
         <div className='appLayout-right-section'>
           <div className='appLayout-right-section-login'>
+          {/* ------------------login and my page---------- */}
+        
+
+
+          {/* ----------------------------------------------- */}
             <button>
               <GoToMyPage to='/myPage'>{name}</GoToMyPage>
             </button>
           </div>
 
           <div className='appLayout-right-section-wrap'>
-            <button className='appLayout-right-section-add-property'>
+            {/* <button className='appLayout-right-section-add-property'>
               another btn
-            </button>
-            <button className='appLayout-right-section-add-property'>
+            </button> */}
+            <button  className={login?'appLayout-right-section-add-property':'none'}>
               <GoToMyPage to='/myPage'>{name}go to my page</GoToMyPage>
             </button>
-            <button
+            <a
               className='appLayout-right-section-add-property'
               eventKey={2}
               href={!login ? "/login" : "/logOut"}
+              style={{textDecorationLine:'none'}}
             >
               {login ? "Log Out" : "Log In"}
               <span>
@@ -53,9 +60,10 @@ const AppLayout = () => {
                   className='googlelogo'
                   src={"./image/googlelogo.png"}
                   alt='logo'
+                  style={{marginRight:'20px'}}
                 />
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
