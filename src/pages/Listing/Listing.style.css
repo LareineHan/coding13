@@ -1,59 +1,68 @@
 .properties {
 	display: flex;
 	max-width: 100%;
-	margin: 0;
+	margin-top: 0px;
+	background-color: transparent;
 	padding: 0;
 }
+.property-filter-row {
+	width: 100%;
+	display: flex;
+	margin: 0 !important;
+}
+.bg-body-tertiary {
+	background-color: transparent !important;
+}
+#root > div.App > div > div:nth-child(3) > div > div > div:nth-child(2) {
+	width: 100%;
+	margin: 0 !important;
+	border-bottom: 1px solid #ccc;
+}
+
 .property-filter-bar {
-	padding-right: 0;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between !important;
 }
 .property-filter-bar .bg-body-tertiary {
-	background-color: transparent;
+  background-color: transparent;
 }
 .properties-map-box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin: 0;
-	position: absolute;
-	left: 0;
-	top: 128px;
-	bottom: 0;
-	width: 70%; /* Adjust as needed */
-	overflow: hidden; /* Ensure map doesn't overflow */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 128px;
+  bottom: 0;
+  width: 70%; /* Adjust as needed */
+  overflow: hidden; /* Ensure map doesn't overflow */
 }
 
 .property-listing {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	right: 0;
-	top: 128px;
-	bottom: 0;
-	width: 30%; /* Adjust as needed */
-	background-color: #f9f9f9;
-	overflow-y: auto; /* Enable vertical scrolling */
+  width: 30%; /* Adjust as needed */
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 128px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
-/* .property-listing-search-bar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 0 10px 10px 10px;
-	border-bottom: 1px solid #ccc;
-} */
-
 .property-listing-card-box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	overflow-y: auto; /* Enable vertical scrolling */
+  width: 100%;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto; /* Enable vertical scrolling */
 }

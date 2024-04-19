@@ -1,28 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Listing.style.css';
 import Card from './components/Card/Card';
 import { Container, Row, Col } from 'react-bootstrap';
 import MapBox from './components/MapBox/MapBox';
 import FilterBar from './components/FilterBar/FilterBar';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleShowUserLocation } from '../../redux/reducers/getUserLocationSlice';
 
 const Listing = () => {
+	const userLocation = useSelector((state) => state.userLocation.userLocation);
 	const searchPlace = useSelector((state) => state.searchPlace.searchPlace);
-	// console.log('searchPlace', searchPlace.name);
+	const showUserLocation = useSelector(
+		(state) => state.userLocation.showUserLocation
+	);
+	const dispatch = useDispatch();
+	console.log('showUserLocation', showUserLocation);
+	console.log('searchPlace', searchPlace?.name);
+	console.log('userLocation', userLocation);
 	const cityName = searchPlace?.name;
 	const searchParams = {
-		location: cityName ? cityName : 'new-york',
+		location: showUserLocation === true ? userLocation : cityName || 'New York',
 		minRent: '1000',
 		maxRent: '8000',
 		page: '1',
 		sort: 'default',
 		// Add other params here
 	};
+	useEffect(() => {
+		if (searchPlace !== null) {
+			dispatch(toggleShowUserLocation(false));
+		}
+		console.log('searchParams', searchParams);
+	}, [searchPlace, showUserLocation]);
+
 	return (
 		<div>
 			<Container className='properties'>
 				<Col>
-					<Row>
+					<Row className='property-filter-row'>
 						<Row className='property-filter-bar'>
 							<FilterBar />
 						</Row>

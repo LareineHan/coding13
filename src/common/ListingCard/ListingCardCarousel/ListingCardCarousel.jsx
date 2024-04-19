@@ -1,8 +1,9 @@
 import React from "react";
-import { useGetImagesQuery } from "../../../../hooks/useGetPropertyImages";
+import { useGetImagesQuery } from "../../../hooks/useGetPropertyImages";
 import Carousel from "react-bootstrap/Carousel";
+import "./ListingCardCarousel.style.css";
 
-const CardCarousel = ({ id }) => {
+const ListingCardCarousel = ({ id }) => {
   const { data, isLoading, isError } = useGetImagesQuery(id);
   console.log("property images:", data);
 
@@ -15,8 +16,8 @@ const CardCarousel = ({ id }) => {
   }
 
   return (
-    <div>
-      <Carousel fade>
+    <div className='info_images'>
+      <Carousel fade interval={null}>
         <Carousel.Item>
           <img
             className='d-block w-100'
@@ -36,4 +37,4 @@ const CardCarousel = ({ id }) => {
   );
 };
 
-export default CardCarousel;
+export default ListingCardCarousel;
