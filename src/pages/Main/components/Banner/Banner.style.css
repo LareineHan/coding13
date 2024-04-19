@@ -1,54 +1,55 @@
 .banner-container {
-    background-image:url("https://www.ikea.com/images/a-light-living-room-centred-around-a-jaettebo-three-and-a-ha-d80334e03b4e4094d0e02846c7de2e85.jpg?f=xxxs?imwidth=300");
-    background-size: cover;
-    height: 453px;
-    color: #fff;
-    position: relative;
+	background-image: url('https://www.ikea.com/images/a-light-living-room-centred-around-a-jaettebo-three-and-a-ha-d80334e03b4e4094d0e02846c7de2e85.jpg?f=xxxs?imwidth=300');
+	background-size: cover;
+	height: 453px;
+	color: #fff;
+	position: relative;
 }
 .banner-container::before {
-    position: absolute;
-    content: "";
-    top:0px;
-    left:0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.432);
+	position: absolute;
+	content: '';
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.432);
 }
 .banner-wrap {
-    text-align: center;
-    position: absolute;
-    top: 27%;
-    left: 0;
-    right: 0;
+	text-align: center;
+	position: absolute;
+	top: 27%;
+	left: 0;
+	right: 0;
 }
 .banner-wrap h1 {
-    font-size: 3.9rem;
-    font-weight: 700;
-    line-height: 64px;
-    margin-bottom: 1.125rem;
-    /* z-index: 100; */
+	font-size: 3.9rem;
+	font-weight: 700;
+	line-height: 64px;
+	margin-bottom: 1.125rem;
+	/* z-index: 100; */
 }
 .banner-wrap p {
-    font-size: 1.8rem;
-    font-weight: 600;
-    line-height: 30px;
-    margin-bottom: 3.3125rem;
-    /* z-index: 100; */
+	font-size: 1.8rem;
+	font-weight: 600;
+	line-height: 30px;
+	margin-bottom: 3.3125rem;
+	/* z-index: 100; */
 }
 .banner-wrap-search {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
-.form-control {
-    padding: 0.8rem;
-    width: 44rem;
-    font-size: 1.1rem;
-    padding-left: 1.3rem;
+.banner-wrap-search .form-control {
+	padding: 0.8rem;
+	width: 44rem;
+	font-size: 1.1rem;
+	padding-left: 1.3rem;
+	height: 3.5rem;
 }
-.btn {
-    margin-left: 1rem;
-    padding: 0 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    height: 3.4rem;
+.banner-wrap-search .btn {
+	margin-left: 1rem;
+	padding: 0 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	height: 3.5rem;
 }

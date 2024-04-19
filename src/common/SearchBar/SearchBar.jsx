@@ -5,17 +5,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { addSearchPlace } from '../../redux/reducers/getSearchPlaceSlice';
+import { Loader } from '@googlemaps/js-api-loader';
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-
+const loader = new Loader({
+	apiKey: API_KEY,
+	version: 'weekly',
+	libraries: ['places'],
+	suppressDeprecationWarnings: true,
+});
 const SearchBar = () => {
 	const scriptRef = useRef(null);
 	const dispatch = useDispatch();
 	const [inputValue, setInputValue] = useState('');
 
 	useEffect(() => {
-		const initializeAutocomplete = () => {
+		const initializeAutocomplete = async () => {
 			const input = document.getElementById('autocomplete_search');
+			if (!window.google || !window.google.maps || !window.google.maps.places) {
+				console.error('Google Maps API not loaded');
+				return;
+			}
+
 			const autocomplete = new window.google.maps.places.Autocomplete(input);
 
 			autocomplete.addListener('place_changed', () => {
@@ -39,7 +50,7 @@ const SearchBar = () => {
 			});
 		};
 
-		if (window.google && window.google.maps) {
+		if (window.google) {
 			initializeAutocomplete();
 		} else {
 			// Load the Google Maps API script
@@ -52,8 +63,8 @@ const SearchBar = () => {
 
 		return () => {
 			// Clean up the Google Maps API script
-			if (scriptRef.current) {
-				document.head.removeChild(scriptRef.current);
+			if (scriptRef.current && scriptRef.current.parentNode) {
+				scriptRef.current.parentNode.removeChild(scriptRef.current);
 			}
 		};
 	}, [dispatch]);
