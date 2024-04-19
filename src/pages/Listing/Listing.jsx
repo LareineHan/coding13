@@ -8,6 +8,7 @@ import ListingCard from "../../common/ListingCard/ListingCard";
 
 const Listing = () => {
   const searchPlace = useSelector((state) => state.searchPlace.searchPlace);
+  // console.log('searchPlace', searchPlace.name);
   const cityName = searchPlace?.name;
   const searchParams = {
     location: cityName ? cityName : "new-york",
@@ -17,6 +18,7 @@ const Listing = () => {
     sort: "default",
     // Add other params here
   };
+
   return (
     <div>
       <Container className='properties'>
