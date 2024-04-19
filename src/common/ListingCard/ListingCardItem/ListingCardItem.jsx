@@ -49,7 +49,7 @@ const ListingCardItem = ({ id }) => {
     amenities[0].amenities[6],
     amenities[0].amenities[7],
   ];
-  console.log("설명", desc);
+  //	console.log('amenities desc', desc);
 
   const goToDeatailPage = (id) => {
     navigate(`/properties/${id}`);
@@ -100,6 +100,7 @@ const ListingCardItem = ({ id }) => {
       </div>
     </div>
   );
+  s;
 };
 
 export default ListingCardItem;

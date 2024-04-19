@@ -1,49 +1,52 @@
 import React, { useState } from 'react';
 import './FilterBar.style.css';
 import SearchBar from '../../../../common/SearchBar/SearchBar';
-import {
-	Container,
-	Row,
-	Col,
-	Button,
-	Navbar,
-	Nav,
-	NavDropdown,
-} from 'react-bootstrap';
+import { Container, Row, Col, Dropdown, DropdownButton } from 'react-bootstrap';
 
 const FilterBar = () => {
-	const [navbarExpanded, setNavbarExpanded] = useState(false);
 	return (
-		<Navbar
-			expand='lg'
-			className='bg-body-tertiary'
-			expanded={navbarExpanded}
-			collapseOnSelect>
-			<Container fluid>
-				<Navbar.Brand>
-					<div className='filter-bar-search'>
-						<SearchBar />
-					</div>
-				</Navbar.Brand>
+		<Container>
+			<Row className='filter-menu'>
+				<Col lg={7} md={9} className='filter-bar-search'>
+					<SearchBar />
+				</Col>
 
-				<Navbar.Toggle
-					aria-controls='navbarScroll'
-					onClick={() => setNavbarExpanded(!navbarExpanded)}
-				/>
-				<Navbar.Collapse id='navbarScroll' className='filters-collapse'>
-					<Nav className='me-auto my-2 my-lg-0 nav-menu' navbarScroll>
-						<NavDropdown title='Price' id='basic-nav-dropdown'>
-							<NavDropdown.Item>Rent price input table</NavDropdown.Item>
-							<NavDropdown.Divider />
-							<NavDropdown.Item>Another action</NavDropdown.Item>
-							<NavDropdown.Item>Something</NavDropdown.Item>
-						</NavDropdown>
-
-						<Nav.Link>Filter Btns</Nav.Link>
-					</Nav>
-				</Navbar.Collapse>
-			</Container>
-		</Navbar>
+				<Col lg={4} md={12} className='filter-menu-box'>
+					<Row>
+						<Col lg={4} md={4} className='filter-menu-list'>
+							<DropdownButton
+								id='dropdown-basic-button'
+								title='Dropdown button'
+								variant='success'>
+								<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+								<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
+								<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
+							</DropdownButton>
+						</Col>
+						<Col lg={4} md={4} className='filter-menu-list'>
+							<DropdownButton
+								id='dropdown-basic-button'
+								title='Dropdown button'
+								variant='success'>
+								<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+								<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
+								<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
+							</DropdownButton>
+						</Col>
+						<Col lg={4} md={4} className='filter-menu-list'>
+							<DropdownButton
+								id='dropdown-basic-button'
+								title='Dropdown button'
+								variant='success'>
+								<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+								<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
+								<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
+							</DropdownButton>
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 
