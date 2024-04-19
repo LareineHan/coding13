@@ -1,5 +1,20 @@
 .google-map {
-	background-color: rgba(212, 62, 62, 0.569);
+	background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=640x640&key=YOUR_API_KEY');
+	background-size: cover;
 	justify-content: center;
 	align-items: center;
+}
+.custom-map-control-button {
+	background-color: #1c2c4c; /* Blue background color */
+	color: #88dded; /* White text color */
+	border: none; /* No border */
+	padding: 10px 20px; /* Padding around the text */
+	margin-top: 10px;
+	cursor: pointer; /* Show pointer cursor on hover */
+	border-radius: 5px; /* Rounded corners */
+}
+
+.custom-map-control-button:hover {
+	background-color: #88dded; /* Darker blue on hover */
+	color: #242443;
 }

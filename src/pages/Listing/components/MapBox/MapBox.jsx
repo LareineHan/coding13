@@ -8,7 +8,7 @@ const MapBox = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
 	const dispatch = useDispatch();
 	const [dispatchCompleted, setDispatchCompleted] = useState(false);
-
+	console.log('Mapbox loading?');
 	useEffect(() => {
 		if (data) {
 			console.log('data', data);
@@ -18,6 +18,8 @@ const MapBox = ({ props }) => {
 					console.error('Error adding map markers:', error);
 					setDispatchCompleted(true); // Set completed even on error
 				});
+		} else {
+			console.log('No data received!');
 		}
 	}, [data, dispatch]);
 
