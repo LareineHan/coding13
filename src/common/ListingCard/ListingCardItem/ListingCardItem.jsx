@@ -14,7 +14,7 @@ const ListingCardItem = ({ id }) => {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div className='error'>Error: {isError.message}</div>;
   }
 
   const {
@@ -74,7 +74,7 @@ const ListingCardItem = ({ id }) => {
           <div className='info_items'>
             <ul>
               <li className='price'>{rentRange}</li>
-              <li>{bedRange}</li>
+              <li className='room'>{bedRange}</li>
               <li className='label'>
                 {desc.map((item) => (
                   <span className={item ? "" : "none"}>{item}</span>

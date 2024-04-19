@@ -12,7 +12,7 @@ const ListingCard = ({ props }) => {
   }
 
   if (isError) {
-    return <div>Error: {isError.message}</div>;
+    return <div className='error'>Error: {isError.message}</div>;
   }
 
   return (
