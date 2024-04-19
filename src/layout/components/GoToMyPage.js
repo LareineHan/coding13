@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import '../../../node_modules/serve-index/public/style.css';
 
 const GoToMyPage = ({ to, children }) => {
   const navigate = useNavigate();
@@ -10,8 +11,8 @@ const GoToMyPage = ({ to, children }) => {
   };
 
   return (
-    <Nav.Link onClick={handleClick} style={{color:'black'}}>
-      {children}
+    <Nav.Link onClick={handleClick} style={{color:'lightGray',fontSize:'20px',cursor:'pointer'}}>
+     {children}<span></span> 
     </Nav.Link>
   );
 }
