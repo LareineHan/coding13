@@ -4,11 +4,12 @@ import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./ListingCardItem.style.css";
 import ListingCardCarousel from "../ListingCardCarousel/ListingCardCarousel";
-import HeartBtn from "../../HeartBtn/LikeBtn"
-import LikeBtn from '../../HeartBtn/LikeBtn';
+import LikeBtn from "../../HeartBtn/LikeBtn";
+import { useNavigate } from "react-router-dom";
 
 const ListingCardItem = ({ id }) => {
   const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
+  const navigate = useNavigate();
   console.log("디테일", data);
 
   if (isLoading) {
@@ -50,8 +51,17 @@ const ListingCardItem = ({ id }) => {
   ];
   console.log("설명", desc);
 
+  const goToDeatailPage = (id) => {
+    navigate(`/properties/${id}`);
+  };
+
   return (
-    <div>
+    <div
+      className='card_content'
+      onClick={() => {
+        goToDeatailPage(id);
+      }}
+    >
       <div key={id} className='card'>
         <div className='card_title'>
           <div className='title_name'>
@@ -68,7 +78,7 @@ const ListingCardItem = ({ id }) => {
             </div>
           </div>
           <div>
-            <LikeBtn listId={data?.id}/>
+            <LikeBtn listId={data?.id} />
           </div>
         </div>
         <div className='card_info'>
