@@ -11,7 +11,7 @@ const GoToMyPage = ({ to, children }) => {
   };
 
   return (
-    <Nav.Link onClick={handleClick} style={{color:'lightGray',fontSize:'20px',cursor:'pointer'}}>
+    <Nav.Link onClick={handleClick} style={{color:'lightGray',fontSize:'15px',cursor:'pointer'}}>
      {children}<span></span> 
     </Nav.Link>
   );

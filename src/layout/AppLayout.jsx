@@ -60,9 +60,11 @@ if(userInfo?.name !== undefined){
          justifyContent:'flex-end',
 
          borderRadius:'10px',
-          padding: "2.6rem",
-          paddingTop: "1rem",
-          paddingBottom: "1.1rem",
+         marginTop:'10px',
+         marginRight:'10px',
+          padding: "1.1rem",
+          paddingTop: "0.5rem",
+          paddingBottom: "0.5rem",
           backgroundColor: "#666",
           position: "absolute",
           right: "0",
@@ -75,9 +77,9 @@ if(userInfo?.name !== undefined){
             </button>
             <a
               className='appLayout-right-section-add-property'
-              eventKey={2}
+              
               href={!username  ? "/login" : "/logOut"}
-              style={{textDecorationLine:'none',fontSize:'20px',color:'white'}}
+              style={{textDecorationLine:'none',fontSize:'15px',color:'white'}}
             >
               {username  ? "Log Out" : "Log In"}
               <span  style={{paddingLeft:'10px',cursor:'pointer'}} >
