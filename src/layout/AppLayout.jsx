@@ -1,100 +1,87 @@
-import React,{useState} from "react";
-import "./AppLayout.style.css";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import GoToMyPage from "./components/GoToMyPage";
-import { Outlet } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import GoToMyPage from './components/GoToMyPage';
+import logoDark from '../images/logo-dark.png';
+import './AppLayout.style.css';
+import { useSelector } from 'react-redux';
 import '../../node_modules/serve-index/public/style.css';
 
-
 const AppLayout = () => {
-let username;
+	const [username, setUserName] = useState(null);
 
-const {userInfo}=useSelector(state=>state.user)
-const token = sessionStorage.getItem('token')
-const name = sessionStorage.getItem('name')
+	return (
+		<>
+			<Navbar bg='light' className='main-navbar' expand='lg'>
+				<Container>
+					<Navbar.Toggle aria-controls='basic-navbar-nav' />
+					<Navbar.Collapse id='basic-navbar-nav'>
+						<Nav className='mr-auto'>
+							<NavDropdown title='Menu' id='basic-nav-dropdown'>
+								<NavDropdown.Item>Rental Tools</NavDropdown.Item>
+								<NavDropdown.Item>Help Center</NavDropdown.Item>
+								<NavDropdown.Divider />
+								<NavDropdown.Item>About us</NavDropdown.Item>
+							</NavDropdown>
+						</Nav>
 
-if(userInfo?.name !== undefined){
-  username = userInfo?.name
-}else{
-  username = name
-}
-  return (
-    <div>
-      <div className='appLayout-container'>
-        <div className='appLayout-left-section'>
-          <div className='appLayout-left-section-menu'>
-            <NavDropdown title='Menu' id='basic-nav-dropdown'>
-              <NavDropdown.Item href='#action/3.1'>
-                Rental Tools
-              </NavDropdown.Item>
-              <NavDropdown.Item href='#action/3.2'>
-                Help Center
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href='/properties'>properties</NavDropdown.Item>
-            </NavDropdown>
-          </div>
-          <button className='appLayout-left-section-language'>English</button>
-        </div>
+						<Nav id='basic-navbar-nav'>
+							<Navbar.Text>
+								<FontAwesomeIcon icon={faGlobe} className='english' />
+								&nbsp;&nbsp;English
+							</Navbar.Text>
+						</Nav>
+					</Navbar.Collapse>
 
-        <div className='appLayout-center-section'>Apartment</div>
+					<Navbar.Brand href='/'>
+						<img
+							src={logoDark}
+							width='220px'
+							className='d-inline-block align-top'
+							alt='logo'
+						/>
+					</Navbar.Brand>
 
-        <div className='appLayout-right-section'>
-          <div className='appLayout-right-section-login'>
-        
-        
-          </div>
+					<Navbar.Collapse className='justify-content-end'>
+						<Nav id='basic-navbar-nav' className='nav-extra-item'>
+							<Navbar.Text href='/properties' className='text-decoration-none '>
+								<a href='/properties'>Properties</a>
+							</Navbar.Text>
+						</Nav>
 
-          <div className='appLayout-right-section-wrap'>
-            {/* <button className='appLayout-right-section-add-property'>
-              another btn
-            </button> */}
-            
-          </div>
-        </div>
-      </div>
-      <div
-        style={{
-          display:'flex',
-         justifyContent:'flex-end',
+						<Nav id='basic-navbar-nav'>
+							{username ? (
+								<NavDropdown title={username} id='basic-nav-dropdown'>
+									<NavDropdown.Item>
+										<a href='/mypage'>Go to My Page</a>
+									</NavDropdown.Item>
+									<NavDropdown.Item>
+										<a href='/logout' className='text-decoration-none '>
+											LogOut
+										</a>
+									</NavDropdown.Item>
+								</NavDropdown>
+							) : (
+								<Navbar.Text href='/login' className='text-decoration-none '>
+									<Navbar.Text>
+										<a href='/login' className='text-decoration-none '>
+											LogIn
+										</a>
+									</Navbar.Text>
+								</Navbar.Text>
+							)}
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
 
-         borderRadius:'10px',
-          padding: "2.6rem",
-          paddingTop: "1rem",
-          paddingBottom: "1.1rem",
-          backgroundColor: "#666",
-          position: "absolute",
-          right: "0",
-          top: "0",
-          
-        }}
-      >
-<button   className={username ?'appLayout-right-section-add-property':'none'}>
-              <GoToMyPage to='/myPage'>{username}'Page</GoToMyPage>
-            </button>
-            <a
-              className='appLayout-right-section-add-property'
-              eventKey={2}
-              href={!username  ? "/login" : "/logOut"}
-              style={{textDecorationLine:'none',fontSize:'20px',color:'white'}}
-            >
-              {username  ? "Log Out" : "Log In"}
-              <span  style={{paddingLeft:'10px',cursor:'pointer'}} >
-                <img
-                  className='googlelogo'
-                  src={"./image/googlelogo.png"}
-                  alt='logo'
-                 
-                 
-                />
-              </span>
-            </a>
-
-      </div>
-      <Outlet />
-    </div>
-  );
+			<div>
+				<Outlet />
+			</div>
+		</>
+	);
 };
 
 export default AppLayout;
