@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.style.css';
-import SearchBar from '../../../../common/SearchBar/SearchBar';
+import BannerSearchBar from '../../../../common/SearchBar/BannerSearchBar';
 const Banner = () => {
 	return (
 		<div className='banner-container'>
@@ -8,7 +8,7 @@ const Banner = () => {
 				<h1>Discover Your New Home</h1>
 				<p>We've helped millions of renters find their perfect fit.</p>
 				<div className='banner-wrap-search'>
-					<SearchBar />
+					<BannerSearchBar />
 				</div>
 			</div>
 		</div>

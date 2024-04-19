@@ -3,9 +3,10 @@ import './SearchBar.style.css';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addSearchPlace } from '../../redux/reducers/getSearchPlaceSlice';
 import { Loader } from '@googlemaps/js-api-loader';
+import { useNavigate } from 'react-router-dom';
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 const loader = new Loader({
 	apiKey: API_KEY,
@@ -13,10 +14,17 @@ const loader = new Loader({
 	libraries: ['places'],
 	suppressDeprecationWarnings: true,
 });
-const SearchBar = () => {
+
+const BannerSearchBar = () => {
 	const scriptRef = useRef(null);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const [inputValue, setInputValue] = useState('');
+	const searchPlace = useSelector((state) => state.searchPlace.searchPlace);
+
+	if (searchPlace !== null) {
+		navigate(`/properties?q=${searchPlace.name}`);
+	}
 
 	useEffect(() => {
 		const initializeAutocomplete = async () => {
@@ -28,8 +36,8 @@ const SearchBar = () => {
 
 			const autocomplete = new window.google.maps.places.Autocomplete(input);
 
-			autocomplete.addListener('place_changed', () => {
-				const place = autocomplete.getPlace();
+			autocomplete?.addListener('place_changed', () => {
+				const place = autocomplete?.getPlace();
 				if (!place.geometry || !place.geometry.location) {
 					console.error('Invalid place geometry');
 					return;
@@ -111,4 +119,4 @@ const SearchBar = () => {
 	);
 };
 
-export default SearchBar;
+export default BannerSearchBar;

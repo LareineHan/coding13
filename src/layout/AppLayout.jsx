@@ -122,16 +122,15 @@ const AppLayout = () => {
 						</Nav>
 					</Navbar.Collapse>
 
-					<Navbar.Collapse
-						href='/'
-						className='justify-content-center logo-area'>
+					<Navbar.Brand href='/'>
 						<img
 							src={logoDark}
 							width='220px'
 							className='d-inline-block align-top'
 							alt='logo'
 						/>
-					</Navbar.Collapse>
+					</Navbar.Brand>
+
 					<Navbar.Collapse className='justify-content-end'>
 						<Navbar.Text className='nav-extra-item' id='basic-navbar-nav'>
 							<a href='/mypage' className='text-decoration-none '>
