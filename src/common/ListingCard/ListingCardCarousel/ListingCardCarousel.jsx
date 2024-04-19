@@ -12,7 +12,13 @@ const ListingCardCarousel = ({ id }) => {
   }
 
   if (isError) {
-    return <div>Error fetching images: {isError.message}</div>;
+    return (
+      <div className='carousel_error'>
+        <div className='error_img'>
+          <img src='/image/carousel_error.png' alt='Error fetching images' />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -22,14 +28,14 @@ const ListingCardCarousel = ({ id }) => {
           <img
             className='d-block w-100'
             src={data?.data[0].link}
-            alt='First slide'
+            alt='Rental house image'
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className='d-block w-100'
             src={data?.data[data.data.length - 1].link}
-            alt='First slide'
+            alt='Rental house image'
           />
         </Carousel.Item>
       </Carousel>
