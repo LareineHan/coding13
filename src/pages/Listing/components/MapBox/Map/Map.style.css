@@ -5,8 +5,8 @@
 	align-items: center;
 }
 .custom-map-control-button {
-	background-color: #1c2c4c; /* Blue background color */
-	color: #88dded; /* White text color */
+	background-color: #198754; /* Blue background color */
+	color: #ffffff; /* White text color */
 	border: none; /* No border */
 	padding: 10px 20px; /* Padding around the text */
 	margin-top: 10px;
@@ -15,6 +15,9 @@
 }
 
 .custom-map-control-button:hover {
-	background-color: #88dded; /* Darker blue on hover */
-	color: #242443;
+	background-color: #00bf67; /* Darker blue on hover */
+	color: #ffffff;
+}
+.gm-style-iw.gm-style-iw-c > div.gm-style-iw-d {
+	font-family: monospace;
 }

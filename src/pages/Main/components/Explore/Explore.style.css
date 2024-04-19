@@ -1,29 +1,18 @@
 .explore-container {
-    text-align: center;
-    padding: 3rem;
+	text-align: center;
+	padding: 3rem 0 3rem 0;
+	margin-bottom: 2rem;
 }
-.explore-container::after {
-    content: "";
-    position: absolute;
-    top: 1120px;
-    /* bottom: -55%; */
-    left: 5%;
-    right: 5%;
-    height: 2px;
-    background: #f4f4f4;
-}
-/* .explore-container h2 {
-    font-weight: 600;
-} */
+
 .explore-cards {
-    display: flex;
-    justify-content: center;
-    margin: 2rem;
-    margin-bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+	margin: 2rem;
+	margin-bottom: 1.5rem;
 }
 .explore-more-btn {
-    padding: 0 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    height: 3rem;
+	width: 20rem;
+	font-size: 1rem;
+	font-weight: 600;
+	height: 3rem;
 }
