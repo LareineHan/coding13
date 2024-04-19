@@ -35,7 +35,7 @@ const AppLayout = () => {
 						</Nav>
 					</Navbar.Collapse>
 
-					<Navbar.Brand href='/'>
+					<Navbar.Brand href='/' className='logo-area'>
 						<img
 							src={logoDark}
 							width='220px'
@@ -51,7 +51,7 @@ const AppLayout = () => {
 							</Navbar.Text>
 						</Nav>
 
-						<Nav id='basic-navbar-nav'>
+						<Nav id='basic-navbar-nav' className='login-menu'>
 							{username ? (
 								<NavDropdown title={username} id='basic-nav-dropdown'>
 									<NavDropdown.Item>

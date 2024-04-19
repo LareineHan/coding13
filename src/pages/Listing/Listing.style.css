@@ -1,77 +1,60 @@
 .properties {
 	display: flex;
 	max-width: 100%;
-	margin-top: 0px;
+	margin-top: 70px;
 	background-color: transparent;
 	padding: 0;
 }
-.property-filter-row {
-	width: 100%;
-	display: flex;
-	margin: 0 !important;
-	border-bottom: 1px solid #ccc;
+
+.properties .col {
+	height: 100%;
 }
-.bg-body-tertiary {
-	background-color: transparent !important;
-}
+
 #root > div.App > div > div:nth-child(3) > div > div > div:nth-child(2) {
 	width: 100%;
 	margin: 0 !important;
 	border-bottom: 1px solid #ccc;
 }
-
 .property-filter-bar {
-	width: 100%;
+	justify-content: space-between !important;
+	margin-left: 0 !important;
+}
+.properties-content-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between !important;
+	padding: 0 !important;
 }
-.property-filter-bar .bg-body-tertiary {
-	background-color: transparent;
-}
+
 .properties-map-box {
-	flex: 1;
+	flex: 0 0 60%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 0;
-	position: absolute;
-	left: 0;
-	top: 150px;
-	bottom: 0;
-	width: 60%; /* Adjust as needed */
 	padding: 0;
 	overflow: hidden; /* Ensure map doesn't overflow */
 }
 
 .property-listing {
-	width: 40%; /* Adjust as needed */
-	padding: 0;
-	position: absolute;
-	right: 0;
-	top: 150px;
-	bottom: 0;
 	display: flex;
-	/* flex-direction: column; */
-	flex: 1;
-	background-color: #f9f9f9;
+	flex: 0 0 40%;
+	background-color: hsla(156, 100%, 94%, 0.579);
+	overflow-y: auto; /* Enable vertical scrolling */
+}
+.scrollable-box {
+	max-height: 100vh; /* Set the maximum height to 80% of the viewport height */
 	overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.property-listing-card-box {
-	width: 80%;
-	margin: 0;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	overflow-y: auto; /* Enable vertical scrolling */
-}
-.property-listing-card-box > div {
-	padding: 0 !important;
-}
-.property-listing-card-box > div > div > div {
-	margin-left: 10px;
-	margin-right: 10px;
+@media screen and (max-width: 1080px) {
+	.properties-content-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.property-listing {
+		margin-top: 20px;
+		padding: 15px;
+		border-top: 1px solid #ccc;
+	}
 }

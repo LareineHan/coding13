@@ -13,7 +13,7 @@
 .pac-target-input {
 	width: 100%;
 	height: inherit;
-	border: 2px solid #198754;
+	border: 2px solid #00bf67;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 0px;
@@ -26,7 +26,7 @@
 .pac-target-input:focus {
 	outline: none;
 	box-shadow: none;
-	border-color: #198754;
+	border-color: #00bf67;
 }
 
 .input-group .btn {
@@ -37,14 +37,14 @@
 	border-bottom-left-radius: 0px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
-	background-color: #198754;
+	background-color: #00bf67;
 }
 .primary-search-bar .input-group-btn .btn {
 	margin-left: 0;
 	color: white;
 }
 .primary-search-bar .input-group-btn .btn:hover {
-	color: #00bf67;
+	color: #00120a;
 }
 
 #autocomplete_search::placeholder {

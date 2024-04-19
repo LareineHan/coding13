@@ -5,9 +5,10 @@
 	align-items: center;
 }
 .custom-map-control-button {
-	background-color: #198754; /* Blue background color */
+	background-color: rgb(251, 0, 125); /* Blue background color */
 	color: #ffffff; /* White text color */
 	border: none; /* No border */
+	font-size: 15px;
 	padding: 10px 20px; /* Padding around the text */
 	margin-top: 10px;
 	cursor: pointer; /* Show pointer cursor on hover */

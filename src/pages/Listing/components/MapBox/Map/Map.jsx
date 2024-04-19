@@ -83,7 +83,7 @@ const Map = () => {
 						icon: {
 							path: window.google.maps.SymbolPath.CIRCLE,
 							scale: 10, // marker size
-							fillColor: 'red', // color of the marker
+							fillColor: 'rgb(251, 0, 125)', // color of the marker
 							fillOpacity: 1, // opacity of the marker
 							strokeWeight: 0, // border thickness of the marker
 						},

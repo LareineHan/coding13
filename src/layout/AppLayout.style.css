@@ -2,15 +2,21 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0.5rem 0.7rem;
-	background-color: white;
+	background-color: rgb(242, 242, 242) !important;
 	font-weight: 600;
-	z-index: 10;
-	background-color: aqua;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 20;
+	padding: 0;
 }
 .main-navbar .container {
 	max-width: 100%;
-	padding: 0;
+	position: relative;
+	max-height: inherit;
+	padding: 0.5rem 0.7rem;
+	/* border: 1px solid red; */
 }
 .logo-area {
 	padding: 0 4rem 0 4rem;
@@ -18,61 +24,52 @@
 .english {
 	margin-left: 1.5rem;
 }
+.login-menu {
+	padding: 8px;
+}
+
+.main-navbar .navbar-toggler-icon {
+	background-image: url('../images/hamburgerhome.png');
+}
+.main-navbar .navbar-toggler-icon:hover {
+	filter: brightness(0.8);
+}
+.main-navbar > .container > button {
+	border: none;
+}
+button.navbar-toggler.collapsed {
+	box-shadow: none;
+}
+button.navbar-toggler:focus {
+	box-shadow: none;
+}
 
 .nav-extra-item {
 	margin-right: 1.5rem;
 }
-/* 
-.appLayout-center-section {
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding-left: 180px;
-  
-}
 
-.appLayout-right-section {
-    display: flex;
-    position: relative;
+@media screen and (max-width: 991px) {
+	.main-navbar {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.logo-area {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		align-items: flex-end;
+		margin: 0;
+		padding: 0;
+	}
+
+	.main-navbar .navbar-collapse {
+		padding-left: 1rem;
+	}
+	.english {
+		margin: 0;
+	}
+	.nav-extra-item {
+		margin-right: 0;
+	}
 }
-.appLayout-right-section-login {
-    display: flex;
-    position: absolute;
-    right: 9rem;
-}
-.appLayout-right-section-login button {
-    border: none;
-    background-color: white;
-    width: 5rem;
-    font-weight: 500;
-}
-.appLayout-right-section-login button:hover {
-    color: green;
-}
-.appLayout-right-section-wrap {
-    display: flex;
-}
-.appLayout-right-section-add-property {
-    border: none;
-    background-color: #666;
-    z-index: 10;
-    padding-left: 1rem;
-    color: #fff;
-    font-weight: 600;
-}
-.appLayout-right-section-login button:hover {
-    color: green;
-}
-.appLayout-right-section-add-property:hover {
-    text-decoration-line: underline;
-}
-.googlelogo{
-    width:20px;
-  }
-  .loginBtn{
-    border-radius: 50px;
-  }
-  .nav{
-    align-content:center;
-    align-items:center;
-  }  */
