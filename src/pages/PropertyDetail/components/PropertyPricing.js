@@ -39,7 +39,7 @@ const PropertyPricing = ({
       const updatedRows = { ...prev };
 
       if (isExpanded) {
-        updatedRows[tab] = updatedRows[tab].filter((item) => item !== idx);
+        updatedRows[tab] = updatedRows[tab]?.filter((item) => item !== idx);
       } else {
         updatedRows[tab] = [...(updatedRows[tab] || []), idx];
       }
@@ -65,7 +65,7 @@ const PropertyPricing = ({
   };
 
   //Find amenities object for type "Interior Amenities"
-  const interiorAmenities = amenities.find(
+  const interiorAmenities = amenities?.find(
     (amenity) => amenity.type === "Interior Amenities"
   );
 
@@ -76,7 +76,7 @@ const PropertyPricing = ({
   const renderUnits = (details, tab) => {
     const unitsToShow = showAllUnits[tab] ? details : details.slice(0, 2);
 
-    return unitsToShow.map((detail, idx) => (
+    return unitsToShow?.map((detail, idx) => (
       <Col key={idx} xs={12} className="propertyPricing-card">
         <Row className="propertyPricing-card-content">
           <Col xs={7}>
@@ -146,7 +146,7 @@ const PropertyPricing = ({
                     <div>
                       <p>Features</p>
                       <ul>
-                        {propertyAmenities.map((amenity, idx) => (
+                        {propertyAmenities?.map((amenity, idx) => (
                           <li key={idx}>{amenity}</li>
                         ))}
                       </ul>
@@ -172,7 +172,7 @@ const PropertyPricing = ({
         onSelect={handleTabSelect}
         className="mb-3"
       >
-        {availabilities.map((availability, index) => (
+        {availabilities?.map((availability, index) => (
           <Tab
             key={index}
             eventKey={availability.type}
