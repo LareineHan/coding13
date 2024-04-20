@@ -15,11 +15,6 @@ const PropertyCarousel = ({ images }) => {
             src={image.link}
             alt={`Slide ${index + 1}`}
           />
-
-          <Carousel.Caption>
-            <h3>{image.caption}</h3>
-            <p>{image.description}</p>
-          </Carousel.Caption>
         </Carousel.Item>
       ))}
     </Carousel>
