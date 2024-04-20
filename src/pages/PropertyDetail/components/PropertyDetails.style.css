@@ -1,16 +1,42 @@
-.utility-list {
-    list-style-type: disc;
-}
-
-.utility-title {
+.property-section {
+    margin-top: 1rem;
+  }
+  
+  .property-section-title {
     font-weight: bold;
     font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .property-section-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .utilityLease-list {
     margin-bottom: 0;
-}
+  }
 
-.leaseTerms-item{
-    display: list-item;
-    margin-left: 2rem;
-    font-size: 1rem;
-}
+  .two-column-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
+  }
+  
+  .two-column-list li {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .two-column-list li::before {
+    content: "•";
+    margin-right: 5px;
+  }
 
+   @media only screen and (min-width: 48rem) {
+    .two-column-list li {
+        flex: 0 0 40%;
+    }
+}
