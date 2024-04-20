@@ -1,7 +1,7 @@
 .banner-container {
 	background-image: url('https://www.ikea.com/images/a-light-living-room-centred-around-a-jaettebo-three-and-a-ha-d80334e03b4e4094d0e02846c7de2e85.jpg?f=xxxs?imwidth=300');
 	background-size: cover;
-	height: 453px;
+	height: 480px;
 	color: #fff;
 	position: relative;
 }
@@ -22,19 +22,20 @@
 	right: 0;
 }
 .banner-wrap h1 {
-	font-size: 3.9rem;
-	font-weight: 700;
+	font-size: 3.8rem;
+	font-weight: 600;
 	line-height: 64px;
 	margin-bottom: 1.125rem;
 	color: #00bf67;
 	text-shadow: #0000009c 0.06em 0.06em 0;
 	/* z-index: 100; */
+	margin-top: 1.8rem;
 }
 .banner-wrap p {
-	font-size: 1.8rem;
-	font-weight: 600;
+	font-size: 1.7rem;
+	font-weight: 500;
 	line-height: 30px;
-	margin-bottom: 3.3125rem;
+	margin-bottom: 2rem;
 	text-shadow: #0000009c 0.06em 0.06em 0;
 	/* z-index: 100; */
 }
@@ -44,7 +45,7 @@
 }
 .banner-wrap-search .form-control {
 	padding: 0.8rem;
-	width: 44rem;
+	width: 40rem;
 	font-size: 1.1rem;
 	padding-left: 1.3rem;
 	height: 3.5rem;
