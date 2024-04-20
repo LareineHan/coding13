@@ -3,7 +3,6 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import GoToMyPage from './components/GoToMyPage';
 import logoDark from '../images/logo-dark.png';
 import './AppLayout.style.css';
 import { useSelector } from 'react-redux';
@@ -61,7 +60,7 @@ const AppLayout = () => {
 							</Navbar.Text>
 						</Nav>
 
-						<Nav id='basic-navbar-nav' className='login-menu'>
+						<Nav style={{marginRight:'60px'}} id='basic-navbar-nav' className='login-menu'>
 						{username ? (
                 <NavDropdown title={username} id='basic-nav-dropdown'>
                   <NavDropdown.Item as={Link} to='/myPage'>
