@@ -5,6 +5,7 @@ const initialState = {
   loading:false,
   newLike:null,
   check:false,
+  savedLike:[],
  }
 
  const likeSlice = createSlice({
@@ -32,6 +33,9 @@ const initialState = {
       },
       checkLike:(state,action)=>{
         state.check=action.payload
+      },
+      saveAllLike:(state,action)=>{
+        state.savedLike=action.payload
       }
      
 
@@ -39,5 +43,5 @@ const initialState = {
 
  })
 
- export const {updateLikeStatus,allRequest,getLikeList,allError,createSuccessItem,checkLike}=likeSlice.actions;
+ export const {updateLikeStatus,allRequest,getLikeList,allError,createSuccessItem,checkLike,saveAllLike}=likeSlice.actions;
  export default likeSlice.reducer

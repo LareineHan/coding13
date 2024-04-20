@@ -1,22 +1,26 @@
-import React ,{useEffect}from 'react';
-import {logOut} from '../redux/Actions/authAction'
+import React, { useEffect } from 'react';
+import { logOut } from '../redux/Actions/authAction';
 import { useDispatch } from 'react-redux';
 import { googleLogout } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-const LogOut = ({setLogIn}) => {
-  const navigate = useNavigate()
-  const dispatch=useDispatch()
-  useEffect(()=>{
-   googleLogout()
-  dispatch(logOut())
 
-  navigate('/')
-  },[dispatch,navigate])
-  return (
-    <div>
-      
-    </div>
-  );
+const LogOut = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleLogout = async () => {
+      googleLogout();
+     await dispatch(logOut()); 
+      navigate('/');
+     window.location.reload();
+    
+    };
+
+    handleLogout();
+  }, []);
+
+  return <div />;
 }
 
 export default LogOut;
