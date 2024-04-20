@@ -33,7 +33,11 @@ const AppLayout = () => {
 								<NavDropdown.Item>Rental Tools</NavDropdown.Item>
 								<NavDropdown.Item>Help Center</NavDropdown.Item>
 								<NavDropdown.Divider />
-								<NavDropdown.Item>About us</NavDropdown.Item>
+								<NavDropdown.Item
+									href='/about'
+									className='text-decoration-none '>
+									<a href='/about'>About Us</a>
+								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
 
