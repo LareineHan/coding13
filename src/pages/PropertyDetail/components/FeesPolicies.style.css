@@ -1,3 +1,7 @@
+.feesPolicies-container {
+  margin-top: 2rem;
+}
+
 .pets-fee {
     width: 100%;
   }  
@@ -11,6 +15,9 @@
  {
 font-weight: bold;
 margin: 1rem;
+text-decoration: underline;
+text-decoration-color: #198754;
+text-decoration-thickness: 3px;
 }
 
 .pets-fee th,
@@ -44,3 +51,10 @@ margin: 1rem;
   .pets-fee >:not(caption)>*>* {
     border-bottom-width: 0;
   }
+
+
+  @media only screen and (min-width: 48rem) {
+    .feesPolicies-container{
+        margin-top: 4rem;
+    }
+    }

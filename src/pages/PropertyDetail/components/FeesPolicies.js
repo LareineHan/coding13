@@ -23,7 +23,7 @@ const FeesPolicies = ({ data }) => {
         additional fees and utilities.
       </p>
 
-      <Table className="pets-fee">
+      <Table hover responsive className="pets-fee">
         <thead className="FeePolicies-pet">
           <tr>
             <td>Pets</td>
