@@ -32,6 +32,7 @@ const PropertyDetailPage = () => {
 
   console.log("PropertyDetailData", data);
   console.log("PropertyDetailData", reviewsData);
+  console.log("PropertyImageData", imageData);
 
   if (isLoading) {
     return (
@@ -62,7 +63,6 @@ const PropertyDetailPage = () => {
     name,
     rentRange,
     bedRange,
-    bathRange,
     address,
     description,
     contact,
@@ -96,10 +96,35 @@ const PropertyDetailPage = () => {
 
   const totalReviews = reviews.length; //total number of reviews
 
+  // Find availability with type "All"
+  const availability = availabilities.find(
+    (availability) => availability.type === "All"
+  );
+  console.log("Availability:", availabilities);
+
+  // Extract bathNum from details
+  let maxBathNum = ""; // Initialize maxBathNum as an empty string or null
+
+  if (availability && availability.details && availability.details.length > 0) {
+    // Extract all bathNum values from details array
+    const bathNumValues = availability.details.map((detail) => detail.bathNum);
+
+    // Convert bathNum values to numbers and filter out any non-numeric values
+    const validBathNumValues = bathNumValues
+      .filter((value) => !isNaN(parseFloat(value)))
+      .map((value) => parseFloat(value));
+
+    // Find the maximum bathNum value
+    if (validBathNumValues.length > 0) {
+      maxBathNum = Math.max(...validBathNumValues).toString(); // Convert max value back to string
+    }
+  }
+  console.log("Max BathNum:", maxBathNum);
+
   return (
     <Container>
       <PropertyCarousel images={images} />
-      <h1>{name}</h1>
+      <h1 className="propertyDetailPage-title">{name}</h1>
       <p>
         {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
       </p>
@@ -109,32 +134,34 @@ const PropertyDetailPage = () => {
         totalReviews={totalReviews}
       />
 
-      <div className="rent-bed-bath-range-container">
-        <div className="rent-bed-bath-range-inner-container">
-          <p className="rent-range-title">Rent Range</p>
+      <Row className="rent-bed-bath-container">
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Monthly Rent</p>
           <p className="rent-range-value">{rentRange}</p>
-        </div>
+        </Col>
 
-        <div className="rent-bed-bath-range-inner-container">
-          <p className="bed-range-title">Bed Range</p>
-          <p className="bed-range-value">{bedRange}</p>
-        </div>
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Bedrooms</p>
+          <p className="rent-range-value">{bedRange}</p>
+        </Col>
 
-        <div className="rent-bed-bath-range-inner-container">
-          <p className="bath-range-title">Bath Range</p>
-          <p className="bath-range-value">{bathRange}</p>
-        </div>
-      </div>
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Bathrooms</p>
+          <p className="rent-range-value">{`1 - ${maxBathNum} baths`}</p>
+        </Col>
+      </Row>
 
       <PropertyPricing
         availabilities={availabilities}
         selectedTab={selectedTab}
         onTabSelect={handleTabSelect}
+        amenities={amenities}
+        imageData={imageData}
       />
 
       <div>
         <h2>About {name}</h2>
-        <p>{description}</p>
+        <p className="about-description">{description}</p>
       </div>
 
       <Contact contact={contact} />

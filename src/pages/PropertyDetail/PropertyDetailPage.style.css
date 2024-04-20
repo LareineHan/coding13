@@ -1,24 +1,26 @@
-.rent-bed-bath-range-container {
+.propertyDetailPage-title {
+    margin-top: 1rem;
+}
+
+.rent-bed-bath-container {
     display: flex;
     justify-content: space-between;
     border: 1px solid #cacaca;
     margin: 1rem 0;
-    padding: 0.5rem;
+   padding: 0.25rem 0;
 }
 
-.rent-bed-bath-range-inner-container:not(:last-child)::after {    
+.rent-bed-bath-inner-container:not(:last-child){    
     border-right: 1px solid #cacaca;
     content: "";
 }
 
-.rent-range-inner-container,
-.bed-range-inner-container,
-.bath-range-inner-container{
-
-    margin: 0;
+.rent-bed-bath-inner-container,
+.bed-bed-bath-inner-container,
+.bath-bed-bath-inner-container{
     text-align: center;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .rent-range-title {
@@ -35,3 +37,19 @@ margin: 0;
 font-weight: bold;
 }
 
+.about-description {
+    margin-top: 1rem;
+}
+
+
+@media only screen and (min-width: 48rem) {
+    .rent-bed-bath-container {
+        padding: 1rem 0;
+    }
+
+    .about-description {
+        margin-bottom:4rem;
+    }
+}
+
+@media only screen and (min-width: 64rem) {}
