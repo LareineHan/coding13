@@ -1,4 +1,3 @@
 .property-review-box {
-    width: 500px;
-    height: 500px;
+   margin: 2rem 0; /*Remove width and height and add margin by minji*/
 }

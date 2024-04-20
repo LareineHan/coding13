@@ -1,6 +1,8 @@
 import React from "react";
 import "./PropertyRating.style.css";
-import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
+import fillStarIcon from "./Icons/star-fillI.png";
+import halfStarIcon from "./Icons/star-half-empty.png";
+import starIcon from "./Icons/star-empty.png";
 
 const PropertyRating = ({ averageRating, totalReviews }) => {
   const MAX_STARS = 5;
@@ -9,18 +11,39 @@ const PropertyRating = ({ averageRating, totalReviews }) => {
 
   const renderStar = (index) => {
     if (index < fullStars) {
-      return <BsStarFill key={index} />;
+      return (
+        <img
+          src={fillStarIcon}
+          alt="fill star icon"
+          className="RatingStar-icons"
+          key={index}
+        />
+      );
     } else if (hasHalfStar && index === fullStars) {
-      return <BsStarHalf key={index} />;
+      return (
+        <img
+          src={halfStarIcon}
+          alt="half full star icon"
+          className="RatingStar-icons"
+          key={index}
+        />
+      );
     } else {
-      return <BsStar key={index} />;
+      return (
+        <img
+          src={starIcon}
+          alt="star icon"
+          className="RatingStar-icons"
+          key={index}
+        />
+      );
     }
   };
 
   return (
-    <div className="rating-box">
+    <div className="rating-container">
       {[...Array(MAX_STARS)].map((_, index) => renderStar(index))}{" "}
-      <span>{averageRating.toFixed(1)}</span>{" "}
+      <span className="avg-rating">{averageRating.toFixed(1)}</span>{" "}
       <span className="total-reviews">({totalReviews} reviews)</span>
     </div>
   );

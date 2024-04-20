@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,9 +8,19 @@ import logoDark from '../images/logo-dark.png';
 import './AppLayout.style.css';
 import { useSelector } from 'react-redux';
 import '../../node_modules/serve-index/public/style.css';
-
+import { Link } from 'react-router-dom';
 const AppLayout = () => {
-	const [username, setUserName] = useState(null);
+	let username;
+
+	const { userInfo } = useSelector((state) => state.user);
+	const token = sessionStorage.getItem('token');
+	const name = sessionStorage.getItem('name');
+
+	if (userInfo?.name !== undefined) {
+		username = userInfo?.name;
+	} else {
+		username = name;
+	}
 
 	return (
 		<>
@@ -54,23 +64,23 @@ const AppLayout = () => {
 						<Nav id='basic-navbar-nav' className='login-menu'>
 							{username ? (
 								<NavDropdown title={username} id='basic-nav-dropdown'>
-									<NavDropdown.Item>
-										<a href='/mypage'>Go to My Page</a>
+									<NavDropdown.Item as={Link} to='/myPage'>
+										Go to My Page
 									</NavDropdown.Item>
-									<NavDropdown.Item>
-										<a href='/logout' className='text-decoration-none '>
-											LogOut
-										</a>
+									<NavDropdown.Item as={Link} to='/logout'>
+										Log Out
 									</NavDropdown.Item>
 								</NavDropdown>
 							) : (
-								<Navbar.Text href='/login' className='text-decoration-none '>
-									<Navbar.Text>
-										<a href='/login' className='text-decoration-none '>
-											LogIn
-										</a>
-									</Navbar.Text>
-								</Navbar.Text>
+								<Link to='/login' className='nav-link'>
+									Log In
+									<img
+										className='googlelogo'
+										src={'./image/googlelogo.png'}
+										alt='logo'
+										style={{ width: '15px', height: '15px', marginLeft: '5px' }}
+									/>
+								</Link>
 							)}
 						</Nav>
 					</Navbar.Collapse>

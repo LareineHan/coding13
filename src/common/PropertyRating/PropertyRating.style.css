@@ -1,5 +1,13 @@
-.rating-box {
+.rating-container {
     display: flex;
     align-content: center;
     align-items: center;
+}
+
+.avg-rating {
+    margin: 0 0.5rem;
+}
+
+.RatingStar-icons {
+    width: 25px;
 }

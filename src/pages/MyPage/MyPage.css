@@ -1,1 +1,16 @@
 
+.MyPage_name {
+  color:#198754;
+  font-weight: bolder;
+}
+.MyPage_title{
+  color:#198754
+}
+.MyPage-card {
+  transition: transform 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.MyPage-card:hover {
+  transform: scale(1.1); /* Scale up the card on hover */
+  z-index: 1;
+}
