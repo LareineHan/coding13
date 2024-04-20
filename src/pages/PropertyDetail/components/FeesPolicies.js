@@ -31,11 +31,11 @@ const FeesPolicies = ({ data }) => {
           </tr>
         </thead>
 
-        {Object.keys(feeMapping).map((petType, index) => {
+        {Object?.keys(feeMapping).map((petType, index) => {
           const feeType = feeMapping[petType];
           const policy = petPolicies.find((p) => p.type === petType);
 
-          const oneTimeFee = onetimeExpenses.find(
+          const oneTimeFee = onetimeExpenses?.find(
             (fee) => fee.type === feeType
           );
 

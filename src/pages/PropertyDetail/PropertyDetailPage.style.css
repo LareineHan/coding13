@@ -1,3 +1,7 @@
+.propertyDetailPage-container {
+    padding-top: 4rem;
+}
+
 .propertyDetailPage-title {
     margin-top: 1rem;
 }
@@ -39,6 +43,7 @@ font-weight: bold;
 
 .about-description {
     margin-top: 1rem;
+    font-size: 1rem;
 }
 
 
@@ -52,4 +57,8 @@ font-weight: bold;
     }
 }
 
-@media only screen and (min-width: 64rem) {}
+@media only screen and (min-width: 64rem) {
+    .propertyDetailPage-container {
+        padding-top: 5rem;
+    }
+}
