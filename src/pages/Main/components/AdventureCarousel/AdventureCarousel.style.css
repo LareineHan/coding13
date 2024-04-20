@@ -1,0 +1,15 @@
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    padding: 8px;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.9rem;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    background-size: 80% 80%;
+    color: white;
+}
+.main-page-carousel-city-name {
+    color: rgba(255, 255, 255, 0.927) !important;
+    font-size: 2rem;
+    border-bottom: none;
+}

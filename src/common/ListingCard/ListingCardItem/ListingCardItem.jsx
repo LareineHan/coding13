@@ -58,7 +58,7 @@ const ListingCardItem = ({ id, setRentData }) => {
 
   return (
     <div>
-      <div key={id} className='card'>
+      <div key={id} className='listing-card'>
         <div className='card_title'>
           <div
             className='title_name card_content'

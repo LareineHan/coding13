@@ -3,12 +3,11 @@
 	padding: 3rem 0 3rem 0;
 	margin-bottom: 2rem;
 }
-
 .explore-cards {
 	display: flex;
 	justify-content: center;
-	margin: 2rem;
-	margin-bottom: 1.5rem;
+	align-items: center;
+	margin-top: 2rem;
 }
 .explore-more-btn {
 	width: 20rem;

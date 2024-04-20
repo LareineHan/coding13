@@ -1,0 +1,68 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap'); */
+
+.Footer {
+    margin-top: auto;
+}
+#root > div.App > div > div:nth-child(3) > div > div > div:nth-child(2) {
+    border-bottom: none;
+}
+.footer-container {
+    background-color: #2e9a5d;
+    color: white;
+    height: 22rem;
+    /* font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; */
+}
+.footer-second-section {
+    padding-top: 1rem;
+    position: relative;
+}
+.footer-second-section-content-part {
+    display: flex;
+    width: 100%;
+}
+.footer-second-section-content {
+    padding-right: 4rem;
+    cursor: pointer;
+}
+.footer-second-section-content h6 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.footer-second-section-content div {
+    margin: 0.5rem 0rem;
+    font-size: 0.9rem;
+}
+.footer-second-section-content div:hover {
+    color: #77e6a7;
+}
+.footer-second-section-icon-part {
+    position: absolute;
+    left: 63rem;
+    bottom: 6rem;
+    cursor: pointer;
+}
+.footer-second-section-icon {
+    margin: 0.3rem;
+    padding: 0.6rem;
+    border: 2px solid white;
+    border-radius: 100px;
+    height: 1.3rem;
+    width: 1.3rem;
+}
+.footer-second-section-icon:hover {
+    border: 2px solid #77e6a7;
+}
+.footer-third-section {
+    padding-top: 4rem;
+}
+.footer-third-section span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.footer-third-section span:hover {
+    color: #77e6a7;
+}
