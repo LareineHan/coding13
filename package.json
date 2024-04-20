@@ -4,10 +4,6 @@
 	"private": true,
 	"dependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-		"@fortawesome/free-brands-svg-icons": "^6.5.2",
-		"@fortawesome/free-regular-svg-icons": "^6.5.2",
-		"@fortawesome/free-solid-svg-icons": "^6.5.2",
-		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@googlemaps/extended-component-library": "^0.6.10",
 		"@googlemaps/js-api-loader": "^1.16.6",
 		"@redux-devtools/extension": "^3.3.0",
@@ -28,6 +24,7 @@
 		"react-redux": "^9.1.1",
 		"react-router-dom": "^6.22.3",
 		"react-scripts": "5.0.1",
+		"react-scroll": "^1.9.0",
 		"redux": "^5.0.1",
 		"web-vitals": "^2.1.4"
 	},
