@@ -8,7 +8,7 @@ const Information = () => {
         <h2>Renting Made Simple</h2>
         <p>Search by city, neighborhood, or postal code, browse high-quality listings, and find the perfect place to call home.</p>
         <InformationCard/>
-        <p style={{fontWeight: "600", marginTop: "4rem"}}>
+        <p style={{fontWeight: "600", marginTop: "4rem", marginBottom: "0.5rem"}}>
             Search listings including&ensp;
             <a href="https://www.apartments.com/" title="Discover your new apartment">apartments</a>,&ensp;
             <a href="https://www.apartments.com/houses/" title="Discover your new house">houses</a>,&ensp;
@@ -16,8 +16,8 @@ const Information = () => {
             and&ensp;
             <a href="https://www.apartments.com/townhomes/" title="Discover your new townhome">townhomes</a>&ensp;
             available for rent.
-            <p>You'll find your next home, in any style you prefer.</p>
         </p>
+        <p style={{fontWeight: "600"}}>You'll find your next home, in any style you prefer.</p>
     </div>
   )
 }

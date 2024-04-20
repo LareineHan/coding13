@@ -1,42 +1,99 @@
-import React from 'react'
-import "./AppLayout.style.css"
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React, { useState } from 'react';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import GoToMyPage from './components/GoToMyPage';
+import logoDark from '../images/logo-dark.png';
+import './AppLayout.style.css';
+import { useSelector } from 'react-redux';
+import '../../node_modules/serve-index/public/style.css';
+import { Link } from 'react-router-dom';
 const AppLayout = () => {
-  return (
-    <div>
-        <div className='appLayout-container'>
-            <div className='appLayout-left-section'>
-                <div className='appLayout-left-section-menu'>
-                    <NavDropdown title="Menu" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Rental Tools</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Help Center</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">About us</NavDropdown.Item>
-                    </NavDropdown>
-                </div>
-                <button className='appLayout-left-section-language'>English</button>
-            </div>
+	let username;
 
-            <div className='appLayout-center-section'>Apartment</div>
+	const {userInfo}=useSelector(state=>state.user)
+	const token = sessionStorage.getItem('token')
+	const name = sessionStorage.getItem('name')
+	
+	if(userInfo?.name !== undefined){
+		username = userInfo?.name
+	}else{
+		username = name
+	}
 
-            <div className='appLayout-right-section'>
-                <div className='appLayout-right-section-login'>
-                    <button>sign up</button>
-                    <span>/</span>
-                    <button>sign in</button>
-                </div>
-                <div className='appLayout-right-section-wrap'>
-                    <button className='appLayout-right-section-add-property'>Add a Property</button>
-                </div>
-            </div>
-        </div>
-        <div style={{padding: "4.6rem", paddingTop: "1rem", paddingBottom: "2rem", backgroundColor: "#666", position: "absolute", right: "0", top: "0"}}></div>
-      <Outlet/>
-    </div>
-  )
-}
+	return (
+		<>
+			<Navbar bg='light' className='main-navbar' expand='lg'>
+				<Container>
+					<Navbar.Toggle aria-controls='basic-navbar-nav' />
+					<Navbar.Collapse id='basic-navbar-nav'>
+						<Nav className='mr-auto'>
+							<NavDropdown title='Menu' id='basic-nav-dropdown'>
+								<NavDropdown.Item>Rental Tools</NavDropdown.Item>
+								<NavDropdown.Item>Help Center</NavDropdown.Item>
+								<NavDropdown.Divider />
+								<NavDropdown.Item>About us</NavDropdown.Item>
+							</NavDropdown>
+						</Nav>
 
-export default AppLayout
+						<Nav id='basic-navbar-nav'>
+							<Navbar.Text>
+								<FontAwesomeIcon icon={faGlobe} className='english' />
+								&nbsp;&nbsp;English
+							</Navbar.Text>
+						</Nav>
+					</Navbar.Collapse>
+
+					<Navbar.Brand href='/' className='logo-area'>
+						<img
+							src={logoDark}
+							width='220px'
+							className='d-inline-block align-top'
+							alt='logo'
+						/>
+					</Navbar.Brand>
+
+					<Navbar.Collapse className='justify-content-end'>
+						<Nav id='basic-navbar-nav' className='nav-extra-item'>
+							<Navbar.Text href='/properties' className='text-decoration-none '>
+								<a href='/properties'>Properties</a>
+							</Navbar.Text>
+						</Nav>
+
+						<Nav id='basic-navbar-nav' className='login-menu'>
+						{username ? (
+                <NavDropdown title={username} id='basic-nav-dropdown'>
+                  <NavDropdown.Item as={Link} to='/myPage'>
+                    Go to My Page
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to='/logout'>
+                    Log Out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <Link to='/login' className='nav-link'>
+								Log In
+								<img
+                  className='googlelogo'
+                  src={"./image/googlelogo.png"}
+                  alt='logo'
+									style={{ width: '15px', height: '15px' ,marginLeft:'5px'}}
+                 
+                 
+                />
+								</Link>
+              )}
+            </Nav>
+					</Navbar.Collapse>
+				</Container>
+			</Navbar>
+
+			<div>
+				<Outlet />
+			</div>
+		</>
+	);
+};
+
+export default AppLayout;

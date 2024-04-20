@@ -1,50 +1,60 @@
 .properties {
 	display: flex;
-	margin: 0;
+	max-width: 100%;
+	margin-top: 70px;
+	background-color: transparent;
+	padding: 0;
+}
+
+.properties .col {
+	height: 100%;
+}
+
+#root > div.App > div > div:nth-child(3) > div > div > div:nth-child(2) {
+	width: 100%;
+	margin: 0 !important;
+	border-bottom: 1px solid #ccc;
+}
+.property-filter-bar {
+	justify-content: space-between !important;
+	margin-left: 0 !important;
+}
+.properties-content-container {
+	display: flex;
+	flex-direction: row;
+	padding: 0 !important;
 }
 
 .properties-map-box {
-	flex: 1;
+	flex: 0 0 60%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 0;
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 70%; /* Adjust as needed */
+	padding: 0;
 	overflow: hidden; /* Ensure map doesn't overflow */
 }
 
 .property-listing {
-	flex: 1;
 	display: flex;
-	flex-direction: column;
-	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 30%; /* Adjust as needed */
-	background-color: #f9f9f9;
+	flex: 0 0 40%;
+	background-color: hsla(156, 100%, 94%, 0.579);
+	overflow-y: auto; /* Enable vertical scrolling */
+}
+.scrollable-box {
+	max-height: 100vh; /* Set the maximum height to 80% of the viewport height */
 	overflow-y: auto; /* Enable vertical scrolling */
 }
 
-.property-listing-search-bar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	border-bottom: 1px solid #ccc;
-}
-
-.property-listing-card-box {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	padding: 10px;
-	overflow-y: auto; /* Enable vertical scrolling */
+@media screen and (max-width: 1080px) {
+	.properties-content-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.property-listing {
+		margin-top: 20px;
+		padding: 15px;
+		border-top: 1px solid #ccc;
+	}
 }

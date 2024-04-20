@@ -1,0 +1,109 @@
+.card {
+  width: 100%;
+  min-width: 360px;
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.card_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.card_title .title_name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card_title .title_name .name h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card_title .title_name .name span {
+  font-size: 0.85rem;
+}
+
+.card_title .title_name .logo {
+  width: 20%;
+  padding-right: 10px;
+}
+
+.card_title .title_name .logo img {
+  width: 100%;
+}
+
+.card_info {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info_items {
+  width: 50%;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info_items ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.info_items ul li.price {
+  color: #1a8754;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.info_items ul li.room {
+  font-weight: 500;
+}
+
+.info_items ul li.phone {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.info_items ul li.label {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.info_items ul li.label span.none {
+  display: none;
+}
+
+.info_items ul li.label span::after {
+  content: ", ";
+}
+
+.info_items ul li.label span:last-child::after {
+  display: none;
+}
+
+.card_info .info_items .btn_contact {
+  width: 100%;
+  max-height: 36px;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  background: #198754;
+  border: 0;
+  border-radius: 8px;
+}
+
+.error {
+  display: none;
+}
