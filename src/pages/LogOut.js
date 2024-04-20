@@ -11,11 +11,12 @@ const LogOut = () => {
 	useEffect(() => {
 		const handleLogout = async () => {
 			googleLogout();
-			await dispatch(logOut()); // If logOut is async, also await this.
-			return navigate('/');
+			await dispatch(logOut());
+			navigate('/');
+			window.location.reload();
 		};
 
-		handleLogout(); //eslint-disable-next-line
+		handleLogout();
 	}, []);
 
 	return <div />;
