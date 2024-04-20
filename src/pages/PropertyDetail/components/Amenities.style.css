@@ -1,0 +1,43 @@
+.amenities-container {
+    margin-top: 2rem;
+    padding-right: 0rem;
+  }
+  
+  .amenities-section {
+    margin-bottom: 2rem;
+  }
+  
+  .amenities-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .amenities-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .two-column-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
+  }
+  
+  .two-column-list li {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .two-column-list li::before {
+    content: "•";
+    margin-right: 5px;
+  }  
+
+@media only screen and (min-width: 48rem) {
+.amenities-container {
+    margin-top: 4rem;
+}
+}
+

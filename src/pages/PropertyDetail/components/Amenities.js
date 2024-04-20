@@ -15,17 +15,19 @@ const Amenities = ({ amenities }) => {
   });
 
   return (
-    <Container>
+    <Container className="amenities-container">
       {Object.entries(amenitiesByType).map(([type, amenitiesList]) => (
-        <div key={type}>
+        <div key={type} className="amenities-section">
           <Row>
             <h2>{type}</h2>
           </Row>
           <Row>
             <Col>
-              <ul>
+              <ul className="amenities-list two-column-list">
                 {amenitiesList.map((amenity, index) => (
-                  <li key={index}>{amenity}</li>
+                  <li key={index} className="amenity-item">
+                    {amenity}
+                  </li>
                 ))}
               </ul>
             </Col>
