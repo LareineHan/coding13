@@ -30,10 +30,6 @@ console.log(savedLike,'savedLike')
     
   }, [savedLike, listId]);
 
-
-
-
-
   const handleLikeClick = async () => {
    
     if (!userId) {
