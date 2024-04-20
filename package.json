@@ -4,6 +4,10 @@
 	"private": true,
 	"dependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+		"@fortawesome/fontawesome-svg-core": "^6.5.2",
+		"@fortawesome/free-regular-svg-icons": "^6.5.2",
+		"@fortawesome/free-solid-svg-icons": "^6.5.2",
+		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@googlemaps/extended-component-library": "^0.6.10",
 		"@googlemaps/js-api-loader": "^1.16.6",
 		"@react-oauth/google": "^0.12.1",
