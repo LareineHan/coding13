@@ -1,6 +1,22 @@
-  .property-carousel-img {
-    width: 400px; 
-    height: 350px; 
-    margin: 1rem 0 ;
-  }
-  
+.property-carousel-img {
+  width: 100%; 
+  height: auto; 
+  max-height: 600px; 
+  object-fit: cover; 
+}
+
+.property-carousel-img {
+  width: 100%; 
+  height: auto; 
+  max-height: 600px; 
+  object-fit: cover; 
+}
+
+.carousel {
+  width: 100%; 
+  max-height: 600px;
+}
+
+.carousel-item {
+  max-height: 600px;
+}
