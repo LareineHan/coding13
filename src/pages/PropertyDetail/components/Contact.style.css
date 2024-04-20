@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     border: 1px solid  #198754;
-    /* border: 1px solid  #00918B; */
     padding: 1.5rem 1rem;
     margin: 2rem 0;
 
@@ -26,7 +25,6 @@
 
 .contact-message-btn.btn,
 .contact-message-btn.btn:active{
-    /* background-color: #00918B; */
     background-color:#198754;
     border: none;
     margin-left: 0;
@@ -37,6 +35,35 @@
     width: 25px;
     margin-bottom: 0.25rem;
 }
+
+.messageFormModal-title {
+    color: #198754;
+    border: none;
+}
+
+.messageFormModal-sendBtn.btn-primary {
+    background-color: #198754;
+    border: none;
+    --bs-btn-hover-bg: #198754;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-active-bg:var(--bs-btn-hover-bg);
+    --bs-btn-active-border-color:var(--bs-btn-hover-bg);
+    --bs-btn-disabled-border-color:var(--bs-btn-hover-bg);
+    --bs-btn-disabled-bg:var(--bs-btn-hover-bg);
+    padding: 0 4rem;
+    --bs-primary-border-subtle: #198754;
+}
+
+.form-control:focus {
+    border-color: #198754;; /* Change border color */
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25); /* Change box shadow */
+  }
+  
+  .form-control:focus {
+    border-color: #198754;; /* Change border color */
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25); /* Change box shadow */
+  }
+
 
 @media only screen and (min-width: 48rem) {
     .rent-bed-bath-container {
@@ -55,5 +82,3 @@
         margin: 1rem 0;
     }
 }
-
-@media only screen and (min-width: 64rem) {}
