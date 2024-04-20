@@ -45,6 +45,8 @@ const Listing = () => {
 	useEffect(() => {
 		if (searchPlace !== null) {
 			navigate(`/properties?q=${searchPlace.name}`);
+		} else {
+			navigate(`/properties`);
 		}
 	}, [searchPlace]);
 
