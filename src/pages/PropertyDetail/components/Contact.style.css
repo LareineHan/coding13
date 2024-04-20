@@ -37,3 +37,23 @@
     width: 25px;
     margin-bottom: 0.25rem;
 }
+
+@media only screen and (min-width: 48rem) {
+    .rent-bed-bath-container {
+        padding: 1rem 0;
+    }
+
+    .about-description {
+        margin-bottom:4rem;
+    }
+
+    .contactName-logo {
+        margin-top: 1rem;
+    }
+
+    .contact-message-btn.btn {
+        margin: 1rem 0;
+    }
+}
+
+@media only screen and (min-width: 64rem) {}

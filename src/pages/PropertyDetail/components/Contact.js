@@ -11,17 +11,17 @@ const Contact = ({ contact }) => {
         <img src={contactIcon} alt="contact icon" className="contactIcon" />
       </h2>
       <Row className="contactName-logo">
-        <Col xs={8}>
+        <Col xs={8} md={9}>
           <h3>{contact.name}</h3>
         </Col>
-        <Col className="contact-logo">
+        <Col md={3} className="contact-logo">
           <img
             src={contact.logo}
             className="contact-logo-img"
             alt={contact.name}
           />
         </Col>
-        <Col>
+        <Col md={12}>
           <p>{contact.phone}</p>
         </Col>
       </Row>{" "}
