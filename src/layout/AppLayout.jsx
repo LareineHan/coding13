@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,19 @@ import { useSelector } from 'react-redux';
 import '../../node_modules/serve-index/public/style.css';
 
 const AppLayout = () => {
-	const [username, setUserName] = useState(null);
+	let username;
+
+	const { userInfo } = useSelector((state) => state.user);
+	//eslint-disable-next-line
+	const token = sessionStorage.getItem('token');
+	const name = sessionStorage.getItem('name');
+
+	if (userInfo?.name !== undefined) {
+		username = userInfo?.name;
+	} else {
+		username = name;
+	}
+	// const [username, setUserName] = useState(null);
 
 	return (
 		<>
@@ -55,7 +67,7 @@ const AppLayout = () => {
 							{username ? (
 								<NavDropdown title={username} id='basic-nav-dropdown'>
 									<NavDropdown.Item>
-										<a href='/mypage'>Go to My Page</a>
+										<GoToMyPage to='/mypage'>{username}'Page</GoToMyPage>
 									</NavDropdown.Item>
 									<NavDropdown.Item>
 										<a href='/logout' className='text-decoration-none '>
