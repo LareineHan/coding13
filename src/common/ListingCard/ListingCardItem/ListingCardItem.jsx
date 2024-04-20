@@ -4,7 +4,7 @@ import { Spinner } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import './ListingCardItem.style.css';
 import ListingCardCarousel from '../ListingCardCarousel/ListingCardCarousel';
-import HeartBtn from '../../HeartBtn/LikeBtn';
+import { Link } from 'react-router-dom';
 import LikeBtn from '../../HeartBtn/LikeBtn';
 
 const ListingCardItem = ({ id }) => {
@@ -56,7 +56,9 @@ const ListingCardItem = ({ id }) => {
 				<div className='card_title'>
 					<div className='title_name'>
 						<div className='name'>
-							<h1>{name}</h1>
+						<Link to={`/properties/${id}`}>
+							<h1 style={{cursor:'pointer'}}>{name}</h1>
+							</Link>
 							<span>{address.fullAddress}</span>
 						</div>
 						<div className='logo'>
