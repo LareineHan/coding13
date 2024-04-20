@@ -11,7 +11,8 @@ import {
   Image,
   Button,
 } from "react-bootstrap";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import arrowUpIcon from "../Icons/arrow-up.png";
+import arrowDownIcon from "../Icons/down-arrow.png";
 
 const PropertyPricing = ({
   availabilities,
@@ -119,9 +120,17 @@ const PropertyPricing = ({
               <td>{detail.availabilityText}</td>
               <td onClick={() => toggleShowDetails(tab, idx)}>
                 {expandedAvailableUnit[tab]?.includes(idx) ? (
-                  <FaChevronUp />
+                  <img
+                    src={arrowUpIcon}
+                    className="showMoreBtnArrowIcon"
+                    alt="arrow up icon"
+                  />
                 ) : (
-                  <FaChevronDown />
+                  <img
+                    src={arrowDownIcon}
+                    className="showMoreBtnArrowIcon"
+                    alt="arrow down icon"
+                  />
                 )}
               </td>
             </tr>
@@ -185,11 +194,21 @@ const PropertyPricing = ({
         >
           {showAllUnits[selectedTab] ? (
             <>
-              Show Less <FaChevronUp />
+              Show Less{" "}
+              <img
+                src={arrowUpIcon}
+                className="showMoreBtnArrowIcon"
+                alt="arrow up icon"
+              />
             </>
           ) : (
             <>
-              Show More <FaChevronDown />
+              Show More{" "}
+              <img
+                src={arrowDownIcon}
+                className="showMoreBtnArrowIcon"
+                alt="arrow down icon"
+              />
             </>
           )}
         </Button>

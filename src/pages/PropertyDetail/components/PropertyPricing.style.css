@@ -4,7 +4,8 @@
 }
 
 .propertyPricing-card {
-   border: 1px solid #cacaca;
+   border: 1px solid #198754;
+   margin: 0.5rem;
 }
 
 .nav-tabs .nav-link {
@@ -93,11 +94,15 @@
 .showMoreLessBtn.btn-outline-primary,
 .showMoreLessBtn.btn-outline-primary:active {
     border: 1px solid #198754;
-    color:#198754 ;
+    color:#198754;
     font-size: 1rem;
     margin-left: 0;
     padding: 0.5rem;
     height: auto;
     margin: 1rem 0;
     background-color: white;
+}
+
+.showMoreBtnArrowIcon {
+    width: 25px;
 }
