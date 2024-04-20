@@ -1,3 +1,7 @@
+.card_content {
+  cursor: pointer;
+}
+
 .card {
   width: 100%;
   min-width: 360px;
@@ -62,7 +66,7 @@
 }
 
 .info_items ul li.price {
-  color: #1a8754;
+  color: #00918b;
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -79,29 +83,19 @@
 .info_items ul li.label {
   margin: 5px 0;
   font-size: 12px;
+  color: #cacaca;
 }
 
 .info_items ul li.label span.none {
   display: none;
 }
 
-.info_items ul li.label span::after {
+.info_items ul li.label .block::after {
   content: ", ";
 }
 
-.info_items ul li.label span:last-child::after {
-  display: none;
-}
-
-.card_info .info_items .btn_contact {
-  width: 100%;
-  max-height: 36px;
-  margin: 0;
-  font-size: 14px;
-  color: white;
-  background: #198754;
-  border: 0;
-  border-radius: 8px;
+.info_items ul li.label .block:last-child::after {
+  content: "";
 }
 
 .error {
