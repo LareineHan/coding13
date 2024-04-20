@@ -9,20 +9,45 @@
     text-align: center;
   }
 
+  .transport-table tbody td,
+  .transport-table thead th {
+    padding-left: 0;
+  }
+
   .transport-table tbody td:last-child,
   .transport-table thead th:last-child  {
     text-align: end;
+    padding-right: 0;
   }
 
   .transport-table tbody td:first-child,
   .transport-table thead th:first-child  {
     text-align: start;
   }
+  
   .transport-table {
-    margin-top: 20px;
+    margin-bottom: 2rem;
   }
+
+  .transport-container {
+    margin-top: 3rem;
+    padding-left: 0;
+  }
+/* 
+   .transport-table thead tr {
+    color: #00918B; 
+  } */
+  .transport-icon {
+    width: 25px;
+    margin-left: 0.25rem;
+  }
+
+  .transport-table tbody tr .transitType-stop {
+    /* color: #198754;  */
+    color: #198754; 
+    /* font-weight: bold; */
+  }
+ 
   
 
-
-  
   
