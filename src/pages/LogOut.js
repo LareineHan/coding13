@@ -5,22 +5,21 @@ import { googleLogout } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 const LogOut = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    const handleLogout = async () => {
-      googleLogout();
-     await dispatch(logOut()); 
-      navigate('/');
-     window.location.reload();
-    
-    };
+	useEffect(() => {
+		const handleLogout = async () => {
+			googleLogout();
+			await dispatch(logOut());
+			navigate('/');
+			window.location.reload();
+		};
 
-    handleLogout();
-  }, []);
+		handleLogout();
+	}, []);
 
-  return <div />;
-}
+	return <div />;
+};
 
 export default LogOut;

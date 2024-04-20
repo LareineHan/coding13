@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,14 +12,14 @@ import { Link } from 'react-router-dom';
 const AppLayout = () => {
 	let username;
 
-	const {userInfo}=useSelector(state=>state.user)
-	const token = sessionStorage.getItem('token')
-	const name = sessionStorage.getItem('name')
-	
-	if(userInfo?.name !== undefined){
-		username = userInfo?.name
-	}else{
-		username = name
+	const { userInfo } = useSelector((state) => state.user);
+	const token = sessionStorage.getItem('token');
+	const name = sessionStorage.getItem('name');
+
+	if (userInfo?.name !== undefined) {
+		username = userInfo?.name;
+	} else {
+		username = name;
 	}
 
 	return (
@@ -62,29 +62,27 @@ const AppLayout = () => {
 						</Nav>
 
 						<Nav id='basic-navbar-nav' className='login-menu'>
-						{username ? (
-                <NavDropdown title={username} id='basic-nav-dropdown'>
-                  <NavDropdown.Item as={Link} to='/myPage'>
-                    Go to My Page
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to='/logout'>
-                    Log Out
-                  </NavDropdown.Item>
-                </NavDropdown>
-              ) : (
-                <Link to='/login' className='nav-link'>
-								Log In
-								<img
-                  className='googlelogo'
-                  src={"./image/googlelogo.png"}
-                  alt='logo'
-									style={{ width: '15px', height: '15px' ,marginLeft:'5px'}}
-                 
-                 
-                />
+							{username ? (
+								<NavDropdown title={username} id='basic-nav-dropdown'>
+									<NavDropdown.Item as={Link} to='/myPage'>
+										Go to My Page
+									</NavDropdown.Item>
+									<NavDropdown.Item as={Link} to='/logout'>
+										Log Out
+									</NavDropdown.Item>
+								</NavDropdown>
+							) : (
+								<Link to='/login' className='nav-link'>
+									Log In
+									<img
+										className='googlelogo'
+										src={'./image/googlelogo.png'}
+										alt='logo'
+										style={{ width: '15px', height: '15px', marginLeft: '5px' }}
+									/>
 								</Link>
-              )}
-            </Nav>
+							)}
+						</Nav>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
