@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useGetPropertiesQuery } from "../../hooks/useGetProperties";
 import ListingCardItem from "./ListingCardItem/ListingCardItem";
 
-const ListingCard = ({ props }) => {
-  const { data, isLoading, isError } = useGetPropertiesQuery(props);
-  console.log("데이터", data);
+const ListingCard = ({ searchParams }) => {
+  const { data, isLoading, isError } = useGetPropertiesQuery(searchParams);
 
   if (isLoading) {
-    return <Spinner animation='border' />;
+    return (
+      <div className='listing_card_spinner'>
+        <Spinner animation='border' />
+      </div>
+    );
   }
 
   if (isError) {
@@ -16,7 +19,7 @@ const ListingCard = ({ props }) => {
   }
 
   return (
-    <div>
+    <div className='listing_card_container'>
       {data?.data.map((item) => (
         <ListingCardItem id={item.id} />
       ))}

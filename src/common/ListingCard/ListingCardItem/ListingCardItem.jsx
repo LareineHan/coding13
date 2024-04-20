@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGetPropertyDetailQuery } from "../../../hooks/useGetPropertyDetail";
 import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -6,15 +6,18 @@ import "./ListingCardItem.style.css";
 import ListingCardCarousel from "../ListingCardCarousel/ListingCardCarousel";
 import LikeBtn from "../../HeartBtn/LikeBtn";
 import { useNavigate } from "react-router-dom";
+import ContactEmailButton from "../../ContactEmailButton/ContactEmailButton";
 
-const ListingCardItem = ({ id }) => {
+const ListingCardItem = ({ id, setRentData }) => {
   const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
-  const navigate = useNavigate();
-  console.log("디테일", data);
 
-  if (isLoading) {
-    return <Spinner animation='border' />;
-  }
+  const navigate = useNavigate();
+  if (!data)
+    if (isLoading) {
+      // setRentData((prev) => ({ ...prev, data }));
+
+      return;
+    }
 
   if (isError) {
     return <div className='error'>Error: {isError.message}</div>;
@@ -56,15 +59,15 @@ const ListingCardItem = ({ id }) => {
   };
 
   return (
-    <div
-      className='card_content'
-      onClick={() => {
-        goToDeatailPage(id);
-      }}
-    >
+    <div>
       <div key={id} className='card'>
         <div className='card_title'>
-          <div className='title_name'>
+          <div
+            className='title_name card_content'
+            onClick={() => {
+              goToDeatailPage(id);
+            }}
+          >
             <div className='name'>
               <h1>{name}</h1>
               <span>{address.fullAddress}</span>
@@ -84,7 +87,12 @@ const ListingCardItem = ({ id }) => {
         <div className='card_info'>
           <ListingCardCarousel id={id} />
           <div className='info_items'>
-            <ul>
+            <ul
+              className='card_content'
+              onClick={() => {
+                goToDeatailPage(id);
+              }}
+            >
               <li className='price'>{rentRange}</li>
               <li className='room'>{bedRange}</li>
               <li className='label'>
@@ -94,7 +102,7 @@ const ListingCardItem = ({ id }) => {
               </li>
               <li className='phone'>{contact.phone}</li>
             </ul>
-            <Button className='btn_contact'>Email</Button>
+            <ContactEmailButton title={name} />
           </div>
         </div>
       </div>
