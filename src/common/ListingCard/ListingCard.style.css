@@ -1,0 +1,12 @@
+.listing_card_spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.listing_card_container {
+  height: 100vh;
+}
