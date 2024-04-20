@@ -9,9 +9,13 @@ import NotFoundPage from './pages/NotFound/NotFoundPage';
 import MyPage from './pages/MyPage/MyPage';
 import Login from './pages/Login/Login';
 import LogOut from './pages/LogOut';
+import ScrollToTop from './common/ScrollToTop';
+import About from './pages/About/About';
+
 function App() {
 	return (
 		<div className='App'>
+			<ScrollToTop />
 			<Routes>
 				<Route path='/' element={<AppLayout />} className='app-layout'>
 					<Route index element={<Mainpage />} className='main-page' />
@@ -19,6 +23,7 @@ function App() {
 						<Route index element={<Listing />} />
 						<Route path=':id' element={<PropertyDetailPage />} />
 					</Route>
+					<Route path='/about' element={<About />} />
 					<Route path='/mypage' element={<MyPage />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/logout' element={<LogOut />} />
