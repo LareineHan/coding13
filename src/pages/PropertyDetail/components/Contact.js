@@ -1,11 +1,16 @@
 import React from "react";
 import "./Contact.style.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import contactIcon from "../Icons/telephone-call.png";
+
 const Contact = ({ contact }) => {
   return (
     <Container className="contact-container">
+      <h2>
+        Contact{" "}
+        <img src={contactIcon} alt="contact icon" className="contactIcon" />
+      </h2>
       <Row className="contactName-logo">
-        <h2>Contact</h2>
         <Col xs={8}>
           <h3>{contact.name}</h3>
         </Col>
@@ -20,7 +25,7 @@ const Contact = ({ contact }) => {
           <p>{contact.phone}</p>
         </Col>
       </Row>{" "}
-      <Button className="message-btn">Message</Button>
+      <Button className="contact-message-btn">Message</Button>
     </Container>
   );
 };

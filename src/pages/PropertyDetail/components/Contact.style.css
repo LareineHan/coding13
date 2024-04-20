@@ -1,8 +1,9 @@
 .contact-container{
     display: flex;
     flex-direction: column;
-    border: 1px solid darkturquoise;
-    padding: 0.5rem;
+    border: 1px solid  #198754;
+    /* border: 1px solid  #00918B; */
+    padding: 1.5rem 1rem;
     margin: 2rem 0;
 
 }
@@ -23,7 +24,16 @@
     max-height: 70px;
 }
 
-.message-btn {
-    background-color:darkturquoise ;
+.contact-message-btn.btn,
+.contact-message-btn.btn:active{
+    /* background-color: #00918B; */
+    background-color:#198754;
     border: none;
+    margin-left: 0;
+    height: 3rem;
+}
+
+.contactIcon {
+    width: 25px;
+    margin-bottom: 0.25rem;
 }
