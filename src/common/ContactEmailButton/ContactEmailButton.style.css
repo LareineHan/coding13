@@ -1,0 +1,40 @@
+.btn_contact_eamil {
+  width: 100%;
+  max-height: 36px;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  background: #00918b;
+  border: 1px solid #00918b;
+  border-radius: 8px;
+}
+
+.btn_contact_eamil:hover {
+  background: white;
+  border: 1px solid #00918b;
+  color: #00918b;
+}
+
+.btn_contact_close {
+  background: white;
+  border: 1px solid #00918b;
+  color: #00918b;
+}
+
+.btn_contact_send {
+  background: #00918b;
+  border: 1px solid #00918b;
+  color: white;
+}
+
+.btn_contact_close:hover {
+  background: #bbe9e8;
+  border: 1px solid #00918b;
+  color: #00918b;
+}
+
+.btn_contact_send:hover {
+  background: #005f5c;
+  border: 1px solid #005f5c;
+  color: white;
+}

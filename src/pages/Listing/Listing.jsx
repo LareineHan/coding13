@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Listing.style.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import MapBox from './components/MapBox/MapBox';
@@ -9,6 +9,7 @@ import ListingCard from '../../common/ListingCard/ListingCard';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
 const Listing = () => {
+	const [filter, setFilter] = useState();
 	const [query, setQuery] = useSearchParams();
 	const keyword = query.get('q');
 	const navigate = useNavigate();
@@ -32,6 +33,7 @@ const Listing = () => {
 		sort: 'default',
 		// Add other params here
 	};
+
 	useEffect(() => {
 		if (keyword) {
 			navigate(`/properties?q=${keyword}`);
@@ -45,17 +47,22 @@ const Listing = () => {
 	useEffect(() => {
 		if (searchPlace !== null) {
 			navigate(`/properties?q=${searchPlace.name}`);
-		} else {
-			navigate(`/properties`);
 		}
 	}, [searchPlace]);
+
+	useEffect(() => {
+		if (!filter) return;
+		console.log('filter: ', filter, searchParams);
+		if (filter.maxBed) searchParams.maxBed = filter.maxBed;
+		if (filter.maxBath) searchParams.maxBath = filter.maxBath;
+	}, [filter]);
 
 	return (
 		<div>
 			<Container className='properties'>
 				<Col>
 					<Row className='property-filter-bar'>
-						<FilterBar />
+						<FilterBar setFilter={setFilter} />
 					</Row>
 
 					<Row className='properties-content-container'>
@@ -63,7 +70,7 @@ const Listing = () => {
 							<MapBox props={searchParams} />
 						</Col>
 						<Col className='property-listing scrollable-box'>
-							<ListingCard props={searchParams} />
+							<ListingCard searchParams={searchParams} />
 						</Col>
 					</Row>
 				</Col>

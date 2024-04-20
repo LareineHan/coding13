@@ -1,97 +1,111 @@
-import React from 'react';
-import { useGetPropertyDetailQuery } from '../../../hooks/useGetPropertyDetail';
-import { Spinner } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import './ListingCardItem.style.css';
-import ListingCardCarousel from '../ListingCardCarousel/ListingCardCarousel';
-import { Link } from 'react-router-dom';
-import LikeBtn from '../../HeartBtn/LikeBtn';
+import React from "react";
+import { useGetPropertyDetailQuery } from "../../../hooks/useGetPropertyDetail";
+import "./ListingCardItem.style.css";
+import ListingCardCarousel from "../ListingCardCarousel/ListingCardCarousel";
+import LikeBtn from "../../HeartBtn/LikeBtn";
+import { useNavigate } from "react-router-dom";
+import ContactEmailButton from "../../ContactEmailButton/ContactEmailButton";
 
-const ListingCardItem = ({ id }) => {
-	const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
-	// console.log("ListingCardItem", data);
+const ListingCardItem = ({ id, setRentData }) => {
+  const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
 
-	if (isLoading) {
-		return <Spinner animation='border' />;
-	}
+  const navigate = useNavigate();
+  if (!data)
+    if (isLoading) {
+      // setRentData((prev) => ({ ...prev, data }));
 
-	if (isError) {
-		return <div className='error'>Error: {isError.message}</div>;
-	}
+      return;
+    }
 
-	const {
-		name,
-		rentRange,
-		bedRange,
-		bathRange,
-		address,
-		description,
-		contact,
-		amenities,
-		availabilities,
-		recurringExpenses,
-		petPolicies,
-		leaseTerms,
-		yearBuilt,
-		unitCount,
-		storyCount,
-		isFurnished,
-		// transits,
-	} = data; // Access nested data
-	const pet = petPolicies ? 'Dog & Cat Friendly' : '';
+  if (isError) {
+    return <div className='error'>Error: {isError.message}</div>;
+  }
 
-	const desc = [
-		pet,
-		amenities[0].amenities[0],
-		amenities[0].amenities[3],
-		amenities[0].amenities[5],
-		amenities[0].amenities[6],
-		amenities[0].amenities[7],
-	];
-	//	console.log('amenities desc', desc);
+  const {
+    name,
+    rentRange,
+    bedRange,
+    bathRange,
+    address,
+    description,
+    contact,
+    amenities,
+    availabilities,
+    recurringExpenses,
+    petPolicies,
+    leaseTerms,
+    yearBuilt,
+    unitCount,
+    storyCount,
+    isFurnished,
+    // transits,
+  } = data; // Access nested data
+  const pet = petPolicies ? "Dog & Cat Friendly" : "";
 
-	return (
-		<div>
-			<div key={id} className='card'>
-				<div className='card_title'>
-					<div className='title_name'>
-						<div className='name'>
-						<Link to={`/properties/${id}`}>
-							<h1 style={{cursor:'pointer'}}>{name}</h1>
-							</Link>
-							<span>{address.fullAddress}</span>
-						</div>
-						<div className='logo'>
-							{contact.logo ? (
-								<img src={contact.logo} alt='company logo' />
-							) : (
-								''
-							)}
-						</div>
-					</div>
-					<div>
-						<LikeBtn listId={data?.id} />
-					</div>
-				</div>
-				<div className='card_info'>
-					<ListingCardCarousel id={id} />
-					<div className='info_items'>
-						<ul>
-							<li className='price'>{rentRange}</li>
-							<li className='room'>{bedRange}</li>
-							<li className='label'>
-								{desc.map((item) => (
-									<span className={item ? '' : 'none'}>{item}</span>
-								))}
-							</li>
-							<li className='phone'>{contact.phone}</li>
-						</ul>
-						<Button className='btn_contact'>Email</Button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  const desc = [
+    pet,
+    amenities[0].amenities[0],
+    amenities[0].amenities[3],
+    amenities[0].amenities[5],
+    amenities[0].amenities[6],
+    amenities[0].amenities[7],
+  ];
+  //	console.log('amenities desc', desc);
+
+  const goToDeatailPage = (id) => {
+    navigate(`/properties/${id}`);
+  };
+
+  return (
+    <div>
+      <div key={id} className='card'>
+        <div className='card_title'>
+          <div
+            className='title_name card_content'
+            onClick={() => {
+              goToDeatailPage(id);
+            }}
+          >
+            <div className='name'>
+              <h1>{name}</h1>
+              <span>{address.fullAddress}</span>
+            </div>
+            <div className='logo'>
+              {contact.logo ? (
+                <img src={contact.logo} alt='company logo' />
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <div>
+            <LikeBtn listId={data?.id} />
+          </div>
+        </div>
+        <div className='card_info'>
+          <ListingCardCarousel id={id} />
+          <div className='info_items'>
+            <ul
+              className='card_content'
+              onClick={() => {
+                goToDeatailPage(id);
+              }}
+            >
+              <li className='price'>{rentRange}</li>
+              <li className='room'>{bedRange}</li>
+              <li className='label'>
+                {desc.map((item) => (
+                  <span className={item ? "block" : "none"}>{item}</span>
+                ))}
+              </li>
+              <li className='phone'>{contact.phone}</li>
+            </ul>
+            <ContactEmailButton title={name} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ListingCardItem;
