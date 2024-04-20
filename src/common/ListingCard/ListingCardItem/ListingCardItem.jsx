@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useGetPropertyDetailQuery } from "../../../hooks/useGetPropertyDetail";
-import { Spinner } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import "./ListingCardItem.style.css";
 import ListingCardCarousel from "../ListingCardCarousel/ListingCardCarousel";
 import LikeBtn from "../../HeartBtn/LikeBtn";
