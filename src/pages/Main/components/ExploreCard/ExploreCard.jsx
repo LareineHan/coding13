@@ -5,6 +5,7 @@ import { useGetPropertiesQuery } from '../../../../hooks/useGetProperties';
 import { useParams } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
 import ExploreCardImage from '../ExploreCardImage/ExploreCardImage';
+import { Link } from 'react-router-dom';
 
 const ExploreCard = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
@@ -19,24 +20,24 @@ const ExploreCard = ({ props }) => {
 	}
 
 	return (
-		<div className='explore-card-container'>
+<div className='explore-card-container'>
 			{data?.data.slice(4, 8).map((property, idx) => (
-
-				<Card className='explore-card' key={idx}>
-					<ExploreCardImage className='explore-card-img' id={property?.id} />
-					<Card.Body>
-						<Card.Title>{property.name}</Card.Title>
-						<Card.Text>
-							<ul className='explore-card-content'>
-								<li>{property.address.fullAddress}</li>
-								<li>
-									{property.bedRange} | {property.rentRange}
-								</li>
-							</ul>
-						</Card.Text>
-					</Card.Body>
-				</Card>
-	
+				<Link to={`/properties/${property.id}`} key={idx} className='explore-card-link'> {/* Link 컴포넌트로 변경 */}
+					<Card className='explore-card'>
+						<ExploreCardImage className='explore-card-img' id={property?.id} />
+						<Card.Body>
+							<Card.Title className='explore-card-title'>{property.name}</Card.Title>
+							<Card.Text>
+								<ul className='explore-card-content'>
+									<li>{property.address.fullAddress}</li>
+									<li>
+										{property.bedRange} | {property.rentRange}
+									</li>
+								</ul>
+							</Card.Text>
+						</Card.Body>
+					</Card>
+				</Link>
 			))}
 		</div>
 	);
