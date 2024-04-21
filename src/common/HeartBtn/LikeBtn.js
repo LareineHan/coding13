@@ -35,7 +35,7 @@ const LikeBtn = React.memo(({ listId }) => {
 
   const handleLikeClick = async () => {
     if (!userId) {
-      setShowAlert(true);
+      setShowAlert(!showAlert);
       return;
     }
 
@@ -50,13 +50,22 @@ const LikeBtn = React.memo(({ listId }) => {
   };
 
   return (
-    <div className="likeBtn" onClick={handleLikeClick}>
-      {showAlert && <Alert>Please try to login first!</Alert>}
-      {!like ? (
-        <Heart size={20} color="#4C4E5D" />
-      ) : (
-        <HeartBK size={20} color="#4C4E5D" />
-      )}
+    <div>
+      <div className="likeBtn" onClick={handleLikeClick}>
+        {showAlert && <Alert>Please try to login first!</Alert>}
+        {!like ? (
+          <Heart size={20} color="#4C4E5D" />
+        ) : (
+          <HeartBK size={20} color="#4C4E5D" />
+        )}
+      </div>
+      <Overlay target={target.current} show={showAlert} placement="bottom">
+        {(props) => (
+          <Tooltip id="overlay-example" {...props} className="tooltip">
+            Please try to Login First!
+          </Tooltip>
+        )}
+      </Overlay>
     </div>
   );
 });

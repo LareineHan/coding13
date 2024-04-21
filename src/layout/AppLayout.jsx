@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import GoToMyPage from './components/GoToMyPage';
+import google from '../images/googlelogo.png';
 import logoDark from '../images/logo-dark.png';
 import './AppLayout.style.css';
 import { useSelector } from 'react-redux';
@@ -33,7 +34,11 @@ const AppLayout = () => {
 								<NavDropdown.Item>Rental Tools</NavDropdown.Item>
 								<NavDropdown.Item>Help Center</NavDropdown.Item>
 								<NavDropdown.Divider />
-								<NavDropdown.Item>About us</NavDropdown.Item>
+								<NavDropdown.Item
+									href='/about'
+									className='text-decoration-none '>
+									<a href='/about'>About Us</a>
+								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
 
@@ -63,7 +68,10 @@ const AppLayout = () => {
 
 						<Nav id='basic-navbar-nav' className='login-menu'>
 							{username ? (
-								<NavDropdown title={username} id='basic-nav-dropdown'>
+								<NavDropdown
+									title={username}
+									id='basic-nav-dropdown'
+									style={{ marginRight: '50px' }}>
 									<NavDropdown.Item as={Link} to='/myPage'>
 										Go to My Page
 									</NavDropdown.Item>
@@ -72,11 +80,11 @@ const AppLayout = () => {
 									</NavDropdown.Item>
 								</NavDropdown>
 							) : (
-								<Link to='/login' className='nav-link'>
+								<Link to='/login' className='nav-link d-flex'>
 									Log In
 									<img
 										className='googlelogo'
-										src={'./image/googlelogo.png'}
+										src={google}
 										alt='logo'
 										style={{ width: '15px', height: '15px', marginLeft: '5px' }}
 									/>

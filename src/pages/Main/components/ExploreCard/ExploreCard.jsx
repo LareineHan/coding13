@@ -19,8 +19,9 @@ const ExploreCard = ({ props }) => {
 	}
 
 	return (
-		<div style={{ display: 'flex' }}>
-			{data?.data.slice(0, 4).map((property, idx) => (
+		<div className='explore-card-container'>
+			{data?.data.slice(4, 8).map((property, idx) => (
+
 				<Card className='explore-card' key={idx}>
 					<ExploreCardImage className='explore-card-img' id={property?.id} />
 					<Card.Body>
@@ -35,6 +36,7 @@ const ExploreCard = ({ props }) => {
 						</Card.Text>
 					</Card.Body>
 				</Card>
+	
 			))}
 		</div>
 	);
