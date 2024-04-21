@@ -1,4 +1,15 @@
-.explore-card-notFound-img {
-    width: 18rem;
-    height: 13rem;
+.explore-card-img {
+    width: 288px;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+@media (min-width: 500px) and (max-width: 992px) {
+    .explore-card-img {
+        width: 60vw;
+        height: 30vh;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
 }

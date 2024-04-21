@@ -21,22 +21,22 @@
 	left: 0;
 	right: 0;
 }
-.banner-wrap h1 {
+.banner-wrap-h1 {
 	font-size: 3.8rem;
 	font-weight: 600;
 	line-height: 64px;
 	margin-bottom: 1.125rem;
 	color: #00bf67;
-	text-shadow: #0000009c 0.06em 0.06em 0;
+	text-shadow: #2929299c 0.06em 0.06em 0;
 	/* z-index: 100; */
 	margin-top: 1.8rem;
 }
-.banner-wrap p {
+.banner-wrap-p {
 	font-size: 1.7rem;
 	font-weight: 500;
 	line-height: 30px;
 	margin-bottom: 2rem;
-	text-shadow: #0000009c 0.06em 0.06em 0;
+	text-shadow: #5858589c 0.06em 0.06em 0;
 	/* z-index: 100; */
 }
 .banner-wrap-search {
@@ -56,4 +56,22 @@
 	font-size: 1.5rem;
 	font-weight: 600;
 	height: 3.5rem;
+}
+@media (min-width: 500px) and (max-width: 992px) {
+	.banner-wrap-search .form-control {
+		width: 20rem;
+		height: 2.9rem;
+	}
+	.banner-wrap-h1 {
+		font-size: 2.7rem;
+		margin-bottom: 0.2rem;
+		margin-top: 2.2rem;
+	}
+	.banner-wrap-p {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	.banner-wrap-search .btn {
+		height: 2.9rem;
+	}
 }
