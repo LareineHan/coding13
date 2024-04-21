@@ -57,7 +57,7 @@
 	font-weight: 600;
 	height: 3.5rem;
 }
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
 	.banner-wrap-search .form-control {
 		width: 20rem;
 		height: 2.9rem;
