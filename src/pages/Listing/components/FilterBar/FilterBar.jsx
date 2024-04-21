@@ -149,6 +149,48 @@ const FilterBar = ({ setFilter }) => {
 							Reset
 						</Button>
 					</div>
+					<Row className='sort-options'>
+						<Col lg={12} md={12} className='filter-menu-list'>
+							<DropdownButton id='sort-dropdown' title='Sort' variant='link'>
+								<Dropdown.Item
+									onClick={() => {
+										setFilter((prev) => ({
+											...prev,
+											sort: 'default',
+										}));
+									}}>
+									Default
+								</Dropdown.Item>
+								<Dropdown.Item
+									onClick={() => {
+										setFilter((prev) => ({
+											...prev,
+											sort: 'lastUpdated',
+										}));
+									}}>
+									Last Updated
+								</Dropdown.Item>
+								<Dropdown.Item
+									onClick={() => {
+										setFilter((prev) => ({
+											...prev,
+											sort: 'rentHighToLow',
+										}));
+									}}>
+									Rent High To Low
+								</Dropdown.Item>
+								<Dropdown.Item
+									onClick={() => {
+										setFilter((prev) => ({
+											...prev,
+											sort: 'rentLowToHigh',
+										}));
+									}}>
+									Rent Low To High
+								</Dropdown.Item>
+							</DropdownButton>
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 		</Container>

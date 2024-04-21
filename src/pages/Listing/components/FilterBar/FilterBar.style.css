@@ -52,6 +52,12 @@
 	display: flex;
 	align-items: center;
 }
+.sort-options .filter-menu-list > .dropdown {
+	justify-content: flex-end;
+}
+.sort-options .filter-menu-list > .dropdown > button {
+	width: 68px;
+}
 
 @media screen and (max-width: 1080px) {
 	.filter-menu-box {
