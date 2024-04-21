@@ -1,0 +1,54 @@
+.mypage_card_carousel {
+  width: 18rem;
+}
+
+.mypage_card_carousel .card-title.h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+.mypage_card_carousel p.card-text p {
+  margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mypage_card_carousel {
+    width: 16rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mypage_card_carousel {
+    width: 18rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .mypage_card_carousel {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mypage_card_carousel {
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .mypage_card_carousel {
+    width: 13rem;
+  }
+
+  .mypage_card_carousel .card-title.h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .mypage_card_carousel {
+    width: 10rem;
+  }
+}

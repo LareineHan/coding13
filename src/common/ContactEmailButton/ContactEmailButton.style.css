@@ -4,37 +4,37 @@
   margin: 0;
   font-size: 14px;
   color: white;
-  background: #00918b;
-  border: 1px solid #00918b;
+  background: #00bf67;
+  border: 1px solid #00bf67;
   border-radius: 8px;
 }
 
 .btn_contact_email:hover {
   background: white;
-  border: 1px solid #00918b;
-  color: #00918b;
+  border: 1px solid #198754;
+  color: #198754;
 }
 
 .btn_contact_close {
   background: white;
-  border: 1px solid #00918b;
-  color: #00918b;
+  border: 1px solid #198754;
+  color: #198754;
 }
 
 .btn_contact_send {
-  background: #00918b;
-  border: 1px solid #00918b;
+  background: #198754;
+  border: 1px solid #198754;
   color: white;
 }
 
 .btn_contact_close:hover {
-  background: #bbe9e8;
-  border: 1px solid #00918b;
-  color: #00918b;
+  background: #a9e0c7;
+  border: 1px solid #198754;
+  color: #198754;
 }
 
 .btn_contact_send:hover {
-  background: #005f5c;
-  border: 1px solid #005f5c;
+  background: #0a3e26;
+  border: 1px solid #0a3e26;
   color: white;
 }
