@@ -87,7 +87,7 @@ const PropertyPricing = ({
     return unitsToShow?.map((detail, idx) => (
       <Col key={idx} xs={12} className="propertyPricing-card">
         <Row className="propertyPricing-card-content">
-          <Col xs={7}>
+          <Col xs={7} md={6}>
             <div className="pricing-title">
               <p>{detail.modelName}</p>
               <p>{detail.rentRange}</p>
@@ -97,7 +97,7 @@ const PropertyPricing = ({
               <p>{`${detail.rentRange} deposit`}</p>
             </div>
           </Col>
-          <Col>
+          <Col xs={5} md={6}>
             {/* Randomly select an image from imageData */}
             <Image
               src={
@@ -106,6 +106,7 @@ const PropertyPricing = ({
                 ].link
               }
               fluid
+              className="property-image"
             />
           </Col>
         </Row>
