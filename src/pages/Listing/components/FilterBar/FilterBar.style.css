@@ -74,6 +74,10 @@
   color: #444 !important;
 }
 
+.apply_btn {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 1080px) {
   .filter-menu-box {
     flex: 2 1;

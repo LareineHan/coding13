@@ -154,7 +154,7 @@ const FilterBar = ({ setFilter }) => {
             <Col
               lg={2}
               md={2}
-              className='sort-options filter-menu-list sort_menu'
+              className='sort-options filter-menu-list sort_menu apply_btn'
             >
               <DropdownButton
                 id='sort-dropdown'
