@@ -53,12 +53,31 @@ const FilterBar = ({ setFilter }) => {
 
 	const handleBedroomSelect = (option) => {
 		setBedroomOption(option);
-		// Update minBed and maxBed based on the selected option
+		if (option === 'one') {
+			setMinBed('1');
+			setMaxBed('1');
+		} else if (option === 'up to two') {
+			setMinBed('1');
+			setMaxBed('2');
+		} else if (option === 'up to three') {
+			setMinBed('1');
+			setMaxBed('3');
+		} else if (option === 'three +') {
+			setMinBed('3');
+		}
 	};
 
 	const handleBathroomSelect = (option) => {
 		setBathroomOption(option);
-		// Update minBath and maxBath based on the selected option
+		if (option === 'one') {
+			setMinBath('1');
+			setMaxBath('1');
+		} else if (option === 'two') {
+			setMinBath('2');
+			setMaxBath('2');
+		} else if (option === 'three +') {
+			setMinBath('3');
+		}
 	};
 
 	return (
