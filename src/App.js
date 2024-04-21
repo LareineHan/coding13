@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route ,Navigate} from 'react-router-dom';
 import PropertyDetailPage from './pages/PropertyDetail/PropertyDetailPage';
 import Listing from './pages/Listing/Listing';
 import Mainpage from './pages/Main/Mainpage';
@@ -13,6 +13,8 @@ import About from './pages/About/About';
 import MainLayout from './layout/MainLayout';
 
 function App() {
+   const token = sessionStorage.getItem('token')
+
 	return (
 		<div className='App'>
 			<ScrollToTop />
@@ -24,7 +26,16 @@ function App() {
 						<Route path=':id' element={<PropertyDetailPage />} />
 					</Route>
 					<Route path='/about' element={<About />} />
-					<Route path='/mypage' element={<MyPage />} />
+
+
+					{token? (
+                        <Route path='/mypage' element={<MyPage />} />
+                    ) : (
+                     
+                        <Route path='/mypage' element={<Navigate to='/' />} />
+                    )}
+
+
 					<Route path='/login' element={<Login />} />
 					<Route path='/logout' element={<LogOut />} />
 				</Route>
