@@ -157,6 +157,7 @@ const PropertyDetailPage = () => {
         onTabSelect={handleTabSelect}
         amenities={amenities}
         imageData={imageData}
+        leaseTerms={leaseTerms}
       />
 
       <div>
