@@ -1,3 +1,10 @@
+.listing_card_content {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
 .card_content {
   cursor: pointer;
 }
@@ -66,7 +73,7 @@
 }
 
 .info_items ul li.price {
-  color: #00918b;
+  color: #198754;
   font-size: 1.25rem;
   font-weight: 700;
 }

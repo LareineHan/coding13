@@ -1,4 +1,7 @@
-
 .tooltip-inner {
   background-color: #00918b; /* 원하는 배경색으로 변경하세요 */
+}
+
+.btn_like_heart {
+  cursor: pointer;
 }
