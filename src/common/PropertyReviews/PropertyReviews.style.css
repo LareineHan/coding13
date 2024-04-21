@@ -1,3 +1,7 @@
 .property-review-box {
    margin: 2rem 0; /*Remove width and height and add margin by minji*/
 }
+
+.Unavailable-propertyReview-message {
+   font-size: 1rem;
+}

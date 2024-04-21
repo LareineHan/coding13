@@ -20,6 +20,7 @@ const PropertyPricing = ({
   onTabSelect,
   amenities,
   imageData,
+  leaseTerms,
 }) => {
   const [expandedAvailableUnit, setExpandedAvailableUnit] = useState({}); // State to manage expanded rows for each tab
   const [showAllUnits, setShowAllUnits] = useState({}); // State to manage show more/less for each tab
@@ -73,6 +74,13 @@ const PropertyPricing = ({
     ? interiorAmenities.amenities
     : [];
 
+  const getLeaseTermList = (terms) => {
+    if (!terms) return [];
+    return terms.split(", ").map((term) => term.trim());
+  };
+
+  const leaseTermList = getLeaseTermList(leaseTerms);
+
   const renderUnits = (details, tab) => {
     const unitsToShow = showAllUnits[tab] ? details : details.slice(0, 2);
 
@@ -107,10 +115,10 @@ const PropertyPricing = ({
         <Table className="availableUnit-table">
           <thead>
             <tr>
-              <th>Unit</th>
-              <th>Price</th>
-              <th>Availability</th>
-              <th></th>
+              <th className="availableUnit-table-head">Unit</th>
+              <th className="availableUnit-table-head">Price</th>
+              <th className="availableUnit-table-head">Availability</th>
+              <th className="availableUnit-table-head"></th>
             </tr>
           </thead>
           <tbody>
@@ -138,16 +146,43 @@ const PropertyPricing = ({
               <tr>
                 <td colSpan="4" className="availableUnit-detail">
                   <div>
-                    <p>{detail.modelName}</p>
+                    <p className="availableUnit-detail-title">
+                      {detail.modelName}
+                    </p>
                     <div>
-                      <p>Lease Information</p>
-                      <p>{`Deposit: ${detail.rentRange}`}</p>
+                      <p className="availableUnit-detail-lease">
+                        Lease Information
+                      </p>
+                      {leaseTermList.length > 1 ? (
+                        <ul className="two-column-list">
+                          {leaseTermList?.map((term, index) => (
+                            <li
+                              key={index}
+                              className="propertyDetail-section-item"
+                            >
+                              {term}
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="propertyDetail-section-item">
+                          {leaseTermList[0]}
+                        </p>
+                      )}
+                      <p>
+                        <span className="availableUnit-deposit-title">
+                          Deposit:
+                        </span>
+                        {detail.rentRange}
+                      </p>
                     </div>
                     <div>
-                      <p>Features</p>
-                      <ul>
+                      <p className="availableUnit-amenity-title">Features</p>
+                      <ul className="availableUnit-amenity-ul">
                         {propertyAmenities?.map((amenity, idx) => (
-                          <li key={idx}>{amenity}</li>
+                          <li className="availableUnit-amenity-list" key={idx}>
+                            {amenity}
+                          </li>
                         ))}
                       </ul>
                     </div>

@@ -1,5 +1,6 @@
 .propertyDetail-section {
   margin-top: 1rem;
+  padding-left: 0.5rem;
 }
 
 .propertyDetail-section-title {
@@ -10,11 +11,12 @@
 
 .propertyDetail-section-list {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
 .utilityLease-list {
   margin-bottom: 0;
+  list-style: disc;
 }
 
 .two-column-list {
@@ -30,62 +32,23 @@
   align-items: center;
 }
 
-.two-column-list li::before {
+.two-column-list li::before,
+.propertyInfo-detail-list::before {
   content: "•";
   margin-right: 5px;
 }
 
-.propertyDetail-container{
+.propertyDetail-container {
   padding-left: 0;
 }
 
  @media only screen and (min-width: 48rem) {
   .two-column-list li {
       flex: 0 0 40%;
+      font-size: 1rem
   }
-}-section {
-    margin-top: 1rem;
-  }
-  
-  .propertyDetail-section-title {
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
+
   .propertyDetail-section-list {
-    list-style-type: disc;
-    padding-left: 20px;
+    font-size: 1rem
   }
-  
-  .utilityLease-list {
-    margin-bottom: 0;
-  }
-
-  .two-column-list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding-inline-start: 0;
-  }
-  
-  .two-column-list li {
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .two-column-list li::before {
-    content: "•";
-    margin-right: 5px;
-  }
-
-  .propertyDetailDetail-container{
-    padding-left: 0;
-  }
-
-   @media only screen and (min-width: 48rem) {
-    .two-column-list li {
-        flex: 0 0 40%;
-    }
-}
+ }

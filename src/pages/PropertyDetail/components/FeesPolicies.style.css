@@ -1,18 +1,22 @@
 .feesPolicies-container {
   margin-top: 2rem;
+  padding-left: 0;
 }
+
+  .pets-fee > * {
+    font-size: 1rem;
+  }
 
 .pets-fee {
     width: 100%;
   }  
 
 .pets-fee tbody tr,
-.pets-fee thead tr  {
+.pets-fee thead tr {
     border-bottom: 1px solid #cacaca;
   }
 
-.pets-fee thead tr
- {
+.pets-fee thead tr {
 font-weight: bold;
 margin: 1rem;
 text-decoration: underline;
@@ -32,7 +36,6 @@ text-decoration-thickness: 3px;
 
 .policy-type {
   font-weight: bold;
-  font-size: 1rem;
 }
 
 .FeePolicies-pet {
@@ -52,6 +55,9 @@ text-decoration-thickness: 3px;
     border-bottom-width: 0;
   }
 
+  .fee-description {
+    font-size: 1rem;
+  }
 
   @media only screen and (min-width: 48rem) {
     .feesPolicies-container{
