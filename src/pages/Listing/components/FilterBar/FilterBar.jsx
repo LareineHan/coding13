@@ -22,6 +22,14 @@ const FilterBar = ({ setFilter }) => {
 	const [bathroomOption, setBathroomOption] = useState('Bathrooms');
 
 	const handleApplyFilters = () => {
+		let sortValue = 'default';
+		if (sortOption === 'Last Updated') {
+			sortValue = 'lastUpdated';
+		} else if (sortOption === 'Rent High To Low') {
+			sortValue = 'rentHighToLow';
+		} else if (sortOption === 'Rent Low To High') {
+			sortValue = 'rentLowToHigh';
+		}
 		setFilter((prev) => ({
 			...prev,
 			minBed,
@@ -30,7 +38,7 @@ const FilterBar = ({ setFilter }) => {
 			maxBath,
 			minRent,
 			maxRent,
-			sort: sortOption === 'Sort' ? 'default' : sortOption.toLowerCase(),
+			sort: sortValue,
 		}));
 	};
 
@@ -89,7 +97,7 @@ const FilterBar = ({ setFilter }) => {
 
 				<Col lg={4} md={12} className='filter-menu-box'>
 					<Row className='filters'>
-						<Col lg={3} md={3} className='filter-menu-list'>
+						<Col lg={2} md={2} className='filter-menu-list'>
 							<DropdownButton
 								id='bedroom-dropdown'
 								title={bedroomOption}
@@ -110,7 +118,7 @@ const FilterBar = ({ setFilter }) => {
 							</DropdownButton>
 						</Col>
 
-						<Col lg={3} md={3} className='filter-menu-list'>
+						<Col lg={2} md={2} className='filter-menu-list'>
 							<DropdownButton
 								id='bathroom-dropdown'
 								title={bathroomOption}
@@ -127,7 +135,7 @@ const FilterBar = ({ setFilter }) => {
 							</DropdownButton>
 						</Col>
 
-						<Col lg={3} md={3} className='filter-menu-list'>
+						<Col lg={2} md={2} className='filter-menu-list'>
 							<Form.Group controlId='minRent'>
 								<Form.Control
 									type='text'
@@ -137,7 +145,7 @@ const FilterBar = ({ setFilter }) => {
 								/>
 							</Form.Group>
 						</Col>
-						<Col lg={3} md={3} className='filter-menu-list'>
+						<Col lg={2} md={2} className='filter-menu-list'>
 							<Form.Group controlId='maxRent'>
 								<Form.Control
 									type='text'
@@ -147,28 +155,11 @@ const FilterBar = ({ setFilter }) => {
 								/>
 							</Form.Group>
 						</Col>
-					</Row>
-					<div className='filter-handlers'>
-						<Button
-							variant='success'
-							className='apply-filter-button'
-							onClick={handleApplyFilters}>
-							Apply Filter
-						</Button>
-						<Button
-							variant='outline-danger'
-							className='reset-filter-button'
-							onClick={handleResetFilters}>
-							Reset Filter
-						</Button>
-					</div>
-					<Row className='sort-options'>
-						<Col lg={12} md={12} className='filter-menu-list'>
+						<Col lg={2} md={2} className='filter-menu-list'>
 							<DropdownButton
 								id='sort-dropdown'
 								title={sortOption}
-								variant='link'
-								className='sort-dropdown'>
+								variant='outline-success'>
 								<Dropdown.Item onClick={() => handleSortSelect('Default')}>
 									Default
 								</Dropdown.Item>
@@ -186,6 +177,23 @@ const FilterBar = ({ setFilter }) => {
 							</DropdownButton>
 						</Col>
 					</Row>
+					<div className='filter-handlers'>
+						<Button
+							variant='success'
+							className='apply-filter-button'
+							onClick={handleApplyFilters}>
+							Apply Filter
+						</Button>
+						<Button
+							variant='outline-danger'
+							className='reset-filter-button'
+							onClick={handleResetFilters}>
+							Reset Filter
+						</Button>
+					</div>
+					{/* <Row className='sort-options'>
+
+					</Row> */}
 				</Col>
 			</Row>
 		</Container>
