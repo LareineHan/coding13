@@ -66,6 +66,15 @@
   margin-bottom: 20px;
 }
 
+.sort-menu {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  color: #444 !important;
+}
+
 @media screen and (max-width: 1080px) {
   .filter-menu-box {
     flex: 2 1;
