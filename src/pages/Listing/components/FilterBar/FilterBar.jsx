@@ -91,13 +91,13 @@ const FilterBar = ({ setFilter }) => {
 	return (
 		<Container>
 			<Row className='filter-menu'>
-				<Col lg={8} md={9} className='filter-bar-search'>
+				<Col lg={7} md={9} className='filter-bar-search'>
 					<SearchBar />
 				</Col>
 
-				<Col lg={4} md={12} className='filter-menu-box'>
+				<Col lg={5} md={12} className='filter-menu-box'>
 					<Row className='filters'>
-						<Col lg={2} md={2} className='filter-menu-list'>
+						<Col className='filter-menu-list'>
 							<DropdownButton
 								id='bedroom-dropdown'
 								title={bedroomOption}
@@ -118,7 +118,7 @@ const FilterBar = ({ setFilter }) => {
 							</DropdownButton>
 						</Col>
 
-						<Col lg={2} md={2} className='filter-menu-list'>
+						<Col className='filter-menu-list'>
 							<DropdownButton
 								id='bathroom-dropdown'
 								title={bathroomOption}
@@ -134,32 +134,11 @@ const FilterBar = ({ setFilter }) => {
 								</Dropdown.Item>
 							</DropdownButton>
 						</Col>
-
-						<Col lg={2} md={2} className='filter-menu-list'>
-							<Form.Group controlId='minRent'>
-								<Form.Control
-									type='text'
-									placeholder='Min Rent'
-									value={minRent}
-									onChange={(e) => setMinRent(e.target.value)}
-								/>
-							</Form.Group>
-						</Col>
-						<Col lg={2} md={2} className='filter-menu-list'>
-							<Form.Group controlId='maxRent'>
-								<Form.Control
-									type='text'
-									placeholder='Max Rent'
-									value={maxRent}
-									onChange={(e) => setMaxRent(e.target.value)}
-								/>
-							</Form.Group>
-						</Col>
-						<Col lg={2} md={2} className='filter-menu-list'>
+						<Col className='filter-menu-list'>
 							<DropdownButton
 								id='sort-dropdown'
 								title={sortOption}
-								variant='link'
+								variant='outline-success'
 								className='sort-dropdown'>
 								<Dropdown.Item onClick={() => handleSortSelect('Default')}>
 									Default
@@ -177,21 +156,45 @@ const FilterBar = ({ setFilter }) => {
 								</Dropdown.Item>
 							</DropdownButton>
 						</Col>
+						<Row>
+							<Col className='filter-menu-list'>
+								<Form.Group controlId='minRent'>
+									<Form.Control
+										type='text'
+										placeholder='Min Rent'
+										value={minRent}
+										onChange={(e) => setMinRent(e.target.value)}
+									/>
+								</Form.Group>
+							</Col>
+							<Col className='filter-menu-list'>
+								<Form.Group controlId='maxRent'>
+									<Form.Control
+										type='text'
+										placeholder='Max Rent'
+										value={maxRent}
+										onChange={(e) => setMaxRent(e.target.value)}
+									/>
+								</Form.Group>
+							</Col>
+							<Col className='filter-handlers'>
+								<Button
+									variant='outline-dark'
+									className='apply-filter-button'
+									onClick={handleApplyFilters}>
+									Apply
+								</Button>
+							</Col>
+							<Col className='filter-handlers'>
+								<Button
+									variant='outline-danger'
+									className='reset-filter-button'
+									onClick={handleResetFilters}>
+									Reset
+								</Button>
+							</Col>
+						</Row>
 					</Row>
-					<div className='filter-handlers'>
-						<Button
-							variant='success'
-							className='apply-filter-button'
-							onClick={handleApplyFilters}>
-							Apply Filter
-						</Button>
-						<Button
-							variant='outline-danger'
-							className='reset-filter-button'
-							onClick={handleResetFilters}>
-							Reset Filter
-						</Button>
-					</div>
 				</Col>
 			</Row>
 		</Container>
