@@ -1,15 +1,40 @@
+.explore-card-container {
+    display: flex;
+    text-align: center;
+}
 .explore-card {
     width: 18rem;
     margin: 1rem;
-    height: 23rem;
+    margin-bottom: 2rem;
+    height: 19.5rem;
     transition: all 0.5s;
     border-radius: 5px;
     cursor: pointer;
 }
+
 .explore-card:hover {
     transform: scale(1.09);
 }
 .explore-card-content {
     list-style-type: none;
     padding: 0.1rem;
+    padding-bottom: 0rem;
+}
+
+/* @media (min-width: 600px) and (max-width: 992px) {
+    .explore-card-container {
+        display: block;
+    }
+} */
+@media (min-width: 500px) and (max-width: 992px) {
+    .explore-card {
+        width: 60vw;
+        margin-left: 18vw;
+        margin-bottom: 2rem;
+        height: 20rem;
+    }
+    .explore-card-container {
+        display: block;
+        text-align: center;
+    }
 }

@@ -8,40 +8,27 @@ import ContactEmailButton from "../../ContactEmailButton/ContactEmailButton";
 
 const ListingCardItem = ({ id }) => {
   const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
-  console.log("디테일", data);
   const navigate = useNavigate();
   if (!data)
     if (isLoading) {
       // setRentData((prev) => ({ ...prev, data }));
-
       return;
     }
-
   if (isError) {
     return <div className='error'>Error: {isError.message}</div>;
   }
-
   const {
     name,
     rentRange,
     bedRange,
-    bathRange,
     address,
-    description,
     contact,
     amenities,
-    availabilities,
-    recurringExpenses,
     petPolicies,
-    leaseTerms,
-    yearBuilt,
-    unitCount,
-    storyCount,
-    isFurnished,
     // transits,
   } = data; // Access nested data
   const pet = petPolicies ? "Dog & Cat Friendly" : "";
-
+  //console.log(amenities, 'amenities');
   const desc = [
     pet,
     amenities && amenities[0].amenities[0],
@@ -50,20 +37,18 @@ const ListingCardItem = ({ id }) => {
     amenities && amenities[0].amenities[6],
     amenities && amenities[0].amenities[7],
   ];
-  //	console.log('amenities desc', desc);
-
-  const goToDeatailPage = (id) => {
+  //  console.log(‘amenities desc’, desc);
+  const goToDetailPage = (id) => {
     navigate(`/properties/${id}`);
   };
-
   return (
     <div>
-      <div key={id} className='listing-card'>
+      <div key={id} className='card'>
         <div className='card_title'>
           <div
             className='title_name card_content'
             onClick={() => {
-              goToDeatailPage(id);
+              goToDetailPage(id);
             }}
           >
             <div className='name'>
@@ -88,7 +73,7 @@ const ListingCardItem = ({ id }) => {
             <ul
               className='card_content'
               onClick={() => {
-                goToDeatailPage(id);
+                goToDetailPage(id);
               }}
             >
               <li className='price'>{rentRange}</li>
@@ -107,5 +92,4 @@ const ListingCardItem = ({ id }) => {
     </div>
   );
 };
-
 export default ListingCardItem;

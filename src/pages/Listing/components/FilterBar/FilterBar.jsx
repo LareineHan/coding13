@@ -1,97 +1,208 @@
 import React, { useState } from "react";
 import "./FilterBar.style.css";
 import SearchBar from "../../../../common/SearchBar/SearchBar";
-import { Container, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+import {
+  Container,
+  Form,
+  Row,
+  Col,
+  Dropdown,
+  DropdownButton,
+  Button,
+} from "react-bootstrap";
 
 const FilterBar = ({ setFilter }) => {
+  const [minBed, setMinBed] = useState("");
+  const [maxBed, setMaxBed] = useState("");
+  const [minBath, setMinBath] = useState("");
+  const [maxBath, setMaxBath] = useState("");
+  const [minRent, setMinRent] = useState("");
+  const [maxRent, setMaxRent] = useState("");
+
+  const handleApplyFilters = () => {
+    setFilter((prev) => ({
+      ...prev,
+      minBed,
+      maxBed,
+      minBath,
+      maxBath,
+      minRent,
+      maxRent,
+    }));
+  };
+
+  const handleResetFilters = () => {
+    setMinBed("");
+    setMaxBed("");
+    setMinBath("");
+    setMaxBath("");
+    setMinRent("");
+    setMaxRent("");
+    setFilter({});
+  };
+
   return (
     <Container>
       <Row className='filter-menu'>
-        <Col lg={7} md={9} className='filter-bar-search'>
+        <Col lg={8} md={9} className='filter-bar-search'>
           <SearchBar />
         </Col>
 
         <Col lg={4} md={12} className='filter-menu-box'>
-          <Row>
-            <Col lg={4} md={4} className='filter-menu-list'>
+          <Row className='filters'>
+            <Col lg={3} md={3} className='filter-menu-list'>
               <DropdownButton
-                id='dropdown-basic-button'
-                title='Bedroom'
+                id='bedroom-dropdown'
+                title='Bedrooms'
                 variant='success'
               >
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({ ...prev, maxBed: "1", minBed: "1" }))
-                  }
+                  onClick={() => {
+                    setMinBed("1");
+                    setMaxBed("1");
+                  }}
                 >
-                  1
+                  one
                 </Dropdown.Item>
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({ ...prev, maxBed: "2", minBed: "2" }))
-                  }
+                  onClick={() => {
+                    setMinBed("1");
+                    setMaxBed("2");
+                  }}
                 >
-                  2
+                  up to two
                 </Dropdown.Item>
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({ ...prev, maxBed: "3", minBed: "3" }))
-                  }
+                  onClick={() => {
+                    setMinBed("1");
+                    setMaxBed("3");
+                  }}
                 >
-                  3
+                  up to three
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setMinBed("3");
+                  }}
+                >
+                  three +
                 </Dropdown.Item>
               </DropdownButton>
             </Col>
-            <Col lg={4} md={4} className='filter-menu-list'>
+
+            <Col lg={3} md={3} className='filter-menu-list'>
               <DropdownButton
-                id='dropdown-basic-button'
-                title='Bathroom'
+                id='bathroom-dropdown'
+                title='Bathrooms'
                 variant='success'
               >
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({
-                      ...prev,
-                      maxBath: "1",
-                      minBath: "1",
-                    }))
-                  }
+                  onClick={() => {
+                    setMinBath("1");
+                    setMaxBath("1");
+                  }}
                 >
-                  1
+                  one
                 </Dropdown.Item>
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({
-                      ...prev,
-                      maxBath: "2",
-                      minBath: "2",
-                    }))
-                  }
+                  onClick={() => {
+                    setMinBath("2");
+                    setMaxBath("2");
+                  }}
                 >
-                  2
+                  two
                 </Dropdown.Item>
                 <Dropdown.Item
-                  onClick={() =>
-                    setFilter((prev) => ({
-                      ...prev,
-                      maxBath: "3",
-                      minBath: "3",
-                    }))
-                  }
+                  onClick={() => {
+                    setMinBath("3");
+                  }}
                 >
-                  3
+                  three +
                 </Dropdown.Item>
               </DropdownButton>
             </Col>
-            <Col lg={4} md={4} className='filter-menu-list'>
-              <DropdownButton
-                id='dropdown-basic-button'
-                title='Dropdown button'
-                variant='success'
-              >
-                <Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
-                <Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
-                <Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
+            <Col lg={3} md={3} className='filter-menu-list'>
+              <Form.Group controlId='minRent'>
+                {/* <Form.Label>Min Rent</Form.Label> */}
+                <Form.Control
+                  type='text'
+                  placeholder='Min Rent'
+                  value={minRent}
+                  onChange={(e) => setMinRent(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+            <Col lg={3} md={3} className='filter-menu-list'>
+              <Form.Group controlId='maxRent'>
+                {/* <Form.Label>Max Rent</Form.Label> */}
+                <Form.Control
+                  type='text'
+                  placeholder='Max Rent'
+                  value={maxRent}
+                  onChange={(e) => setMaxRent(e.target.value)}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+          <div className='filter-handlers'>
+            <Button
+              variant='link'
+              style={{ color: "green" }}
+              onClick={handleApplyFilters}
+            >
+              Apply Filter
+            </Button>
+            <Button
+              variant='link'
+              style={{ color: "00BF67" }}
+              onClick={handleResetFilters}
+            >
+              Reset
+            </Button>
+          </div>
+          <Row className='sort-options'>
+            <Col lg={12} md={12} className='filter-menu-list'>
+              <DropdownButton id='sort-dropdown' title='Sort' variant='link'>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilter((prev) => ({
+                      ...prev,
+                      sort: "default",
+                    }));
+                  }}
+                >
+                  Default
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilter((prev) => ({
+                      ...prev,
+                      sort: "lastUpdated",
+                    }));
+                  }}
+                >
+                  Last Updated
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilter((prev) => ({
+                      ...prev,
+                      sort: "rentHighToLow",
+                    }));
+                  }}
+                >
+                  Rent High To Low
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => {
+                    setFilter((prev) => ({
+                      ...prev,
+                      sort: "rentLowToHigh",
+                    }));
+                  }}
+                >
+                  Rent Low To High
+                </Dropdown.Item>
               </DropdownButton>
             </Col>
           </Row>

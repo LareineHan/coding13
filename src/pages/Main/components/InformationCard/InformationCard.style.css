@@ -38,3 +38,26 @@
     font-weight: 800;
     text-decoration-line: underline;
 }
+@media (min-width: 500px) and (max-width: 992px) {
+    .information-card-img {
+        width: 21.5rem;
+        height: 13rem;
+    }
+    .information-card-content {
+        width: 19rem;
+        height: 13rem;
+        padding: 4.5rem;
+    }
+    .information-card-content h3 {
+        font-weight: 600;
+        font-size: 1rem;
+        padding-bottom: 0px;
+    }
+    .information-card-content p {
+        padding-top: 0rem;
+        font-size: 0.6rem !important;
+    }
+    .information-card-content-btn {
+        font-size: 0.7rem;
+    }
+}

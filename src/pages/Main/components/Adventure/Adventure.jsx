@@ -11,9 +11,9 @@ const Adventure = () => {
   
   return (
     <div>
-        <div className='adventure-container' style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
+        <div className='adventure-container'>
             <div>
-                <div style={{marginTop: "9rem", marginRight: "2rem", textAlign: "center"}}>
+                <div className='adventure-main-btn'>
                     <h4>Get home recommendations</h4>
                     <p>Sign in for a more personalized experience.</p>
                     <Link to={!token?'/login':'/properties'} style={{textDecoration: 'none'}}>

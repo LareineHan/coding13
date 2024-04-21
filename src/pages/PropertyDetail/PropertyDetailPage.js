@@ -122,7 +122,7 @@ const PropertyDetailPage = () => {
   console.log("Max BathNum:", maxBathNum);
 
   return (
-    <Container className="propertyDetailPage-container">
+    <Container className='propertyDetailPage-container'>
       <PropertyCarousel images={images} />
       <h1 className='propertyDetailPage-title'>{name}</h1>
       <p>

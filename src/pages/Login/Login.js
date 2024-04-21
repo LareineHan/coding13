@@ -9,7 +9,7 @@ const Login = () => {
 	useGoogleOneTapLogin({
 		onSuccess: async (credentialResponse) => {
 			try {
-				await dispatch(googleLogin({ token: credentialResponse.credential }));
+				await dispatch(googleLogin({ token: credentialResponse?.credential }));
 				return navigate('/');
 			} catch (error) {
 				console.error('Navigation error:', error);
@@ -19,6 +19,8 @@ const Login = () => {
 			console.log('Login Failed');
 		},
 	});
+
+	return null;
 };
 
 export default Login;

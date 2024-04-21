@@ -9,22 +9,23 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-const GOOGLE_CLIENTID = process.env.REACT_APP_GOOGLE_CLIENTID
+const GOOGLE_CLIENTID = process.env.REACT_APP_GOOGLE_CLIENTID;
+console.log('GOOGLE_CLIENTID:', GOOGLE_CLIENTID);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient();
 root.render(
 	<GoogleOAuthProvider clientId={GOOGLE_CLIENTID}>
-	<Provider store={store}>
-		<QueryClientProvider client={queryClient}>
-			<BrowserRouter>
-				<App />
-				<ReactQueryDevtools
-					initialIsOpen={false}
-					buttonPosition='bottom-right'
-				/>
-			</BrowserRouter>
-		</QueryClientProvider>
-	</Provider>
+		<Provider store={store}>
+			<QueryClientProvider client={queryClient}>
+				<BrowserRouter>
+					<App />
+					<ReactQueryDevtools
+						initialIsOpen={false}
+						buttonPosition='bottom-right'
+					/>
+				</BrowserRouter>
+			</QueryClientProvider>
+		</Provider>
 	</GoogleOAuthProvider>
 );
 

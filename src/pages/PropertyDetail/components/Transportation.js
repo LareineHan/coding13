@@ -14,7 +14,7 @@ const Transportation = ({ transits }) => {
           <Table hover responsive className="transport-table">
             <thead>
               <tr>
-                <th width="60%">
+                <th width="60%" className="transport-table-type">
                   {transitType.type}
                   {transitType.type === "Airport" && (
                     <img

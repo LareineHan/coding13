@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGetImagesQuery } from '../../../../hooks/useGetPropertyImages'
+import "./ExploreCardImage.style.css"
 
 const ExploreCardImage = ({id}) => {
     const {data, isLoading, isError} = useGetImagesQuery(id);
@@ -9,7 +10,7 @@ const ExploreCardImage = ({id}) => {
 
   return (
     <div>
-        <img style={{width: "288px", height: "200px", borderTopLeftRadius: "5px", borderTopRightRadius: "5px"}} alt='Property image' src={data.data[0].link}/>
+        <img className='explore-card-img' alt='Property image' src={data.data[0].link}/>
     </div>
   )
 }

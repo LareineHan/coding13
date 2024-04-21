@@ -8,7 +8,6 @@ import { toggleShowUserLocation } from "../../redux/reducers/getUserLocationSlic
 import ListingCard from "../../common/ListingCard/ListingCard";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useGetPropertiesQuery } from "../../hooks/useGetProperties";
-
 const Listing = () => {
   const [query, setQuery] = useSearchParams();
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ const Listing = () => {
         : searchPlace?.name || "New York",
     };
     setFilter(newSearchParams);
-  }, [searchPlace, showUserLocation, userLocation]);
+  }, [searchPlace, showUserLocation, userLocation, setFilter]);
   // Navigate when searchPlace changes
   useEffect(() => {
     if (searchPlace) {
@@ -45,9 +44,14 @@ const Listing = () => {
       dispatch(toggleShowUserLocation(false));
     }
   }, [searchPlace, dispatch, setQuery]);
+  useEffect(() => {
+    if (Object.keys(filter).length === 0) {
+      setFilter(initialSearchParams);
+    }
+  }, [filter, setFilter, initialSearchParams]);
+
   // Fetch properties using the search parameters
   const { data, isLoading, isError } = useGetPropertiesQuery(filter);
-
   return (
     <div>
       <Container className='properties'>
@@ -68,5 +72,4 @@ const Listing = () => {
     </div>
   );
 };
-
 export default Listing;
