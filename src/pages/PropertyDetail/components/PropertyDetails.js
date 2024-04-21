@@ -9,7 +9,6 @@ const PropertyDetails = ({
   unitCount,
   storyCount,
   isFurnished,
-  propertyInfo,
 }) => {
   const getLeaseTermList = (terms) => {
     if (!terms) return [];
@@ -23,14 +22,14 @@ const PropertyDetails = ({
       <h2>Details</h2>
       <div className="propertyDetail-section">
         <p className="propertyDetail-section-title">Utility Included</p>
-        <ul className="propertyDetail-section-list two-column-list">
-          {recurringExpenses.map((recurringExpense, index) => {
+        <ul className="two-column-list">
+          {recurringExpenses?.map((recurringExpense, index) => {
             // Split the type string by comma, ampersand, or 'and'
             const formattedWords = recurringExpense.type
               .split(/,\s*|\s*&\s*|\s+and\s+/)
               .map((word) => word.trim().toLowerCase());
 
-            return formattedWords.map((word, wordIndex) => (
+            return formattedWords?.map((word, wordIndex) => (
               <li
                 key={`${index}-${wordIndex}`}
                 className="propertyDetail-section-item"
@@ -44,8 +43,8 @@ const PropertyDetails = ({
       <div className="propertyDetail-section">
         <p className="propertyDetail-section-title">Lease Option</p>
         {leaseTermList.length > 1 ? (
-          <ul className="propertyDetail-section-list">
-            {leaseTermList.map((term, index) => (
+          <ul className="two-column-list">
+            {leaseTermList?.map((term, index) => (
               <li key={index} className="propertyDetail-section-item">
                 {term}
               </li>
@@ -57,10 +56,12 @@ const PropertyDetails = ({
       </div>
       <div className="propertyDetail-section">
         <p className="propertyDetail-section-title">Property Information</p>
-        <ul className="propertyDetail-section-list two-column-list">
-          <li>Built {yearBuilt}</li>
-          <li>{`${unitCount} units / ${storyCount} stories`}</li>
-          <li>{isFurnished ? "Furnished" : "Unfurnished"}</li>
+        <ul className="propertyDetail-section-list">
+          <li className=" propertyInfo-detail-list">Built {yearBuilt}</li>
+          <li className=" propertyInfo-detail-list">{`${unitCount} units / ${storyCount} stories`}</li>
+          <li className=" propertyInfo-detail-list">
+            {isFurnished ? "Furnished" : "Unfurnished"}
+          </li>
         </ul>
       </div>
     </Container>

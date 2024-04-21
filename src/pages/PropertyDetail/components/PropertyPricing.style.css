@@ -6,17 +6,15 @@
 .propertyPricing-card {
    border: 1px solid #198754;
    margin: 0.5rem;
+   border-radius: 8px;
 }
 
 .nav-tabs .nav-link {
-    /*Tabs border*/
-      /* border: 1px solid #007987;
-      border-radius: 0;
-      color: #007987; Tab font color */
      border:0.1px solid #cacaca8b;
       border-radius: 0;
       color: white; 
       background-color:#198754 ;
+      font-size: 1rem;
 } 
 
 .nav-link {
@@ -25,16 +23,11 @@
 
 .nav-tabs {
     border: 0;
-    /* --bs-nav-tabs-link-active-border-color: #198754;
-    --bs-nav-tabs-link-active-color: white;
-    --bs-nav-tabs-link-active-bg: #00918B;  
-    --bs-nav-tabs-link-hover-border-color: #198754; */
     margin: 2rem 0;
     --bs-nav-tabs-link-active-border-color: #198754;
     --bs-nav-tabs-link-active-color:#198754 ;
     --bs-nav-tabs-link-active-bg: white;  
     --bs-nav-tabs-link-hover-border-color: #198754;
-
 }
 
 .property-type-tab{
@@ -59,6 +52,8 @@
 
 .availableUnit {
     margin-top: 1rem;
+    color: #198754;
+    font-weight: bold;
 }
 
 .availableUnit,
@@ -76,9 +71,8 @@
 }
 
 .availableUnit-table thead tr th {
-    font-weight: 400;
+    font-weight:500;
     border-top: 1px solid #dee2e6;
-    padding: 0 0.25rem;
 }
 
 .availableUnit-table {
@@ -101,8 +95,42 @@
     height: auto;
     margin: 1rem 0;
     background-color: white;
+    border-radius: 8px;
 }
 
 .showMoreBtnArrowIcon {
     width: 25px;
 }
+
+.availableUnit-amenity-list {
+    list-style: disc;
+}
+
+.availableUnit-amenity-ul {
+    margin-left: 0;
+}
+
+.availableUnit-amenity-title,
+.availableUnit-detail-lease,
+.availableUnit-deposit-title{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.availableUnit-detail-title {
+    font-weight: bold;
+}
+
+.availableUnit-deposit-title {
+    margin-right: 0.25rem;
+}
+
+@media only screen and (min-width: 48rem) {
+    .property-pricing-tabs,
+    .availableUnit-table > *,
+    .availableUnit {
+        font-size: 1rem;
+    }
+}
+
+

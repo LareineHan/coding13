@@ -9,12 +9,12 @@ const Transportation = ({ transits }) => {
   return (
     <Container className="transport-container">
       <h2>Transportation</h2>
-      {transits.map((transitType, index) => (
+      {transits?.map((transitType, index) => (
         <div key={index}>
           <Table hover responsive className="transport-table">
             <thead>
               <tr>
-                <th width="60%">
+                <th width="60%" className="transport-table-type">
                   {transitType.type}
                   {transitType.type === "Airport" && (
                     <img
@@ -44,7 +44,7 @@ const Transportation = ({ transits }) => {
               </tr>
             </thead>
             <tbody>
-              {transitType.stops.map((stop, idx) => (
+              {transitType?.stops.map((stop, idx) => (
                 <tr key={idx}>
                   <td className="transitType-stop">{stop.name}</td>
                   {stop.walk ? (
