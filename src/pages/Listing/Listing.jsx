@@ -51,6 +51,7 @@ const Listing = () => {
 	}, [filter, setFilter, initialSearchParams]);
 
 	// Fetch properties using the search parameters
+	// Fetch properties using the search parameters
 	const { data, isLoading, isError } = useGetPropertiesQuery(filter);
 	return (
 		<div>
