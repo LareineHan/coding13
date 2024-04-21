@@ -102,6 +102,7 @@
 	flex-direction: column;
 	max-width: 600px;
 	align-items: flex-start;
+	margin-bottom: 3rem;
 }
 .descriptions > .row {
 	margin: 0 !important;

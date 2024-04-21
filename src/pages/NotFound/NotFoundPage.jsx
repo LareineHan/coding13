@@ -1,7 +1,12 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const NotFoundPage = () => {
-	return <div>Not Found Page</div>;
+	return (
+		<Container>
+			<h1>Not Found Page</h1>
+		</Container>
+	);
 };
 
 export default NotFoundPage;
