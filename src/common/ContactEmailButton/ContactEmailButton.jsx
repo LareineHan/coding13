@@ -1,5 +1,5 @@
 import React from "react";
-import {Button,Form,Modal, Alert } from "react-bootstrap";
+import { Button, Form, Modal, Alert } from "react-bootstrap";
 
 import { useState } from "react";
 import "../ContactEmailButton/ContactEmailButton.style.css";
@@ -98,15 +98,11 @@ const ContactEmailButton = ({ title }) => {
 
   return (
     <>
-<<<<<<< HEAD
       <Button
         variant='primary'
         onClick={handleShow}
-        className='btn_contact_eamil'
+        className='btn_contact_email'
       >
-=======
-      <Button variant="primary" onClick={handleShow} className="btn_contact_email">
->>>>>>> develop
         Email
       </Button>
 
@@ -116,20 +112,20 @@ const ContactEmailButton = ({ title }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>
               <Form.Control
-                type="email"
-                placeholder="Enter email"
+                type='email'
+                placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicMessage">
+            <Form.Group className='mb-3' controlId='formBasicMessage'>
               <Form.Label>Message</Form.Label>
               <Form.Control
-                as="textarea"
+                as='textarea'
                 rows={3}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -138,19 +134,26 @@ const ContactEmailButton = ({ title }) => {
             </Form.Group>
           </Form>
           {submitted && (
-            <Alert variant="success" className="mt-3">
+            <Alert variant='success' className='mt-3'>
               Thank you. We will get back to you soon!
             </Alert>
           )}
         </Modal.Body>
         <Modal.Footer>
-                   <Button variant="primary" onClick={handleFormSubmit} className='btn_contact_send'>
+          <Button
+            variant='primary'
+            onClick={handleFormSubmit}
+            className='btn_contact_send'
+          >
             Send
-          </Button> 
-          <Button variant="secondary" onClick={handleClose} className='btn_contact_close'>
+          </Button>
+          <Button
+            variant='secondary'
+            onClick={handleClose}
+            className='btn_contact_close'
+          >
             Close
           </Button>
-
         </Modal.Footer>
       </Modal>
     </>

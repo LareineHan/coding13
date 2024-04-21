@@ -67,10 +67,13 @@ const AppLayout = () => {
               </Navbar.Text>
             </Nav>
 
-<<<<<<< HEAD
             <Nav id='basic-navbar-nav' className='login-menu'>
               {username ? (
-                <NavDropdown title={username} id='basic-nav-dropdown'>
+                <NavDropdown
+                  title={username}
+                  id='basic-nav-dropdown'
+                  style={{ marginRight: "50px" }}
+                >
                   <NavDropdown.Item as={Link} to='/myPage'>
                     Go to My Page
                   </NavDropdown.Item>
@@ -93,36 +96,6 @@ const AppLayout = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-=======
-						<Nav id='basic-navbar-nav' className='login-menu'>
-							{username ? (
-								<NavDropdown
-									title={username}
-									id='basic-nav-dropdown'
-									style={{ marginRight: '50px' }}>
-									<NavDropdown.Item as={Link} to='/myPage'>
-										Go to My Page
-									</NavDropdown.Item>
-									<NavDropdown.Item as={Link} to='/logout'>
-										Log Out
-									</NavDropdown.Item>
-								</NavDropdown>
-							) : (
-								<Link to='/login' className='nav-link d-flex'>
-									Log In
-									<img
-										className='googlelogo'
-										src={google}
-										alt='logo'
-										style={{ width: '15px', height: '15px', marginLeft: '5px' }}
-									/>
-								</Link>
-							)}
-						</Nav>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar>
->>>>>>> develop
 
       <div className='outlet_container'>
         <Outlet />

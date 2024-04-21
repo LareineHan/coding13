@@ -50,8 +50,6 @@ const Listing = () => {
     }
   }, [filter, setFilter, initialSearchParams]);
 
-<<<<<<< HEAD
-  // Fetch properties using the search parameters
   const { data, isLoading, isError } = useGetPropertiesQuery(filter);
   return (
     <div>
@@ -72,29 +70,5 @@ const Listing = () => {
       </Container>
     </div>
   );
-=======
-	// Fetch properties using the search parameters
-	// Fetch properties using the search parameters
-	const { data, isLoading, isError } = useGetPropertiesQuery(filter);
-	return (
-		<div>
-			<Container className='properties'>
-				<Col>
-					<Row className='property-filter-bar'>
-						<FilterBar setFilter={setFilter} />
-					</Row>
-					<Row className='properties-content-container'>
-						<Col className='properties-map-box'>
-							<MapBox props={filter} />
-						</Col>
-						<Col className='property-listing scrollable-box'>
-							<ListingCard searchParams={filter} />
-						</Col>
-					</Row>
-				</Col>
-			</Container>
-		</div>
-	);
->>>>>>> develop
 };
 export default Listing;
