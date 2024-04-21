@@ -1,10 +1,13 @@
 .adventure-container {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .adventure-container::after {
     content: "";
     position: absolute;
-    bottom: -910px;
+    bottom: -960px;
     /* bottom: -55%; */
     left: 5%;
     right: 5%;
@@ -17,3 +20,31 @@
     font-weight: 600;
     height: 3rem;
 }
+.adventure-main-btn {
+    margin-right: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 410px) and (max-width: 992px) {
+    .adventure-container {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+    .adventure-container::after {
+        opacity: 0;
+    }
+    .adventure-main-btn {
+        margin-bottom: 1rem;
+    }
+    .adventure-more-btn {
+        padding: 0 4rem !important;
+        font-size: 1rem;
+        font-weight: 600;
+        height: 2.5rem;
+    }
+    .adventure-main-btn {
+        margin-right: 0rem;
+        text-align: center;
+    }
+}
+

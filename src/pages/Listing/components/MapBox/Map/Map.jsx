@@ -35,7 +35,7 @@ const Map = () => {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(async (position) => {
 						const { latitude, longitude } = position.coords;
-						console.log('Latitude:', latitude, 'Longitude:', longitude);
+						//console.log('Latitude:', latitude, 'Longitude:', longitude);
 
 						// Make a reverse geocoding request
 						const response = await fetch(
@@ -50,7 +50,7 @@ const Map = () => {
 								result.plus_code.compound_code.includes('US')
 							);
 						});
-						console.log('Filtered US Results:', usResults);
+						//console.log('Filtered US Results:', usResults);
 
 						// Set the default city based on the user's location
 						let defaultCity = 'New York';
@@ -65,7 +65,7 @@ const Map = () => {
 							)?.long_name || defaultCity;
 						setUserCity(city);
 						dispatch(addUserLocation(city));
-						console.log('City:', city, 'User City:', userCity);
+						//console.log('City:', city, 'User City:', userCity);
 					});
 				}
 

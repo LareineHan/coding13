@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import "./PropertyDetailPage.style.css";
-import { useGetPropertyDetailQuery } from "../../hooks/useGetPropertyDetail";
-import { useParams } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
-import PropertyReviews from "../../common/PropertyReviews/PropertyReviews";
-import { useGetImagesQuery } from "../../hooks/useGetPropertyImages";
-import PropertyCarousel from "../../common/Carousel/PropertyCarousel";
-import { useGetReviewsQuery } from "../../hooks/useGetReviews";
-import PropertyRating from "../../common/PropertyRating/PropertyRating";
-import PropertyPricing from "./components/PropertyPricing";
-import Contact from "./components/Contact";
-import Amenities from "./components/Amenities";
-import FeesPolicies from "./components/FeesPolicies";
-import PropertyDetails from "./components/PropertyDetails";
-import Transportation from "./components/Transportation";
+import React, { useState, useEffect } from 'react';
+import './PropertyDetailPage.style.css';
+import { useGetPropertyDetailQuery } from '../../hooks/useGetPropertyDetail';
+import { useParams } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import PropertyReviews from '../../common/PropertyReviews/PropertyReviews';
+import { useGetImagesQuery } from '../../hooks/useGetPropertyImages';
+import PropertyCarousel from '../../common/Carousel/PropertyCarousel';
+import { useGetReviewsQuery } from '../../hooks/useGetReviews';
+import PropertyRating from '../../common/PropertyRating/PropertyRating';
+import PropertyPricing from './components/PropertyPricing';
+import Contact from './components/Contact';
+import Amenities from './components/Amenities';
+import FeesPolicies from './components/FeesPolicies';
+import PropertyDetails from './components/PropertyDetails';
+import Transportation from './components/Transportation';
 
 const PropertyDetailPage = () => {
   const { id } = useParams();

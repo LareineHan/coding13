@@ -1,3 +1,8 @@
+.adventure-carousel-container {
+    margin-bottom: 5rem;
+    width: 58vw;
+    height: 60vh;
+}
 .carousel-control-next-icon, .carousel-control-prev-icon {
     padding: 8px;
     width: 1.5rem;
@@ -12,4 +17,31 @@
     color: rgba(255, 255, 255, 0.927) !important;
     font-size: 2rem;
     border-bottom: none;
+}
+.adventure-carousel-img {
+    width: 62vw;
+    height: 60vh;
+}
+@media (min-width: 410px) and (max-width: 992px) {
+    .adventure-container {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+    .adventure-container::after {
+        opacity: 0;
+    }
+    .adventure-carousel-img {
+        width: 100vw;
+        height: 38vh;
+    }
+    .adventure-carousel-container {
+        margin-bottom: -8rem;
+        text-align: center;
+    }
+    .adventure-carousel-box {
+        text-align: center;
+    }
+    .main-page-carousel-city-name {
+        font-size: 1.5rem;
+    }
 }

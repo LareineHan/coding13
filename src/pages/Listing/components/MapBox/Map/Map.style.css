@@ -12,7 +12,7 @@
 	padding: 10px 20px; /* Padding around the text */
 	margin-top: 10px;
 	cursor: pointer; /* Show pointer cursor on hover */
-	border-radius: 5px; /* Rounded corners */
+	border-radius: 4px; /* Rounded corners */
 }
 
 .custom-map-control-button:hover {

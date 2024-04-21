@@ -1,7 +1,12 @@
+.explore-card-container {
+    display: flex;
+    text-align: center;
+}
 .explore-card {
     width: 18rem;
     margin: 1rem;
-    height: 23rem;
+    margin-bottom: 2rem;
+    height: 19.5rem;
     transition: all 0.5s;
     border-radius: 5px;
     cursor: pointer;
@@ -9,7 +14,43 @@
 .explore-card:hover {
     transform: scale(1.09);
 }
+.explore-card-title {
+    padding-top: 0.6rem;
+}
 .explore-card-content {
     list-style-type: none;
     padding: 0.1rem;
+    padding-bottom: 0rem;
+}
+
+@media (min-width: 410px) and (max-width: 992px) {
+    .explore-card {
+        width: 100%;
+        margin: 0rem;
+        margin-bottom: 2rem;
+        height: 20rem;
+    }
+    .explore-card-container {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 992px) {
+    .explore-card {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 26rem;
+    }
+    .explore-card-container {
+        display: block;
+        text-align: center;
+    }
+}
+@media (min-width: 1000px) {
+    .explore-card {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 22rem;
+    }
 }
