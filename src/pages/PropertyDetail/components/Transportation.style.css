@@ -1,6 +1,9 @@
-.transport-table tbody tr,
-.transport-table thead tr  {
+.transport-table tbody tr {
     border-bottom: 1px solid #cacaca;
+  }
+
+  .transport-table thead tr {
+        border-bottom: 1px solid #3A4B40;
   }
 
   .transport-table tbody td,
@@ -33,21 +36,16 @@
     margin-top: 3rem;
     padding-left: 0;
   }
-/* 
-   .transport-table thead tr {
-    color: #00918B; 
-  } */
+
   .transport-icon {
     width: 25px;
     margin-left: 0.25rem;
   }
 
   .transport-table tbody tr .transitType-stop {
-    /* color: #198754;  */
-    color: #198754; 
-    /* font-weight: bold; */
+    color: #4D634F; 
+    font-weight: bold;
   }
- 
   
 
   
