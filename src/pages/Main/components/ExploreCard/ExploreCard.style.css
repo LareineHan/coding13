@@ -23,11 +23,6 @@
     padding-bottom: 0rem;
 }
 
-/* @media (min-width: 600px) and (max-width: 992px) {
-    .explore-card-container {
-        display: block;
-    }
-} */
 @media (min-width: 410px) and (max-width: 992px) {
     .explore-card {
         width: 100%;

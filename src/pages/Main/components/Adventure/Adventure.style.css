@@ -7,7 +7,7 @@
 .adventure-container::after {
     content: "";
     position: absolute;
-    bottom: -830px;
+    bottom: -960px;
     /* bottom: -55%; */
     left: 5%;
     right: 5%;
