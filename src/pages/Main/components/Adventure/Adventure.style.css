@@ -14,15 +14,19 @@
     height: 2px;
     background: #f4f4f4;
 }
+.adventure-main-btn {
+    margin-right: 2rem;
+    text-align: center;
+    padding-bottom: 6rem;
+}
 .adventure-more-btn {
     padding: 0 10rem !important;
     font-size: 1rem;
     font-weight: 600;
     height: 3rem;
 }
-.adventure-main-btn {
-    margin-right: 2rem;
-    text-align: center;
+.adventure-main-btn-p {
+    font-size: 0.9rem;
 }
 
 @media (min-width: 410px) and (max-width: 992px) {
@@ -45,6 +49,7 @@
     .adventure-main-btn {
         margin-right: 0rem;
         text-align: center;
+        padding-bottom: 0rem;
     }
 }
 
