@@ -26,7 +26,7 @@ const ExploreCard = ({ props }) => {
 				<Card className='explore-card' key={idx}>
 					<ExploreCardImage className='explore-card-img' id={property?.id} />
 					<Card.Body>
-						<Card.Title>{property.name}</Card.Title>
+						<Card.Title className='explore-card-title'>{property.name}</Card.Title>
 						<Card.Text>
 							<ul className='explore-card-content'>
 								<li>{property.address.fullAddress}</li>

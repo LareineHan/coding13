@@ -1,13 +1,13 @@
 .information-container {
     text-align: center;
-    padding: 1rem;
+    padding: 16px;
     margin-bottom: 10rem;
 }
 .information-container p {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 20.8px;
+    margin-bottom: 16px;
 }
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .information-container h2 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
