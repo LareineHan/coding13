@@ -95,7 +95,7 @@ const AppLayout = () => {
 				</Container>
 			</Navbar>
 
-			<div style={{ height: '80vh' }}>
+			<div>
 				<Outlet />
 			</div>
 		</>

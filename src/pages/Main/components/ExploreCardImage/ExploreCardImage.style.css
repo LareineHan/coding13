@@ -1,13 +1,13 @@
 .explore-card-img {
-    width: 288px;
+    width: 100%;
     height: 200px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .explore-card-img {
-        width: 60vw;
+        width: 100%;
         height: 30vh;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;

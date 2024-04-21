@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className='footer-container'>
 
-    <Container style={{padding: "2rem 2.5rem"}}>
+    <Container style={{padding: "2rem 1rem"}}>
 
       {/* logo */}
         <Row>

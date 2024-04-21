@@ -22,7 +22,7 @@
     width: 62vw;
     height: 60vh;
 }
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .adventure-container {
         margin-top: 1rem;
         flex-direction: column;

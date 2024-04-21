@@ -7,7 +7,7 @@
 .adventure-container::after {
     content: "";
     position: absolute;
-    bottom: -830px;
+    bottom: -960px;
     /* bottom: -55%; */
     left: 5%;
     right: 5%;
@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .adventure-container {
         margin-top: 1rem;
         flex-direction: column;

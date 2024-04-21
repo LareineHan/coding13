@@ -11,9 +11,11 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
 .explore-card:hover {
     transform: scale(1.09);
+}
+.explore-card-title {
+    padding-top: 0.6rem;
 }
 .explore-card-content {
     list-style-type: none;
@@ -21,20 +23,34 @@
     padding-bottom: 0rem;
 }
 
-/* @media (min-width: 600px) and (max-width: 992px) {
-    .explore-card-container {
-        display: block;
-    }
-} */
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .explore-card {
-        width: 60vw;
-        margin-left: 18vw;
+        width: 100%;
+        margin: 0rem;
         margin-bottom: 2rem;
         height: 20rem;
     }
     .explore-card-container {
         display: block;
         text-align: center;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 992px) {
+    .explore-card {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 26rem;
+    }
+    .explore-card-container {
+        display: block;
+        text-align: center;
+    }
+}
+@media (min-width: 1000px) {
+    .explore-card {
+        width: 100%;
+        margin-bottom: 3rem;
+        height: 22rem;
     }
 }
