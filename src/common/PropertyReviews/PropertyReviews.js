@@ -48,7 +48,9 @@ const PropertyReviews = ({ id }) => {
           ))}
         </div>
       ) : (
-        <p>No available reviews</p>
+        <p className="Unavailable-propertyReview-message">
+          No available reviews
+        </p>
       )}
     </div>
   );
