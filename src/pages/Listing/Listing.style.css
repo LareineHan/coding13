@@ -22,7 +22,7 @@
 .properties-content-container {
 	display: flex;
 	flex-direction: row;
-	padding: 0 !important;
+	padding: 3px !important;
 }
 
 .properties-map-box {
@@ -38,7 +38,6 @@
 .property-listing {
 	display: flex;
 	flex: 0 0 40%;
-	background-color: hsla(156, 100%, 94%, 0.579);
 	overflow-y: auto; /* Enable vertical scrolling */
 }
 .scrollable-box {
