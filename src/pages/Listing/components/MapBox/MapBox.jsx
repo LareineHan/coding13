@@ -8,10 +8,8 @@ const MapBox = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
 	const dispatch = useDispatch();
 	const [dispatchCompleted, setDispatchCompleted] = useState(false);
-	console.log('Mapbox loading?');
 	useEffect(() => {
 		if (data) {
-			console.log('data', data);
 			dispatch(addMapMarkers(data?.data))
 				.then(() => setDispatchCompleted(true))
 				.catch((error) => {
