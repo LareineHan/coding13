@@ -66,7 +66,7 @@ const FilterBar = ({ setFilter }) => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
-                    setMinBed("1");
+                    setMinBed("2");
                     setMaxBed("2");
                   }}
                 >
@@ -74,7 +74,7 @@ const FilterBar = ({ setFilter }) => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
-                    setMinBed("1");
+                    setMinBed("3");
                     setMaxBed("3");
                   }}
                 >
