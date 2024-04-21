@@ -29,12 +29,12 @@ const getUserLocationSlice = createSlice({
 		builder
 			.addCase(addUserLocation.pending, (state) => {
 				state.status = 'loading';
-				console.log('addUserLocation.pending', state.status);
+				//console.log('addUserLocation.pending', state.status);
 			})
 			.addCase(addUserLocation.fulfilled, (state, action) => {
 				state.status = 'succeeded';
 				state.userLocation = action.payload;
-				console.log('addUserLocation.fulfilled', state.userLocation);
+				//console.log('addUserLocation.fulfilled', state.userLocation);
 			})
 			.addCase(addUserLocation.rejected, (state, action) => {
 				state.status = 'failed';
@@ -44,12 +44,12 @@ const getUserLocationSlice = createSlice({
 		builder
 			.addCase(toggleShowUserLocation.pending, (state) => {
 				state.toggleStatus = 'loading';
-				console.log('toggleShowUserLocation.pending', state.status);
+				//console.log('toggleShowUserLocation.pending', state.status);
 			})
 			.addCase(toggleShowUserLocation.fulfilled, (state, action) => {
 				state.toggleStatus = 'succeeded';
 				state.showUserLocation = action.payload;
-				console.log('toggleShowUserLocation.fulfilled', state.showUserLocation);
+				//console.log('toggleShowUserLocation.fulfilled', state.showUserLocation);
 			})
 			.addCase(toggleShowUserLocation.rejected, (state, action) => {
 				state.toggleStatus = 'failed';

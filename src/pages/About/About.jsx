@@ -62,10 +62,6 @@ const About = () => {
 					</Row>
 				</Col>
 			</Row>
-			<Row></Row>
-			<div className='about-content'>
-				<img src={logo} alt='logo' className='about-logo' />
-			</div>
 		</Container>
 	);
 };
