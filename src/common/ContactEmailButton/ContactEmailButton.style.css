@@ -1,4 +1,4 @@
-.btn_contact_eamil {
+.btn_contact_email {
   width: 100%;
   max-height: 36px;
   margin: 0;
@@ -9,7 +9,7 @@
   border-radius: 8px;
 }
 
-.btn_contact_eamil:hover {
+.btn_contact_email:hover {
   background: white;
   border: 1px solid #00918b;
   color: #00918b;
