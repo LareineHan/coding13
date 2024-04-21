@@ -73,3 +73,8 @@ button.navbar-toggler:focus {
     margin-right: 0;
   }
 }
+
+.dropdown-item:active {
+  background-color: #00bf67;
+  color: white;
+}

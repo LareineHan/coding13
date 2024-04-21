@@ -14,6 +14,8 @@ import Amenities from "./components/Amenities";
 import FeesPolicies from "./components/FeesPolicies";
 import PropertyDetails from "./components/PropertyDetails";
 import Transportation from "./components/Transportation";
+import LikeBtn from "../../common/HeartBtn/LikeBtn";
+import { CopyUrlBtn } from "../../common/ShareBtn/ShareBtn";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -125,14 +127,22 @@ const PropertyDetailPage = () => {
     <Container className='propertyDetailPage-container'>
       <PropertyCarousel images={images} />
       <h1 className='propertyDetailPage-title'>{name}</h1>
-      <p>
-        {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
-      </p>
-
-      <PropertyRating
-        averageRating={averageRating}
-        totalReviews={totalReviews}
-      />
+      <Row className='propertyDetailPage-subInfo-container'>
+        <Col xs={8} md={10}>
+          {" "}
+          <p>
+            {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
+          </p>{" "}
+          <PropertyRating
+            averageRating={averageRating}
+            totalReviews={totalReviews}
+          />
+        </Col>
+        <Col xs={4} md={2} className='propertyDetailPage-share-like'>
+          <CopyUrlBtn className='propertyDetailPage-share' />
+          <LikeBtn listId={data?.id} className='propertyDetailPage-like' />
+        </Col>
+      </Row>
 
       <Row className='rent-bed-bath-container'>
         <Col className='rent-bed-bath-inner-container'>
