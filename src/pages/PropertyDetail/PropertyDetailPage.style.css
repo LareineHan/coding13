@@ -46,6 +46,28 @@ font-weight: bold;
     font-size: 1rem;
 }
 
+.propertyDetailPage-subInfo-container {
+    display: flex;
+}
+
+.propertyDetailPage-share-like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+div.likeBtn {
+    padding-left: 2rem;
+}
+
+.propertyDetailPage-share div.shareBtn svg,
+.propertyDetailPage-share div.likeBtn svg
+ {
+    fill: #4C4E5D; 
+}
+
 
 @media only screen and (min-width: 48rem) {
     .rent-bed-bath-container {
@@ -54,6 +76,14 @@ font-weight: bold;
 
     .about-description {
         margin-bottom:4rem;
+    }
+
+    div.likeBtn  {
+        padding-left: 3rem;
+    }
+    
+    .propertyDetailPage-share-like {
+        padding-right: 2em;
     }
 }
 

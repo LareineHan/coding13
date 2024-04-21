@@ -1,6 +1,6 @@
 import React from "react";
 import "./PropertyRating.style.css";
-import fillStarIcon from "./Icons/star-fillI.png";
+import fillStarIcon from "./Icons/star-fill.png";
 import halfStarIcon from "./Icons/star-half-empty.png";
 import starIcon from "./Icons/star-empty.png";
 
