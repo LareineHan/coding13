@@ -17,7 +17,7 @@ const ContactEmailButton = ({ title }) => {
         onClick={handleShow}
         className='btn_contact_eamil'
       >
-        Launch demo modal
+        Email
       </Button>
 
       <Modal show={show} onHide={handleClose}>

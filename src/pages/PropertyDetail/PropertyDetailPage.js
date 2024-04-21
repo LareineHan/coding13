@@ -124,7 +124,7 @@ const PropertyDetailPage = () => {
   return (
     <Container>
       <PropertyCarousel images={images} />
-      <h1 className="propertyDetailPage-title">{name}</h1>
+      <h1 className='propertyDetailPage-title'>{name}</h1>
       <p>
         {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
       </p>
@@ -134,20 +134,20 @@ const PropertyDetailPage = () => {
         totalReviews={totalReviews}
       />
 
-      <Row className="rent-bed-bath-container">
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Monthly Rent</p>
-          <p className="rent-range-value">{rentRange}</p>
+      <Row className='rent-bed-bath-container'>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Monthly Rent</p>
+          <p className='rent-range-value'>{rentRange}</p>
         </Col>
 
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Bedrooms</p>
-          <p className="rent-range-value">{bedRange}</p>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Bedrooms</p>
+          <p className='rent-range-value'>{bedRange}</p>
         </Col>
 
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Bathrooms</p>
-          <p className="rent-range-value">{`1 - ${maxBathNum} baths`}</p>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Bathrooms</p>
+          <p className='rent-range-value'>{`1 - ${maxBathNum} baths`}</p>
         </Col>
       </Row>
 
@@ -161,7 +161,7 @@ const PropertyDetailPage = () => {
 
       <div>
         <h2>About {name}</h2>
-        <p className="about-description">{description}</p>
+        <p className='about-description'>{description}</p>
       </div>
 
       <Contact contact={contact} />

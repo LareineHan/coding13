@@ -16,11 +16,9 @@ const FilterBar = ({ setFilter }) => {
             <Col lg={4} md={4} className='filter-menu-list'>
               <DropdownButton
                 id='dropdown-basic-button'
-                title='Dropdown button'
+                title='Bedroom'
                 variant='success'
               >
-                {" "}
-                방개수
                 <Dropdown.Item
                   onClick={() =>
                     setFilter((prev) => ({ ...prev, maxBed: "1", minBed: "1" }))
@@ -47,7 +45,7 @@ const FilterBar = ({ setFilter }) => {
             <Col lg={4} md={4} className='filter-menu-list'>
               <DropdownButton
                 id='dropdown-basic-button'
-                title='화장실'
+                title='Bathroom'
                 variant='success'
               >
                 <Dropdown.Item

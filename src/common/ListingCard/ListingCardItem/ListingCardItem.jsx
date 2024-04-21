@@ -6,9 +6,9 @@ import LikeBtn from "../../HeartBtn/LikeBtn";
 import { useNavigate } from "react-router-dom";
 import ContactEmailButton from "../../ContactEmailButton/ContactEmailButton";
 
-const ListingCardItem = ({ id, setRentData }) => {
+const ListingCardItem = ({ id }) => {
   const { data, isLoading, isError } = useGetPropertyDetailQuery(id);
-
+  console.log("디테일", data);
   const navigate = useNavigate();
   if (!data)
     if (isLoading) {
@@ -44,11 +44,11 @@ const ListingCardItem = ({ id, setRentData }) => {
 
   const desc = [
     pet,
-    amenities[0].amenities[0],
-    amenities[0].amenities[3],
-    amenities[0].amenities[5],
-    amenities[0].amenities[6],
-    amenities[0].amenities[7],
+    amenities && amenities[0].amenities[0],
+    amenities && amenities[0].amenities[3],
+    amenities && amenities[0].amenities[5],
+    amenities && amenities[0].amenities[6],
+    amenities && amenities[0].amenities[7],
   ];
   //	console.log('amenities desc', desc);
 
