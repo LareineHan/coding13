@@ -32,15 +32,15 @@ const PropertyReviews = ({ id }) => {
   }
 
   return (
-    <div className="property-review-box">
+    <div className='property-review-box'>
       <h2>Reviews</h2>
-      {/*Change logic to show "No available reviews" when there is no review by minji*/}
-      {data.length > 0 ? (
+      {/*Change logic to show “No available reviews” when there is no review by minji*/}
+      {data.data?.length > 0 ? (
         <div>
           {data?.data.map((review) => (
             <div key={review.key}>
               <p>Title: {review.title}</p>
-              <p>Text: {review.text}</p>
+              <p>Text: {review?.text}</p>
               <p>Rating: {review.rating}</p>
               <p>Submission Date: {review.submissionDate}</p>
               {review.comments && <p>Comment: {review.comments[0].text}</p>}
@@ -48,7 +48,7 @@ const PropertyReviews = ({ id }) => {
           ))}
         </div>
       ) : (
-        <p className="Unavailable-propertyReview-message">
+        <p className='Unavailable-propertyReview-message'>
           No available reviews
         </p>
       )}

@@ -13,12 +13,10 @@
 .filter-handlers {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
   justify-content: flex-end;
 }
 .filter-handlers > .btn {
   border-radius: 3px;
-  margin-top: 1rem;
   padding: 0.5rem 1rem;
   width: 100%;
 }
@@ -61,6 +59,11 @@
 }
 .sort-options .filter-menu-list > .dropdown > button:hover {
   text-decoration: underline;
+}
+
+.sort-options {
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1080px) {
@@ -123,7 +126,7 @@
   .filter-bar-search {
     display: flex;
     flex: 2 0 !important;
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
     margin: auto;
   }
 
