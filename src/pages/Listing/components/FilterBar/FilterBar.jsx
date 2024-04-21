@@ -130,7 +130,7 @@ const FilterBar = ({ setFilter }) => {
               </DropdownButton>
             </Col>
 
-            <Col lg={2} md={3} className='sort-options filter-menu-list '>
+            <Col lg={2} md={3} className='sort-options filter-menu-list'>
               <Form.Group controlId='minRent'>
                 <Form.Control
                   type='text'
@@ -154,7 +154,7 @@ const FilterBar = ({ setFilter }) => {
             <Col
               lg={2}
               md={2}
-              className='sort-options filter-menu-list sort_menu apply_btn'
+              className='sort-options filter-menu-list sort_menu sort-menu'
             >
               <DropdownButton
                 id='sort-dropdown'
@@ -183,7 +183,7 @@ const FilterBar = ({ setFilter }) => {
           </Row>
         </Col>
 
-        <Row className='sort-options'>
+        <Row className='sort-options apply_btn  '>
           <Col lg={2} md={3}>
             <div className='filter-handlers'>
               <Button
