@@ -74,7 +74,7 @@ const AppLayout = () => {
                   id='basic-nav-dropdown'
                   style={{ marginRight: "50px" }}
                 >
-                  <NavDropdown.Item as={Link} to='/myPage'>
+                  <NavDropdown.Item as={Link} to='/mypage'>
                     Go to My Page
                   </NavDropdown.Item>
                   <NavDropdown.Item as={Link} to='/logout'>
