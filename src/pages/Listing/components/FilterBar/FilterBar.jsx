@@ -89,7 +89,7 @@ const FilterBar = ({ setFilter }) => {
 
         <Col lg={4} md={12} className='filter-menu-box'>
           <Row className='filters'>
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col lg={2} md={3} className='filter-menu-list'>
               <DropdownButton
                 id='bedroom-dropdown'
                 title={bedroomOption}
@@ -112,7 +112,7 @@ const FilterBar = ({ setFilter }) => {
               </DropdownButton>
             </Col>
 
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col lg={2} md={3} className='filter-menu-list'>
               <DropdownButton
                 id='bathroom-dropdown'
                 title={bathroomOption}
@@ -130,7 +130,7 @@ const FilterBar = ({ setFilter }) => {
               </DropdownButton>
             </Col>
 
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col lg={2} md={3} className='filter-menu-list'>
               <Form.Group controlId='minRent'>
                 <Form.Control
                   type='text'
@@ -140,7 +140,7 @@ const FilterBar = ({ setFilter }) => {
                 />
               </Form.Group>
             </Col>
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col lg={2} md={3} className='filter-menu-list'>
               <Form.Group controlId='maxRent'>
                 <Form.Control
                   type='text'
@@ -150,25 +150,8 @@ const FilterBar = ({ setFilter }) => {
                 />
               </Form.Group>
             </Col>
-          </Row>
-          <div className='filter-handlers'>
-            <Button
-              variant='success'
-              className='apply-filter-button'
-              onClick={handleApplyFilters}
-            >
-              Apply Filter
-            </Button>
-            <Button
-              variant='outline-danger'
-              className='reset-filter-button'
-              onClick={handleResetFilters}
-            >
-              Reset Filter
-            </Button>
-          </div>
-          <Row className='sort-options'>
-            <Col lg={12} md={12} className='filter-menu-list'>
+
+            <Col lg={2} md={2} className='filter-menu-list'>
               <DropdownButton
                 id='sort-dropdown'
                 title={sortOption}
@@ -195,6 +178,30 @@ const FilterBar = ({ setFilter }) => {
             </Col>
           </Row>
         </Col>
+        <Row className='sort-options'>
+          <Col lg={2} md={3}>
+            <div className='filter-handlers'>
+              <Button
+                variant='success'
+                className='apply-filter-button'
+                onClick={handleApplyFilters}
+              >
+                Apply
+              </Button>
+            </div>
+          </Col>
+          <Col lg={2} md={3}>
+            <div className='filter-handlers'>
+              <Button
+                variant='outline-danger'
+                className='reset-filter-button'
+                onClick={handleResetFilters}
+              >
+                Reset
+              </Button>
+            </div>
+          </Col>
+        </Row>
       </Row>
     </Container>
   );
