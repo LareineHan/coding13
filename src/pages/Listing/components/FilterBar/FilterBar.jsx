@@ -159,7 +159,8 @@ const FilterBar = ({ setFilter }) => {
 							<DropdownButton
 								id='sort-dropdown'
 								title={sortOption}
-								variant='outline-success'>
+								variant='link'
+								className='sort-dropdown'>
 								<Dropdown.Item onClick={() => handleSortSelect('Default')}>
 									Default
 								</Dropdown.Item>
@@ -191,9 +192,6 @@ const FilterBar = ({ setFilter }) => {
 							Reset Filter
 						</Button>
 					</div>
-					{/* <Row className='sort-options'>
-
-					</Row> */}
 				</Col>
 			</Row>
 		</Container>

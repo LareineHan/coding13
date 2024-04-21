@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './PropertyDetailPage.style.css';
-import { useGetPropertyDetailQuery } from '../../hooks/useGetPropertyDetail';
-import { useParams } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import PropertyReviews from '../../common/PropertyReviews/PropertyReviews';
-import { useGetImagesQuery } from '../../hooks/useGetPropertyImages';
-import PropertyCarousel from '../../common/Carousel/PropertyCarousel';
-import { useGetReviewsQuery } from '../../hooks/useGetReviews';
-import PropertyRating from '../../common/PropertyRating/PropertyRating';
-import PropertyPricing from './components/PropertyPricing';
-import Contact from './components/Contact';
-import Amenities from './components/Amenities';
-import FeesPolicies from './components/FeesPolicies';
-import PropertyDetails from './components/PropertyDetails';
-import Transportation from './components/Transportation';
+import React, { useState, useEffect } from "react";
+import "./PropertyDetailPage.style.css";
+import { useGetPropertyDetailQuery } from "../../hooks/useGetPropertyDetail";
+import { useParams } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import PropertyReviews from "../../common/PropertyReviews/PropertyReviews";
+import { useGetImagesQuery } from "../../hooks/useGetPropertyImages";
+import PropertyCarousel from "../../common/Carousel/PropertyCarousel";
+import { useGetReviewsQuery } from "../../hooks/useGetReviews";
+import PropertyRating from "../../common/PropertyRating/PropertyRating";
+import PropertyPricing from "./components/PropertyPricing";
+import Contact from "./components/Contact";
+import Amenities from "./components/Amenities";
+import FeesPolicies from "./components/FeesPolicies";
+import PropertyDetails from "./components/PropertyDetails";
+import Transportation from "./components/Transportation";
+import LikeBtn from "../../common/HeartBtn/LikeBtn";
+import { CopyUrlBtn } from "../../common/ShareBtn/ShareBtn";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -122,32 +124,40 @@ const PropertyDetailPage = () => {
   console.log("Max BathNum:", maxBathNum);
 
   return (
-    <Container className="propertyDetailPage-container">
+    <Container className='propertyDetailPage-container'>
       <PropertyCarousel images={images} />
-      <h1 className="propertyDetailPage-title">{name}</h1>
-      <p>
-        {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
-      </p>
+      <h1 className='propertyDetailPage-title'>{name}</h1>
+      <Row className='propertyDetailPage-subInfo-container'>
+        <Col xs={8} md={10}>
+          {" "}
+          <p>
+            {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
+          </p>{" "}
+          <PropertyRating
+            averageRating={averageRating}
+            totalReviews={totalReviews}
+          />
+        </Col>
+        <Col xs={4} md={2} className='propertyDetailPage-share-like'>
+          <CopyUrlBtn className='propertyDetailPage-share' />
+          <LikeBtn listId={data?.id} className='propertyDetailPage-like' />
+        </Col>
+      </Row>
 
-      <PropertyRating
-        averageRating={averageRating}
-        totalReviews={totalReviews}
-      />
-
-      <Row className="rent-bed-bath-container">
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Monthly Rent</p>
-          <p className="rent-range-value">{rentRange}</p>
+      <Row className='rent-bed-bath-container'>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Monthly Rent</p>
+          <p className='rent-range-value'>{rentRange}</p>
         </Col>
 
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Bedrooms</p>
-          <p className="rent-range-value">{bedRange}</p>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Bedrooms</p>
+          <p className='rent-range-value'>{bedRange}</p>
         </Col>
 
-        <Col className="rent-bed-bath-inner-container">
-          <p className="rent-range-title">Bathrooms</p>
-          <p className="rent-range-value">{`1 - ${maxBathNum} baths`}</p>
+        <Col className='rent-bed-bath-inner-container'>
+          <p className='rent-range-title'>Bathrooms</p>
+          <p className='rent-range-value'>{`1 - ${maxBathNum} baths`}</p>
         </Col>
       </Row>
 
@@ -162,7 +172,7 @@ const PropertyDetailPage = () => {
 
       <div>
         <h2>About {name}</h2>
-        <p className="about-description">{description}</p>
+        <p className='about-description'>{description}</p>
       </div>
 
       <Contact contact={contact} />

@@ -1,64 +1,96 @@
 .propertyDetailPage-container {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 
 .propertyDetailPage-title {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .rent-bed-bath-container {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #cacaca;
-    margin: 1rem 0;
-   padding: 0.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #cacaca;
+  margin: 1rem 0;
+  padding: 0.25rem 0;
 }
 
-.rent-bed-bath-inner-container:not(:last-child){    
-    border-right: 1px solid #cacaca;
-    content: "";
+.rent-bed-bath-inner-container:not(:last-child) {
+  border-right: 1px solid #cacaca;
+  content: "";
 }
 
 .rent-bed-bath-inner-container,
 .bed-bed-bath-inner-container,
-.bath-bed-bath-inner-container{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.bath-bed-bath-inner-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .rent-range-title {
-    font-size: .875rem;
-    line-height: .875rem;
-    margin: 0;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  margin: 0;
 }
 
 .rent-range-value,
 .bad-range-value,
 .rent-range-value {
-font-size: 1rem;
-margin: 0;
-font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: bold;
 }
 
 .about-description {
-    margin-top: 1rem;
-    font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
+.propertyDetailPage-subInfo-container {
+  display: flex;
+}
+
+.propertyDetailPage-share-like {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+div.likeBtn {
+  padding-left: 2rem;
+}
+
+.propertyDetailPage-share div.shareBtn svg,
+.propertyDetailPage-share div.likeBtn svg {
+  fill: #4c4e5d;
+}
+
+.propertyDetailPage-title {
+  font-size: 1.5rem;
+}
 
 @media only screen and (min-width: 48rem) {
-    .rent-bed-bath-container {
-        padding: 1rem 0;
-    }
+  .rent-bed-bath-container {
+    padding: 1rem 0;
+  }
 
-    .about-description {
-        margin-bottom:4rem;
-    }
+  .about-description {
+    margin-bottom: 4rem;
+  }
+
+  div.likeBtn {
+    padding-left: 3rem;
+  }
+
+  .propertyDetailPage-share-like {
+    padding-right: 2em;
+  }
 }
 
 @media only screen and (min-width: 64rem) {
-    .propertyDetailPage-container {
-        padding-top: 5rem;
-    }
+  .propertyDetailPage-container {
+    padding-top: 5rem;
+  }
 }
