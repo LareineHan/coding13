@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Footer.style.css"
 import { Container, Row, Col } from 'react-bootstrap'
-import logoDark from '../images/logo-dark.png';
+import logoWhite from '../images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons"
@@ -12,12 +12,12 @@ const Footer = () => {
   return (
     <div className='footer-container'>
 
-    <Container style={{padding: "2rem 2.5rem"}}>
+    <Container style={{padding: "2rem 1rem"}}>
 
       {/* logo */}
         <Row>
           <Col>
-            <img style={{width: "13rem"}} alt='footer-logo' src={logoDark}/>
+            <img style={{width: "13rem"}} alt='footer-logo' src={logoWhite}/>
           </Col>
         </Row>
 

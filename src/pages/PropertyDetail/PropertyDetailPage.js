@@ -122,9 +122,15 @@ const PropertyDetailPage = () => {
   console.log("Max BathNum:", maxBathNum);
 
   return (
+<<<<<<< HEAD
     <Container className='propertyDetailPage-container'>
       <PropertyCarousel images={images} />
       <h1 className='propertyDetailPage-title'>{name}</h1>
+=======
+    <Container className="propertyDetailPage-container">
+      <PropertyCarousel images={images} />
+      <h1 className="propertyDetailPage-title">{name}</h1>
+>>>>>>> develop
       <p>
         {`${address.lineOne}, ${address.city}, ${address.state} ${address.postalCode}`}
       </p>
@@ -134,6 +140,7 @@ const PropertyDetailPage = () => {
         totalReviews={totalReviews}
       />
 
+<<<<<<< HEAD
       <Row className='rent-bed-bath-container'>
         <Col className='rent-bed-bath-inner-container'>
           <p className='rent-range-title'>Monthly Rent</p>
@@ -148,6 +155,22 @@ const PropertyDetailPage = () => {
         <Col className='rent-bed-bath-inner-container'>
           <p className='rent-range-title'>Bathrooms</p>
           <p className='rent-range-value'>{`1 - ${maxBathNum} baths`}</p>
+=======
+      <Row className="rent-bed-bath-container">
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Monthly Rent</p>
+          <p className="rent-range-value">{rentRange}</p>
+        </Col>
+
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Bedrooms</p>
+          <p className="rent-range-value">{bedRange}</p>
+        </Col>
+
+        <Col className="rent-bed-bath-inner-container">
+          <p className="rent-range-title">Bathrooms</p>
+          <p className="rent-range-value">{`1 - ${maxBathNum} baths`}</p>
+>>>>>>> develop
         </Col>
       </Row>
 
@@ -157,11 +180,19 @@ const PropertyDetailPage = () => {
         onTabSelect={handleTabSelect}
         amenities={amenities}
         imageData={imageData}
+<<<<<<< HEAD
+=======
+        leaseTerms={leaseTerms}
+>>>>>>> develop
       />
 
       <div>
         <h2>About {name}</h2>
+<<<<<<< HEAD
         <p className='about-description'>{description}</p>
+=======
+        <p className="about-description">{description}</p>
+>>>>>>> develop
       </div>
 
       <Contact contact={contact} />

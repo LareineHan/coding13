@@ -13,7 +13,7 @@
     width: 100%;
 }
 .footer-second-section {
-	padding-top: 1rem;
+	padding-top: 1.6rem;
 	position: relative;
 }
 .footer-second-section-content-part {
@@ -69,7 +69,7 @@
     color: #77e6a7;
 }
 
-@media (min-width: 500px) and (max-width: 992px) {
+@media (min-width: 410px) and (max-width: 992px) {
     .footer-container {
         background-color: #2e9a5d;
         color: white;

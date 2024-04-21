@@ -3,9 +3,8 @@ import Card from 'react-bootstrap/Card';
 import './ExploreCard.style.css';
 import { useGetPropertiesQuery } from '../../../../hooks/useGetProperties';
 import { useParams } from 'react-router-dom';
-import { Container, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import ExploreCardImage from '../ExploreCardImage/ExploreCardImage';
-import { Row, Col } from "react-bootstrap"
 
 const ExploreCard = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);

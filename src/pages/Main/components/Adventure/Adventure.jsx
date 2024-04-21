@@ -15,7 +15,7 @@ const Adventure = () => {
             <div>
                 <div className='adventure-main-btn'>
                     <h4>Get home recommendations</h4>
-                    <p>Sign in for a more personalized experience.</p>
+                    <p className='adventure-main-btn-p'>Sign in for a more personalized experience.</p>
                     <Link to={!token?'/login':'/properties'} style={{textDecoration: 'none'}}>
                     <Button variant="outline-success" type="submit" className='adventure-more-btn'>{!token?'Sign in':'Go to Properties'}</Button>
                     </Link>
