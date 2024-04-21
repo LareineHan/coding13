@@ -3,6 +3,8 @@ import ExploreCard from '../ExploreCard/ExploreCard';
 import './Explore.style.css';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import { Container,Row, Col } from "react-bootstrap"
+
 
 const Explore = () => {
 	const navigate = useNavigate(); //eslint-disable-line
@@ -21,12 +23,14 @@ const Explore = () => {
 	};
 	return (
 		<div className='explore-container'>
-			<h2>Explore Rentals in {userCity}</h2>
-			<div
-				className='explore-cards'
-				style={{ display: 'flex', flexDirection: 'column' }}>
-				<ExploreCard props={searchParams} />
-			</div>
+			<h2 className='explore-container-h2'>Explore Rentals in {userCity}</h2>
+            <Container>
+                <Row>
+                    <Col>
+                        <ExploreCard props={searchParams} />
+                    </Col>
+                </Row>
+            </Container>
 			<Button
 				variant='success'
 				className='explore-more-btn'

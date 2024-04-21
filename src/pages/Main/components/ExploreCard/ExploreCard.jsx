@@ -3,8 +3,9 @@ import Card from 'react-bootstrap/Card';
 import './ExploreCard.style.css';
 import { useGetPropertiesQuery } from '../../../../hooks/useGetProperties';
 import { useParams } from 'react-router-dom';
-import { Spinner } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
 import ExploreCardImage from '../ExploreCardImage/ExploreCardImage';
+import { Row, Col } from "react-bootstrap"
 
 const ExploreCard = ({ props }) => {
 	const { data, isLoading, isError } = useGetPropertiesQuery(props);
@@ -19,8 +20,9 @@ const ExploreCard = ({ props }) => {
 	}
 
 	return (
-		<div style={{ display: 'flex' }}>
-			{data?.data.slice(0, 4).map((property, idx) => (
+		<div className='explore-card-container'>
+			{data?.data.slice(4, 8).map((property, idx) => (
+
 				<Card className='explore-card' key={idx}>
 					<ExploreCardImage className='explore-card-img' id={property?.id} />
 					<Card.Body>
@@ -35,6 +37,7 @@ const ExploreCard = ({ props }) => {
 						</Card.Text>
 					</Card.Body>
 				</Card>
+	
 			))}
 		</div>
 	);

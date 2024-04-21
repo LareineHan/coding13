@@ -23,10 +23,10 @@ const Footer = () => {
 
       {/* contents */}
         <Row className='footer-second-section'>
-          <Col className='footer-second-section-content-part'>
+          <Col className='footer-second-section-content-part' md={12}>
             <div className='footer-second-section-content'>
               <h6>ADVERTISERS</h6>
-              <p>
+              <p className='footer-content-list'>
                 <div>Advertise</div>
                 <div>Add a Property</div>
                 <div>Customer Portal</div>
@@ -35,7 +35,7 @@ const Footer = () => {
 
             <div className='footer-second-section-content'>
               <h6>SEARCHES</h6>
-              <p>
+              <p className='footer-content-list'>
                 <div>Newest Rentals</div>
                 <div>Open Houses</div>
                 <div>Neighborhoods</div>
@@ -44,7 +44,7 @@ const Footer = () => {
 
             <div className='footer-second-section-content'>
               <h6>LANDLORDS</h6>
-              <p>
+              <p className='footer-content-list'>
                 <div>List a Property</div>
                 <div>My Listings</div>
                 <div>Prices</div>
@@ -53,7 +53,7 @@ const Footer = () => {
 
             <div className='footer-second-section-content'>
               <h6>FAQ</h6>
-              <p>
+              <p className='footer-content-list'>
                 <div>About Us</div>
                 <div>Contact Us</div>
                 <div>Blog</div>
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
 
           </Col>
-          <Col className="footer-second-section-icon-part">
+          <Col className="footer-second-section-icon-part" md={12}>
           <FontAwesomeIcon className="footer-second-section-icon" icon={faFacebookF} size="2x"/>
           <FontAwesomeIcon className="footer-second-section-icon" icon={faInstagram} size="2x"/>
           <FontAwesomeIcon className="footer-second-section-icon" icon={faXTwitter} size="2x"/>
