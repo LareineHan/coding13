@@ -48,7 +48,7 @@ const Contact = ({ contact }) => {
       </h2>
       <Row className="contactName-logo">
         <Col xs={8} md={9}>
-          <h3>{contact.name}</h3>
+          <h3 className="contactPage-name">{contact.name}</h3>
         </Col>
         <Col md={3} className="contact-logo">
           <img
@@ -62,7 +62,7 @@ const Contact = ({ contact }) => {
         </Col>
       </Row>{" "}
       <Button className="contact-message-btn" onClick={handleShowForm}>
-        Message
+        Email
       </Button>
       <Modal show={showForm} onHide={handleCloseForm}>
         <Modal.Header closeButton>

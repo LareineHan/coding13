@@ -24,13 +24,13 @@ const PropertyDetails = ({
       <div className="propertyDetail-section">
         <p className="propertyDetail-section-title">Utility Included</p>
         <ul className="propertyDetail-section-list two-column-list">
-          {recurringExpenses.map((recurringExpense, index) => {
+          {recurringExpenses?.map((recurringExpense, index) => {
             // Split the type string by comma, ampersand, or 'and'
             const formattedWords = recurringExpense.type
               .split(/,\s*|\s*&\s*|\s+and\s+/)
               .map((word) => word.trim().toLowerCase());
 
-            return formattedWords.map((word, wordIndex) => (
+            return formattedWords?.map((word, wordIndex) => (
               <li
                 key={`${index}-${wordIndex}`}
                 className="propertyDetail-section-item"
@@ -45,7 +45,7 @@ const PropertyDetails = ({
         <p className="propertyDetail-section-title">Lease Option</p>
         {leaseTermList.length > 1 ? (
           <ul className="propertyDetail-section-list">
-            {leaseTermList.map((term, index) => (
+            {leaseTermList?.map((term, index) => (
               <li key={index} className="propertyDetail-section-item">
                 {term}
               </li>

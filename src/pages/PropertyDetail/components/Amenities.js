@@ -6,7 +6,7 @@ const Amenities = ({ amenities }) => {
   // Separate amenities by type
   const amenitiesByType = {};
 
-  amenities.forEach((amenity) => {
+  amenities?.forEach((amenity) => {
     const { type, amenities } = amenity;
     if (!amenitiesByType[type]) {
       amenitiesByType[type] = [];
@@ -16,7 +16,7 @@ const Amenities = ({ amenities }) => {
 
   return (
     <Container className="amenities-container">
-      {Object.entries(amenitiesByType).map(([type, amenitiesList]) => (
+      {Object?.entries(amenitiesByType).map(([type, amenitiesList]) => (
         <div key={type} className="amenities-section">
           <Row>
             <h2>{type}</h2>
@@ -24,7 +24,7 @@ const Amenities = ({ amenities }) => {
           <Row>
             <Col>
               <ul className="amenities-list two-column-list">
-                {amenitiesList.map((amenity, index) => (
+                {amenitiesList?.map((amenity, index) => (
                   <li key={index} className="amenity-item">
                     {amenity}
                   </li>

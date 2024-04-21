@@ -17,6 +17,7 @@
       border-radius: 0;
       color: white; 
       background-color:#198754 ;
+      font-size: 1rem;
 } 
 
 .nav-link {
@@ -106,3 +107,10 @@
 .showMoreBtnArrowIcon {
     width: 25px;
 }
+
+@media only screen and (min-width: 48rem) {
+    .property-pricing-tabs {
+        font-size: 1rem;
+    }
+}
+

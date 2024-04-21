@@ -77,8 +77,8 @@ const PropertyDetailPage = () => {
     transits,
   } = data; // Access nested data
 
-  const images = imageData?.data;
-  const reviews = reviewsData?.data;
+  const images = imageData?.data || [];
+  const reviews = reviewsData?.data || [];
 
   const handleTabSelect = (type) => {
     setSelectedTab(type);
@@ -94,10 +94,10 @@ const PropertyDetailPage = () => {
 
   const averageRating = calculateAverageRating();
 
-  const totalReviews = reviews.length; //total number of reviews
+  const totalReviews = reviews?.length || 0; //total number of reviews
 
   // Find availability with type "All"
-  const availability = availabilities.find(
+  const availability = availabilities?.find(
     (availability) => availability.type === "All"
   );
   console.log("Availability:", availabilities);
@@ -107,7 +107,7 @@ const PropertyDetailPage = () => {
 
   if (availability && availability.details && availability.details.length > 0) {
     // Extract all bathNum values from details array
-    const bathNumValues = availability.details.map((detail) => detail.bathNum);
+    const bathNumValues = availability?.details.map((detail) => detail.bathNum);
 
     // Convert bathNum values to numbers and filter out any non-numeric values
     const validBathNumValues = bathNumValues
@@ -122,7 +122,7 @@ const PropertyDetailPage = () => {
   console.log("Max BathNum:", maxBathNum);
 
   return (
-    <Container>
+    <Container className="propertyDetailPage-container">
       <PropertyCarousel images={images} />
       <h1 className='propertyDetailPage-title'>{name}</h1>
       <p>
