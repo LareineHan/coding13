@@ -1,75 +1,79 @@
 .main-navbar {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: rgb(242, 242, 242) !important;
-	font-weight: 600;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 20;
-	padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(242, 242, 242) !important;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  padding: 0;
 }
 .main-navbar .container {
-	max-width: 100%;
-	position: relative;
-	max-height: inherit;
-	padding: 0.5rem 0.7rem;
-	/* border: 1px solid red; */
+  max-width: 100%;
+  position: relative;
+  max-height: inherit;
+  padding: 0.5rem 0.7rem;
+  /* border: 1px solid red; */
 }
 .logo-area {
-	padding: 0 4rem 0 4rem;
+  padding: 0 4rem 0 4rem;
 }
 .english {
-	margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 .login-menu {
-	padding: 8px;
+  padding: 8px;
 }
 
 .main-navbar .navbar-toggler-icon {
-	background-image: url('../images/hamburgerhome.png');
+  background-image: url("../images/hamburgerhome.png");
 }
 .main-navbar .navbar-toggler-icon:hover {
-	filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 .main-navbar > .container > button {
-	border: none;
+  border: none;
 }
 button.navbar-toggler.collapsed {
-	box-shadow: none;
+  box-shadow: none;
 }
 button.navbar-toggler:focus {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .nav-extra-item {
-	margin-right: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 @media screen and (max-width: 991px) {
-	.main-navbar {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	.logo-area {
-		position: absolute;
-		top: 0;
-		right: 0;
-		display: flex;
-		align-items: flex-end;
-		margin: 0;
-		padding: 0;
-	}
+  .main-navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logo-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+  }
 
-	.main-navbar .navbar-collapse {
-		padding-left: 1rem;
-	}
-	.english {
-		margin: 0;
-	}
-	.nav-extra-item {
-		margin-right: 0;
-	}
+  .main-navbar .navbar-collapse {
+    padding-left: 1rem;
+  }
+  .english {
+    margin: 0;
+  }
+  .nav-extra-item {
+    margin-right: 0;
+  }
+}
+
+.outlet_container {
+  height: 85vh;
 }

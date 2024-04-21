@@ -44,13 +44,13 @@ const FilterBar = ({ setFilter }) => {
   return (
     <Container>
       <Row className='filter-menu'>
-        <Col lg={8} md={9} className='filter-bar-search'>
+        <Col xl={2} lg={12} className='filter-bar-search'>
           <SearchBar />
         </Col>
 
-        <Col lg={4} md={12} className='filter-menu-box'>
+        <Col xl={10} lg={12} className='filter-menu-box'>
           <Row className='filters'>
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col xl={3} md={6} className='filter-menu-list'>
               <DropdownButton
                 id='bedroom-dropdown'
                 title='Bedrooms'
@@ -66,7 +66,7 @@ const FilterBar = ({ setFilter }) => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
-                    setMinBed("2");
+                    setMinBed("1");
                     setMaxBed("2");
                   }}
                 >
@@ -74,7 +74,7 @@ const FilterBar = ({ setFilter }) => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   onClick={() => {
-                    setMinBed("3");
+                    setMinBed("1");
                     setMaxBed("3");
                   }}
                 >
@@ -90,7 +90,7 @@ const FilterBar = ({ setFilter }) => {
               </DropdownButton>
             </Col>
 
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col xl={3} md={6} className='filter-menu-list'>
               <DropdownButton
                 id='bathroom-dropdown'
                 title='Bathrooms'
@@ -121,7 +121,7 @@ const FilterBar = ({ setFilter }) => {
                 </Dropdown.Item>
               </DropdownButton>
             </Col>
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col xl={2} md={6} className='filter-menu-list'>
               <Form.Group controlId='minRent'>
                 {/* <Form.Label>Min Rent</Form.Label> */}
                 <Form.Control
@@ -132,7 +132,7 @@ const FilterBar = ({ setFilter }) => {
                 />
               </Form.Group>
             </Col>
-            <Col lg={3} md={3} className='filter-menu-list'>
+            <Col xl={2} md={6} className='filter-menu-list'>
               <Form.Group controlId='maxRent'>
                 {/* <Form.Label>Max Rent</Form.Label> */}
                 <Form.Control
@@ -143,69 +143,71 @@ const FilterBar = ({ setFilter }) => {
                 />
               </Form.Group>
             </Col>
-          </Row>
-          <div className='filter-handlers'>
-            <Button
-              variant='link'
-              style={{ color: "green" }}
-              onClick={handleApplyFilters}
-            >
-              Apply Filter
-            </Button>
-            <Button
-              variant='link'
-              style={{ color: "00BF67" }}
-              onClick={handleResetFilters}
-            >
-              Reset
-            </Button>
-          </div>
-          <Row className='sort-options'>
-            <Col lg={12} md={12} className='filter-menu-list'>
-              <DropdownButton id='sort-dropdown' title='Sort' variant='link'>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilter((prev) => ({
-                      ...prev,
-                      sort: "default",
-                    }));
-                  }}
+            <Col xl={2} md={12}>
+              <div className='filter-handlers'>
+                <Button
+                  variant='link'
+                  style={{ color: "green" }}
+                  onClick={handleApplyFilters}
                 >
-                  Default
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilter((prev) => ({
-                      ...prev,
-                      sort: "lastUpdated",
-                    }));
-                  }}
+                  Apply
+                </Button>
+                <Button
+                  variant='link'
+                  style={{ color: "00BF67" }}
+                  onClick={handleResetFilters}
                 >
-                  Last Updated
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilter((prev) => ({
-                      ...prev,
-                      sort: "rentHighToLow",
-                    }));
-                  }}
-                >
-                  Rent High To Low
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => {
-                    setFilter((prev) => ({
-                      ...prev,
-                      sort: "rentLowToHigh",
-                    }));
-                  }}
-                >
-                  Rent Low To High
-                </Dropdown.Item>
-              </DropdownButton>
+                  Reset
+                </Button>
+              </div>
             </Col>
           </Row>
+        </Col>
+      </Row>
+      <Row className='sort-options'>
+        <Col lg={12} md={12} className='filter-menu-list'>
+          <DropdownButton id='sort-dropdown' title='Sort' variant='link'>
+            <Dropdown.Item
+              onClick={() => {
+                setFilter((prev) => ({
+                  ...prev,
+                  sort: "default",
+                }));
+              }}
+            >
+              Default
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setFilter((prev) => ({
+                  ...prev,
+                  sort: "lastUpdated",
+                }));
+              }}
+            >
+              Last Updated
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setFilter((prev) => ({
+                  ...prev,
+                  sort: "rentHighToLow",
+                }));
+              }}
+            >
+              Rent High To Low
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setFilter((prev) => ({
+                  ...prev,
+                  sort: "rentLowToHigh",
+                }));
+              }}
+            >
+              Rent Low To High
+            </Dropdown.Item>
+          </DropdownButton>
         </Col>
       </Row>
     </Container>

@@ -43,7 +43,7 @@ const ListingCardItem = ({ id }) => {
   };
   return (
     <div>
-      <div key={id} className='card'>
+      <div key={id} className='listing_card_content'>
         <div className='card_title'>
           <div
             className='title_name card_content'
